@@ -1,0 +1,14 @@
+h2 {
+  color: rgb(156, 7, 7);
+}
+
+img {
+  border: 5px solid rgb(17, 2, 2);
+  border-radius: 10px;
+  width: 50%;
+  height: auto;
+}
+
+#code1 {
+  margin-left: 40px;
+}
