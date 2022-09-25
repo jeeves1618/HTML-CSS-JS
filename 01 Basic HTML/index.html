@@ -195,16 +195,84 @@
       </ol>
       </p>
       <h2>Floating, Relative and Absolute</h2>
+      <div id="div01">
+        <p float="yes" id="p1"></p>
+        <p float="yes" id="p2"></p>
+        <p float="yes" id="p3"></p>
+        <p float="yes" id="p4"></p>
+        <section>This is the content that comes after floating boxes</section>
+      </div>
       <p>
-        <ol>
-          <li><b>Creating background for a div. </b> <br> <code>#bg {<br>width 300px; <br>height:500px; background-color: blue; <br>background-image: url("a.jpg");<br>background-repeat: no-repeat;
-            <br>background-position: top right; <br>} </code>
-            <br>You can also combine all 'background-' properties into one background property as <code>#bg {<br>width 300px; <br>height:500px; background: blue url("a.jpg") no-repeat top right; <br>} </code>.
-          </code><br>Now, if you define a height for this box and this defined height happened to be not big enough to hold the text inside, then the text will overflow. 
-        If you want the text to be shown within the box and enable a scroll bar, use the property <code>{overflow: auto;}</code></li>
-          <li><b>background will override</b> all previously defined background- properties. If a background- property is not explicitly defined in background, then the browser default will 
-          override what was specified in background- </li>
-        </ol>
+        
+          <div id="list01"><b>Floating an element </b> takes it out of the document flow. Supposing that p1 is inside div01, the div01 will collapse without taking the p1 into consideration.
+            It will be as high as the p2, p3, p4 and section. <br> <code>#div01 {
+            background-color: #00ffff;
+          }
+          <br>
+          p[float] {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            float: right;
+          }
+          <br>
+          #p1 {
+            background-color: bisque;
+          }
+          <br>
+          #p2 {
+            background-color: rgb(190, 162, 127);
+          }
+          <br>
+          #p3 {
+            background-color: rgb(168, 189, 168);
+          }
+          <br>
+          #p4 {
+            background-color: rgb(150, 182, 204);
+          }
+           </code>
+          </div>  
+          <div id="list02">
+            <b>Clearing the float </b> If you want an element that is defined as float to not float around and take its position in the document, then use <code>{clear : left;}</code>
+          </div>
+          <br>
+          
         </p>
+        <div id="list03">
+          <p id="p5">
+            <b>Absolute Positioning: </b> Absolute positioning will place the element relative to the parent/grand parent element which is defined as position: relative. If there are no 
+            elements in the ancestory defined as position: relative, then it will place its relative to the html element. 
+          </p>
+          <p id="p6">
+            <b>Relative Positioning: </b> Relative positioning offsets the element relative to its normal document flow position.
+          </p>
+        </div>
+        <h2>Media Queries</h2>
+        <div id="list04">
+          <p id="p7">
+            The syntax of the media query is as below:<br>
+            <code>
+              <section id="p7-s1">@media</section><section id="p7-s2">(max-width: 767px) {</section>
+                <section id="p7-s3">p {</section>
+                  <section id="p7-s4">color: blue;</section>
+                  <section id="p7-s5">}</section>
+                  <section id="p7-s6">}</section>
+            </code>
+            <br>
+            The style inside the outer curly braces will be applicable if the condition after <code>@media</code> resolves to true. In this case, <code>(max-width: 767px)</code> 
+            should resolve to true for the paragraph to become blue.<br>
+            Some common conditions in media query are <br>
+            <code>
+              <section>@media (max-width: 500px) {...}</section>
+              <section>@media (max-width: 500px) and (max-width: 900px) {...}</section>
+              <section>@media (max-width: 500px) , (max-width: 900px) {...} //Comma is equal to OR</section>
+              <section>@media (min-width: 600px) {...}</section>
+              <section>@media (orientation: potrait) {...}</section>
+              <section>@media screen {...}</section>
+              <section>@media print {...}</section>
+            </code>
+          </p>
+        </div>
   </body>
 </html>
