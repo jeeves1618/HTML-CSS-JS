@@ -1,0 +1,85 @@
+h2 {
+  color: rgb(156, 7, 7);
+}
+
+img {
+  border: 5px solid rgb(17, 2, 2);
+  border-radius: 10px;
+  width: 50%;
+  height: auto;
+}
+
+#code1 {
+  margin-left: 40px;
+}
+
+#div01 {
+  background-color: #00ffff;
+}
+
+p[float] {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+#p1 {
+  background-color: bisque;
+  float: left;
+}
+
+#p2 {
+  background-color: rgb(190, 162, 127);
+  float: right;
+}
+
+#p3 {
+  background-color: rgb(168, 189, 168);
+  clear: both;
+}
+
+#p4 {
+  background-color: rgb(150, 182, 204);
+}
+
+section {
+  clear: both;
+}
+
+#list01 {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#list02 {
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#list03 {
+  clear: both;
+  position: relative;
+}
+
+#p5 {
+  width: 40%;
+  height: auto;
+  border: 1px solid black;
+  position: absolute;
+  bottom: 0px;
+  right: 5%;
+  background-color: azure;
+}
+
+#p6 {
+  width: 40%;
+  height: auto;
+  border: 1px solid black;
+  position: relative;
+  top: 10px;
+  left: 5%;
+  background-color: azure;
+}

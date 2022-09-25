@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Responsive Design</title>
+    <link rel="stylesheet" type="text/css" href="style1.css" media="all">
+  </head>
+  <body>
+    <h1 style="text-align: center">Responsive Design</h1>
+    <hr />
+    <h2>Words of Wisdom</h2>
+    <p>Be Water, My Friend.
+      Empty your mind.
+      Be formless, shapeless, like water.
+      You put water into a cup, it becomes the cup.
+      You put water into a bottle, it becomes the bottle.
+      You put it into a teapot, it becomes the teapot.
+      Now water can flow or it can crash.
+      Be water, my friend.</p>
+    <p>
+      Prior to HTML5, all content models are either block level elements or
+      inline elements. The content models in HTML 5 are documented here.
+      https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html
+    </p>
+    <p>
+      HTML is only for structuring a page. CSS can be used to style h1 as h2. So
+      why should we use them? Wny can't we simply use &lt;div&gt; or &lt;p&gt;
+      element then? Because, using disticnt semantic elements enhances the
+      readability and provides a structure to the html document. It is for the
+      meaningful expression of the structure of a page.
+    </p>
+    <p>HTML entities help avoid rendering issues.</p>
+    <p>
+      We have three types of selectors, element selectors, class selectors and
+      id selectors.
+    </p>
+    <h2>Basics of CSS</h2>
+    <p>
+      CSS declaration block contains one or more declarations. A declaration is always formatted
+      as a property followed by a colon and then a value followed by a semicolon.
+      The colon and semicolon can be followed by zero or more spaces. In nearly all cases,
+      a value is either a single keyword or a space-separated list of one or more keywords
+      that are permitted for that property. If you use an incorrect property or value in a
+      declaration, the whole rule will be ignored.
+    </p>
+    <h2>Selectors in CSS</h2>
+    <p><strong>Selectors can be grouped.</strong>h2, p {color: gray;} By placing the h2 and p selectors on the left side of the rule and separating them with
+      a comma, you’ve defined a rule where the style on the right (color: gray;) applies to
+      the elements referenced by both selectors. The comma tells the browser that there are
+      two different selectors involved in the rule. Leaving out the comma would give the
+      rule a completely different meaning, which we’ll explore in “Descendant Selectors”</p>
+    
+    
+    <p>
+      If you want the attributes to be applied to multiple selectors at a time,
+      then you have to specify the selectors with comma in between. For example,
+      p,h1,.classname {...}
+    </p>
+    <p>
+      <strong>Element with Class Selector</strong> you want the attributes to be
+      applied to a select combination of two selectors at a time, then you have
+      to specify the selectors with dot in between. For example p.classname
+      {...} will be applicable to &lt;p class="classname"&gt; but not to &lt;div
+      class="classname"&gt;. The same logic can be used on a combination of two
+      class names as well. For instance, .classname1.classname2 {color:blue;}
+      will color the element with both classes,
+      <strong> &lt;div class="classname1 classname2"&gt; </strong>, as
+      <span style="color: blue"> blue </span>
+    </p>
+
+    <p>
+      <strong>Child Selector</strong> If you want the attributes to be applied
+      to a selector (lets say p) only when it is under the block (or a direct
+      child) article, then you have to specify them as
+      <strong> article &gt; p {...} </strong>
+    </p>
+    <p>
+      <strong>Descendant Selector</strong> What if you want to go beyond direct
+      child into grand kids? If you want the attributes to be applied to p
+      element under all descendants within article, then you have to specify
+      them as
+      <strong> article p {...} </strong>
+    </p>
+    <p>
+      <strong>Multiple Classes</strong> If you want to specify two classes for a
+      HTML element, you can just list them under class attribute separated by
+      spaces<strong> &lt;div class="classone classtwo"&gt; </strong>
+      
+   
+    <p>
+      <strong
+        >The child and descendant selectors are not limited to HTML elements.
+      </strong>
+      They can be implemented on classes as well. For instance<strong>
+        .colorBlue p { color: blue;}
+      </strong>
+      CSS tag will have every p inside (at any level) the element with
+      class="colorBlue" colored blue. Similarly,
+      <strong>div > .colorBlue{ color: blue;}</strong>
+      will have the elements with class="colorBlue" which are direct children of
+      div element colored in blue.
+    </p>
+
+    <p>
+      Things we aren't covering here are Adjacent Sibling Selector (Selector +
+      Selector) and General Sibling Selector (Selector ~ Selector).
+    </p>
+    <h2>CSS Psuedo Class Selectors</h2>
+    <p>
+      A CSS pseudo-class is a keyword added to a selector that specifies a
+      special state of the selected element(s). For example, :hover can be used
+      to change a button's color when the user's pointer hovers over it. The
+      syntax of pseudo-classes: <section class="w3-code notranslate cssHigh"></section>selector:pseudo-class { property: value; }</section>
+      You can also have multiple pseudo classes like <section class="w3-code notranslate cssHigh"></section>selector:pseudo-class1:pseudo-class2 { property: value; }</section>
+      For example, <code>
+        div:nth-child(3):hover{
+          background-color: green;
+          cursor: pointer;
+        }
+      </code> is valid. 
+    </p>
+  
+  <p>
+    Here we are going to cover the following pseudo-class selectors.
+    <ul>
+      <li>:link</li>
+      <li>:visited</li>
+      <li>:hover</li>
+      <li>:active</li>
+      <li>:nth-child</li>
+    </ul>
+  </p>
+  <h2>CSS Style Placement</h2>
+    <p>
+      <ol>
+        <li>In line styling. You can put the style element inside the tag of the HTML element. For example <code>&lt;p style="text-align: center;"&gt;</code> is valid.</li>
+        <li>Styling in head. You can put the same style element inside the head of the HTML document using style tag. For example <code>&lt;head&gt;<br>&lt;p &lt;style&gt;text-align: center;&lt;/style&gt;<br>&lt;/head&gt;</code> is valid.</li>
+        <li>External Style sheet. <code>&lt;link rel="stylesheet" href="filename.css"&gt;</li></code>
+      </ol>
+      </p>
+      <h2>CSS Rules Conflict Resolution</h2>
+    <p>
+      <ol>
+        <li><b>Origin Precedence (when there is conflict).</b> HTML is processed sequentially from top to bottom. So, the CSS rules will also be applied sequentially in the same way and the last declaration always gets reflected. 
+        For the same of precedence, think of external CSS as expanded at the point where it was declared inside the head.</li>
+        <li><b>Origin Precedence (when there is no conflict).</b> When there is no conflict on the properties, i.e. different properties are assigned values at multiple levels, they merge
+        together</li>
+        <li><b>Levels of specificity</b> First is inline styling within HTML tag with a style = " ". Next comes ID, then comes class, psuedo class and attribute. Finally the number of HTML elements.
+        Specificity score is calculated from First to last. It will 1 0 0 0 for a style element with inline styling and 0 1 1 0 for an element with ID and class. Since 1000 > 110, the first will
+        have precedence over the second. </li>
+        <li><b>Skipping specificity</b> If you want to override all rules, use !importat after the value of the attribute. <code>p { color:green !important; }</code></li>
+      </ol>
+      </p>
+      <h2>Text Styling</h2>
+    <p>
+      <ol>
+        <li><b>Font Family.</b> Specifies the font collections.</li>
+        <li><b>Color</b> Text color</li>
+        <li><b>Font Style</b> Font styles is where you are going specify italic etc.</li>
+        <li><b>Font Size</b> Specify the size of font in pixels. We can state the size in %, for example <code>font-size: 120%</code>. We can also say <code>font-size: 2em</code> which
+        will make the text twice as larger. em will have a cumulative effect. It will not override. For instance, if you specify the text as 2em in the body and 4em in the div, the 
+      text in div will become 8em. </li>
+        <li><b>Font Transform</b> Transforms the text to upper case etc.</li>
+        <li><b>Text Align</b> Used to align the text to right, left or center</li>
+      </ol>
+      </p>
+      <h2>Box Model</h2>
+    <p>
+      <img src="https://raw.githubusercontent.com/jeeves1618/HTML-CSS-JS/main/01%20Basic%20HTML/css-box-model.png">
+      <p>&copy; <a href="https://sabe.io/classes/css/css-box-model-padding-border-margin">sabe.io</a></p>
+      <ol>
+        <li><b>Margin. </b> Every browser will have a default margin. If you want to reset the marging, you can add style element to body as below. <br>
+        <code id="code1">
+          body {
+            margin: 0; 
+            padding: 0;
+          }
+        </code><br>This proper will stop applying to child elements once you override margin in any one of the child elements. We will have to use the * element 
+        to enforce the inheritance then.</li>
+        <li><b>Creating a box with margin, border and padding. </b> <br> <code>#box { padding: 10px 10px 10px 10px; border: 20px solid black; margin: 40px; width 300px; height:auto } </code>
+          The width here does not include the width of padding, margin and border. If you want the width to be inclusive of all three, use <code>box-sizing: border-box;</code> property. 
+        </code><br>Now, if you define a height for this box and this defined height happened to be not big enough to hold the text inside, then the text will overflow. 
+      If you want the text to be shown within the box and enable a scroll bar, use the property <code>{overflow: auto;}</code></li>
+        <li><b>Inheritance of properties.</b> Some CSS properties are inherited from parent element (e.g body) to child element (e.g div). <code>box-sizing: border-box;</code> is not
+        one of those properties. If you want such properties to be applied to all elements under body, then you have to code like this <code>* {box-sizing: border-box;}</code> using universal selector</li>
+        <li><b>Cumulative and Collapsing Margins.</b> If there are two elements side by side and the left element has the right margin of 30 and the right element has the left margin of 20,
+        then the margin between them will be 50 (cumulative). But, if there are two elements one above the other
+         and the top element has the bottom margin of 30 and the bottom element has the top margin of 20,
+        then the margin between them will be 30 (Collapsing).</li>
+      </ol>
+      </p>
+      <h2>The Background Property</h2>
+    <p>
+      <ol>
+        <li><b>Creating background for a div. </b> <br> <code>#bg {<br>width 300px; <br>height:500px; background-color: blue; <br>background-image: url("a.jpg");<br>background-repeat: no-repeat;
+          <br>background-position: top right; <br>} </code>
+          <br>You can also combine all 'background-' properties into one background property as <code>#bg {<br>width 300px; <br>height:500px; background: blue url("a.jpg") no-repeat top right; <br>} </code>.
+        </code><br>Now, if you define a height for this box and this defined height happened to be not big enough to hold the text inside, then the text will overflow. 
+      If you want the text to be shown within the box and enable a scroll bar, use the property <code>{overflow: auto;}</code></li>
+        <li><b>background will override</b> all previously defined background- properties. If a background- property is not explicitly defined in background, then the browser default will 
+        override what was specified in background- </li>
+      </ol>
+      </p>
+      <h2>Floating, Relative and Absolute</h2>
+      <div id="div01">
+        <p float="yes" id="p1"></p>
+        <p float="yes" id="p2"></p>
+        <p float="yes" id="p3"></p>
+        <p float="yes" id="p4"></p>
+        <section>This is the content that comes after floating boxes</section>
+      </div>
+      <p>
+        
+          <div id="list01"><b>Floating an element </b> takes it out of the document flow. Supposing that p1 is inside div01, the div01 will collapse without taking the p1 into consideration.
+            It will be as high as the p2, p3, p4 and section. <br> <code>#div01 {
+            background-color: #00ffff;
+          }
+          <br>
+          p[float] {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            float: right;
+          }
+          <br>
+          #p1 {
+            background-color: bisque;
+          }
+          <br>
+          #p2 {
+            background-color: rgb(190, 162, 127);
+          }
+          <br>
+          #p3 {
+            background-color: rgb(168, 189, 168);
+          }
+          <br>
+          #p4 {
+            background-color: rgb(150, 182, 204);
+          }
+           </code>
+          </div>  
+          <div id="list02">
+            <b>Clearing the float </b> If you want an element that is defined as float to not float around and take its position in the document, then use <code>{clear : left;}</code>
+          </div>
+          <br>
+          
+        </p>
+        <div id="list03">
+          <p id="p5">
+            <b>Absolute Positioning: </b> Absolute positioning will place the element relative to the parent/grand parent element which is defined as position: relative. If there are no 
+            elements in the ancestory defined as position: relative, then it will place its relative to the html element. 
+          </p>
+          <p id="p6">
+            <b>Relative Positioning: </b> Relative positioning offsets the element relative to its normal document flow position.
+          </p>
+        </div>
+        <h2>Media Queries</h2>
+        <div id="list04">
+          <p id="p7">
+            The syntax of the media query is as below:<br>
+            <code>
+              <section id="p7-s1">@media</section><section id="p7-s2">(max-width: 767px) {</section>
+                <section id="p7-s3">p {</section>
+                  <section id="p7-s4">color: blue;</section>
+                  <section id="p7-s5">}</section>
+                  <section id="p7-s6">}</section>
+            </code>
+            <br>
+            The style inside the outer curly braces will be applicable if the condition after <code>@media</code> resolves to true. In this case, <code>(max-width: 767px)</code> 
+            should resolve to true for the paragraph to become blue.<br>
+            Some common conditions in media query are <br>
+            <code>
+              <section>@media (max-width: 500px) {...}</section>
+              <section>@media (max-width: 500px) and (max-width: 900px) {...}</section>
+              <section>@media (max-width: 500px) , (max-width: 900px) {...} //Comma is equal to OR</section>
+              <section>@media (min-width: 600px) {...}</section>
+              <section>@media (orientation: potrait) {...}</section>
+              <section>@media screen {...}</section>
+              <section>@media print {...}</section>
+            </code>
+          </p>
+        </div>
+  </body>
+</html>
