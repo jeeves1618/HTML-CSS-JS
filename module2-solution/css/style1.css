@@ -1,10 +1,6 @@
-* {
-  background: border-box;
-  margin-left: 10px;
-}
-
 h1 {
   margin-bottom: 15px;
+  text-align: center;
 }
 
 h2 {
@@ -16,8 +12,7 @@ p {
   background-color: #a52a2a;
   width: 90%;
   height: 150px;
-  margin-right: auto;
-  margin-left: auto;
+  float: right;
   font-family: Arial, Helvetica, sans-serif;
   color: aliceblue;
 }
@@ -26,8 +21,8 @@ p {
   width: 100%;
 }
 
-/***************** for large devices ******************/
-@media (min-width: 1200px) {
+/***************** Desktop Version ******************/
+@media (min-width: 992px) {
   .col-lg-1,
   .col-lg-2,
   .col-lg-3,
@@ -94,8 +89,8 @@ p {
   }
 }
 
-/***************** for medium devices ******************/
-@media (min-width: 950px) and (max-width: 1199px) {
+/***************** For Tablet ******************/
+@media (min-width: 768px) and (max-width: 991px) {
   .col-md-1,
   .col-md-2,
   .col-md-3,
@@ -161,8 +156,8 @@ p {
   }
 }
 
-/***************** for small devices ******************/
-@media (min-width: 600px) and (max-width: 949px) {
+/***************** for mobile phones ******************/
+@media (max-width: 767px) {
   .col-sm-1,
   .col-sm-2,
   .col-sm-3,
@@ -227,85 +222,4 @@ p {
   .col-sm-12 {
     width: 100%;
   }
-}
-img {
-  border: 5px solid rgb(17, 2, 2);
-  border-radius: 10px;
-  width: 50%;
-  height: auto;
-}
-
-#code1 {
-  margin-left: 40px;
-}
-
-#div01 {
-  background-color: #00ffff;
-}
-
-p[float] {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-  margin: 10px;
-}
-
-#p1 {
-  background-color: bisque;
-  float: left;
-}
-
-#p2 {
-  background-color: rgb(190, 162, 127);
-  float: right;
-}
-
-#p3 {
-  background-color: rgb(168, 189, 168);
-  clear: both;
-}
-
-#p4 {
-  background-color: rgb(150, 182, 204);
-}
-
-section {
-  clear: both;
-}
-
-#list01 {
-  float: left;
-  width: 50%;
-  box-sizing: border-box;
-}
-
-#list02 {
-  float: right;
-  width: 50%;
-  box-sizing: border-box;
-}
-
-#list03 {
-  clear: both;
-  position: relative;
-}
-
-#p5 {
-  width: 40%;
-  height: auto;
-  border: 1px solid black;
-  position: absolute;
-  bottom: 0px;
-  right: 5%;
-  background-color: azure;
-}
-
-#p6 {
-  width: 40%;
-  height: auto;
-  border: 1px solid black;
-  position: relative;
-  top: 10px;
-  left: 5%;
-  background-color: azure;
 }
