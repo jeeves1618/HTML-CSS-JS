@@ -23,6 +23,10 @@ h1 {
   padding-bottom: 10px;
 }
 
+i {
+  text-align: left;
+}
+
 #menu_desc_1 {
   border: 2px solid black;
   margin-left: 10px;
