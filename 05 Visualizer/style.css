@@ -94,6 +94,13 @@ i {
   color: white;
 }
 
+#menu_sub_text {
+  padding: 0px;
+  width: 40%;
+  color: white;
+  font-size: 10px;
+}
+
 #slide_input {
   padding: 5px;
   width: 40%;

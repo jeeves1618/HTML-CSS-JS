@@ -91,9 +91,13 @@
           <p>Set the Parameters</p>
           <div id="menu_text">
             Consumer Price Index 
+            <div id="menu_sub_text">
+              (Ranges between 50 and 150)
+            </div>
           </div>
+          
           <div id="slide_input">
-            <label for="cpiRange" class="form-label">Range from 50 to 150</label>
+            <label for="cpiRange" class="form-label" id="cpiRangeValue">Range from 50 to 150</label>
             <input type="range" min="50" max="150" value="50" class="form-range" id="cpiRange">
           </div>
         </div>
@@ -104,9 +108,12 @@
         <div id="menu_desc_1">
           <div id="menu_text">
             Foreign Direct Investment as % of GDP 
+            <div id="menu_sub_text">
+              (Ranges between 0% and 50%)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="fdiGDPRange" class="form-label">Range from 0% to 50%</label>
+            <label for="fdiGDPRange" class="form-label" id="fdiGDPRangeValue">Range from 0% to 50%</label>
             <input type="range"  min="0" max="50" value="19" class="form-range" id="fdiGDPRange">
           </div>
         </div>
@@ -117,9 +124,12 @@
         <div id="menu_desc_1">
           <div id="menu_text">
             Unemployment Percentage 
+            <div id="menu_sub_text">
+              (Ranges between 0% and 50%)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="unemploymentRange" class="form-label">Range from 0% to 50%</label>
+            <label for="unemploymentRange" class="form-label" id="unemploymentRangeValue">Range from 0% to 50%</label>
             <input type="range"  min="0" max="50" value="9" class="form-range" id="unemploymentRange">
           </div>
         </div>
@@ -130,10 +140,13 @@
         <div id="menu_desc_1">
           <div id="menu_text">
             Annual Inflation Percentage 
+            <div id="menu_sub_text">
+              (Ranges between -10% and 30%)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="inflationRange" class="form-label">Range from 0% to 50%</label>
-            <input type="range"  min="0" max="50" value="6.2"  class="form-range" id="inflationRange">
+            <label for="inflationRange" class="form-label" id="inflationRangeValue">Range from -10% to 30%</label>
+            <input type="range"  min="-10" max="30" value="6.2"  class="form-range" id="inflationRange">
           </div>
         </div>
       </div>
@@ -143,10 +156,13 @@
         <div id="menu_desc_1">
           <div id="menu_text">
             GDP per Capita 
+            <div id="menu_sub_text">
+              (Between $1,000 and $200,000)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="gdpPerCapitaRange" class="form-label">$1,000 to $1,000,000</label>
-            <input type="range"  min="1000" max="1000000" value="30000"  class="form-range" id="gdpPerCapitaRange">
+            <label for="gdpPerCapitaRange" class="form-label" id="gdpPerCapitaRangeValue">$1,000 to $200,000</label>
+            <input type="range"  min="1000" max="200000" value="30000"  class="form-range" id="gdpPerCapitaRange">
           </div>
         </div>
       </div>
@@ -156,9 +172,12 @@
         <div id="menu_desc_1">
           <div id="menu_text">
             GDP growth in Percentage
+            <div id="menu_sub_text">
+              (Ranges between -30% and 30%)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="gdpGrowthRange" class="form-label">-30% to 30%</label>
+            <label for="gdpGrowthRange" class="form-label" id="gdpGrowthRangeValue">-30% to 30%</label>
             <input type="range"  min="-30" max="30" value="2"  class="form-range" id="gdpGrowthRange">
           </div>
         </div>
@@ -168,10 +187,13 @@
       <div class="col-lg-12 col-md-6 col-sm-12">
         <div id="menu_desc_1">
           <div id="menu_text">
-            Exports of Goods and Services in 000,000 $
+            Exports of Goods and Services
+            <div id="menu_sub_text">
+              (Between 1,000,000 and 1,000,000,000)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="goodsAndServicesRange" class="form-label">1,000,000 to 1,000,000,000</label>
+            <label for="goodsAndServicesRange" class="form-label" id="goodsAndServicesRangeValue">1,000,000 to 1,000,000,000</label>
             <input type="range"  min="1000000" max="1000000000" value="600000000"  class="form-range" id="goodsAndServicesRange">
           </div>
         </div>
@@ -182,9 +204,12 @@
         <div id="menu_desc_1">
           <div id="menu_text">
             Exchange rate of Yuan against USD
+            <div id="menu_sub_text">
+              (Ranges between 0 and 100 Yuans)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="yuanExchangeRange" class="form-label">0 Yuan to 100 Yuan</label>
+            <label for="yuanExchangeRange" class="form-label" id="yuanExchangeRangeValue">0 Yuan to 100 Yuan</label>
             <input type="range"  min="0" max="100" value="7"  class="form-range" id="yuanExchangeRange">
           </div>
         </div>
@@ -196,9 +221,12 @@
         <div id="menu_desc_1">
           <div id="menu_text">
             Political Stability Index
+            <div id="menu_sub_text">
+              (Ranges between -2.5 and +2.5)
+            </div>
           </div>
           <div id="slide_input">
-            <label for="politicalStabilityRange" class="form-label">-2.5 to +2.5</label>
+            <label for="politicalStabilityRange" class="form-label" id="politicalStabilityRangeValue">-2.5 to +2.5</label>
             <input type="range"  min="-2.5" max="2.5" value="1"  class="form-range" id="politicalStabilityRange">
           </div>
         </div>
@@ -278,4 +306,5 @@
     </div>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>
