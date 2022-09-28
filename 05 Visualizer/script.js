@@ -2,7 +2,9 @@
 import weights from "./weights.json" assert { type: "json" };
 let politicalStabilityIndex;
 let yuanExRate;
-let goodsAndServices;
+let exports;
+let imports;
+let cad;
 let gdpGrowth;
 let gdpPerCapita;
 let inflation;
@@ -54,19 +56,7 @@ let formatAmount = function (amount, currencySymbol) {
       amountFormatter[amountFormatterItr] === "."
     ) {
       charAtString = amountString.charAt(i);
-      console.log(
-        "for" +
-          " " +
-          i +
-          " " +
-          charAtString +
-          " " +
-          amountFormatterItr +
-          " " +
-          amountFormatter[amountFormatterItr]
-      );
     } else {
-      console.log("comma");
       charAtString = amountFormatter[amountFormatterItr];
       cAmountString = charAtString + cAmountString;
       charAtString = amountString.charAt(i);
@@ -93,33 +83,33 @@ slider.oninput = function () {
 let slider2 = document.getElementById("fdiGDPRange");
 let output2 = document.getElementById("fdiGDPRangeValue");
 output2.innerHTML = slider2.value + `%`;
-fdiGDP = slider2.value / 100;
+fdiGDP = slider2.value;
 // Update the current slider value (each time you drag the slider handle)
 slider2.oninput = function () {
   output2.innerHTML = this.value + `%`;
-  fdiGDP = this.value / 100;
+  fdiGDP = this.value;
 };
 
 // Setting the slider value for Unemployment Percentage
 let slider3 = document.getElementById("unemploymentRange");
 let output3 = document.getElementById("unemploymentRangeValue");
 output3.innerHTML = slider3.value + `%`;
-unemployment = slider3.value / 100;
+unemployment = slider3.value;
 // Update the current slider value (each time you drag the slider handle)
 slider3.oninput = function () {
   output3.innerHTML = this.value + `%`;
-  unemployment = this.value / 100;
+  unemployment = this.value;
 };
 
 // Setting the slider value for Annual Inflation Percentage
 let slider4 = document.getElementById("inflationRange");
 let output4 = document.getElementById("inflationRangeValue");
 output4.innerHTML = slider4.value + `%`;
-inflation = slider4.value / 100;
+inflation = slider4.value;
 // Update the current slider value (each time you drag the slider handle)
 slider4.oninput = function () {
   output4.innerHTML = this.value + `%`;
-  inflation = this.value / 100;
+  inflation = this.value;
 };
 
 // Setting the slider value for GDP per Capita
@@ -137,23 +127,47 @@ slider5.oninput = function () {
 let slider6 = document.getElementById("gdpGrowthRange");
 let output6 = document.getElementById("gdpGrowthRangeValue");
 output6.innerHTML = slider6.value + `%`;
-gdpGrowth = slider6.value / 100;
+gdpGrowth = slider6.value;
 // Update the current slider value (each time you drag the slider handle)
 slider6.oninput = function () {
   output6.innerHTML = this.value + `%`;
-  gdpGrowth = this.value / 100;
+  gdpGrowth = this.value;
 };
 
 // Setting the slider value for Exports of Goods and Services
-let slider7 = document.getElementById("goodsAndServicesRange");
-let output7 = document.getElementById("goodsAndServicesRangeValue");
+let slider7 = document.getElementById("exportsRange");
+let output7 = document.getElementById("exportsRangeValue");
 output7.innerHTML = slider7.value + " Trillion USD";
-goodsAndServices = slider7.value * 1000000000000;
+exports = slider7.value * 1000000000000;
 
 // Update the current slider value (each time you drag the slider handle)
 slider7.oninput = function () {
   output7.innerHTML = this.value + " Trillion USD";
-  goodsAndServices = this.value * 1000000000000;
+  exports = this.value * 1000000000000;
+};
+
+// Setting the slider value for imports of Goods and Services
+let slider1 = document.getElementById("importsRange");
+let output1 = document.getElementById("importsRangeValue");
+output1.innerHTML = slider1.value + " Trillion USD";
+imports = slider1.value * 1000000000000;
+
+// Update the current slider value (each time you drag the slider handle)
+slider1.oninput = function () {
+  output1.innerHTML = this.value + " Trillion USD";
+  imports = this.value * 1000000000000;
+};
+
+// Setting the slider value for imports of Goods and Services
+let slider0 = document.getElementById("cadRange");
+let output0 = document.getElementById("cadRangeValue");
+output0.innerHTML = slider0.value + " Billion USD";
+cad = slider0.value * 1000000000;
+
+// Update the current slider value (each time you drag the slider handle)
+slider0.oninput = function () {
+  output0.innerHTML = this.value + " Billion USD";
+  cad = this.value * 1000000000;
 };
 
 // Setting the slider value for Exchange rate of Yuan against USD
@@ -204,11 +218,27 @@ document.querySelector(".submitInput").addEventListener(
     console.log("Annual Inflation %        :" + inflation);
     console.log("GDP per Capita            :" + gdpPerCapita);
     console.log("GDP growth %              :" + gdpGrowth);
-    console.log("Exports of Goods and Svcs :" + goodsAndServices);
+    console.log("Exports of Goods and Svcs :" + exports);
+    console.log("Imports of Goods and Svcs :" + imports);
+    console.log("Current Account Deficit   :" + cad);
     console.log("Exchange rate of Yuan     :" + yuanExRate);
     console.log("Political Stability Index :" + politicalStabilityIndex);
-    console.log(weights);
+    console.log("Intercept :" + weights[0].intercept);
 
+    netSales =
+      cpiIndex * weights[0].cpi +
+      fdiGDP * weights[0].fdi +
+      unemployment * weights[0].unemployment +
+      inflation * weights[0].inflation +
+      gdpPerCapita * weights[0].gdpPerCapita +
+      gdpGrowth * weights[0].gdpGrowth +
+      exports * weights[0].exports +
+      imports * weights[0].imports +
+      cad * weights[0].cad +
+      yuanExRate * weights[0].exchangeRate +
+      politicalStabilityIndex * weights[0].PSI +
+      weights[0].intercept;
+    console.log("Predicted netSales : " + netSales);
     document.getElementById("output1").innerHTML = formatAmount(
       "587824179824",
       "$"
