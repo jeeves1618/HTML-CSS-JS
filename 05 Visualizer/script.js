@@ -1,5 +1,5 @@
 "use strict";
-
+import weights from "./weights.json" assert { type: "json" };
 let politicalStabilityIndex;
 let yuanExRate;
 let goodsAndServices;
@@ -186,5 +186,6 @@ document.querySelector(".submitInput").addEventListener(
     console.log("Exports of Goods and Svcs :" + goodsAndServices);
     console.log("Exchange rate of Yuan     :" + yuanExRate);
     console.log("Political Stability Index :" + politicalStabilityIndex);
+    console.log(weights);
   }
 );
