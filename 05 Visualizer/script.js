@@ -10,6 +10,12 @@ let unemployment;
 let fdiGDP;
 let cpiIndex;
 
+let netSales = 0;
+let grossProfit = 0;
+let totalSGandA = 0;
+let membershipAndOtherIncome = 0;
+let segmentOperatingIncome = 0;
+
 let formatAmount = function (amount, currencySymbol) {
   let amountString = amount; //.toFixed(2).toString();
   let lengthOfString = amountString.length;
@@ -189,3 +195,18 @@ document.querySelector(".submitInput").addEventListener(
     console.log(weights);
   }
 );
+
+console.log(netSales);
+document.getElementById("output1").innerHTML = formatAmount(netSales, "$");
+document.getElementById("output2").innerHTML = formatAmount(grossProfit, "$");
+document.getElementById("output3").innerHTML = formatAmount(totalSGandA, "$");
+document.getElementById("output4").innerHTML = formatAmount(
+  membershipAndOtherIncome,
+  "$"
+);
+document.getElementById("output5").innerHTML = formatAmount(
+  segmentOperatingIncome,
+  "$"
+);
+document.getElementById("output_title").innerHTML =
+  "Please click on submit to get the predicted values";
