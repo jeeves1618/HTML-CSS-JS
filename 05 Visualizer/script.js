@@ -1,6 +1,6 @@
 "use strict";
 
-let formatAmount = function (amount) {
+let formatAmount = function (amount, currencySymbol) {
   let amountString = amount; //.toFixed(2).toString();
   let lengthOfString = amountString.length;
   let amountFormatter = [
@@ -59,7 +59,7 @@ let formatAmount = function (amount) {
     cAmountString = charAtString + cAmountString;
     amountFormatterItr++;
   }
-  cAmountString = "$ " + cAmountString;
+  cAmountString = currencySymbol + cAmountString;
   return cAmountString;
 };
 // Setting the slider value for Consumer Price Index
@@ -105,11 +105,11 @@ slider4.oninput = function () {
 // Setting the slider value for GDP per Capita
 let slider5 = document.getElementById("gdpPerCapitaRange");
 let output5 = document.getElementById("gdpPerCapitaRangeValue");
-output5.innerHTML = formatAmount(slider5.value);
+output5.innerHTML = formatAmount(slider5.value, "$");
 
 // Update the current slider value (each time you drag the slider handle)
 slider5.oninput = function () {
-  output5.innerHTML = formatAmount(this.value);
+  output5.innerHTML = formatAmount(this.value, "$");
 };
 
 // Setting the slider value for GDP growth in Percentage
@@ -125,21 +125,21 @@ slider6.oninput = function () {
 // Setting the slider value for Exports of Goods and Services
 let slider7 = document.getElementById("goodsAndServicesRange");
 let output7 = document.getElementById("goodsAndServicesRangeValue");
-output7.innerHTML = formatAmount(slider7.value);
+output7.innerHTML = formatAmount(slider7.value, "$");
 
 // Update the current slider value (each time you drag the slider handle)
 slider7.oninput = function () {
-  output7.innerHTML = formatAmount(this.value);
+  output7.innerHTML = formatAmount(this.value, "$");
 };
 
 // Setting the slider value for Exchange rate of Yuan against USD
 let slider8 = document.getElementById("yuanExchangeRange");
 let output8 = document.getElementById("yuanExchangeRangeValue");
-output8.innerHTML = formatAmount(slider8.value);
+output8.innerHTML = formatAmount(slider8.value, "¥");
 
 // Update the current slider value (each time you drag the slider handle)
 slider8.oninput = function () {
-  output8.innerHTML = formatAmount(this.value);
+  output8.innerHTML = formatAmount(this.value, "¥");
 };
 
 // Setting the slider value for Political Stability Index
