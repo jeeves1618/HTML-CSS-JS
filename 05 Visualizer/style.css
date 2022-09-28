@@ -95,6 +95,7 @@ h1 {
   width: 40%;
   float: right;
   color: white;
+  text-align: right;
 }
 
 p {
@@ -114,4 +115,12 @@ p {
 
 .row {
   width: 100%;
+}
+
+/*** Button Alignment ***/
+
+button {
+  margin: 0 auto;
+  display: block;
+  position: relative;
 }
