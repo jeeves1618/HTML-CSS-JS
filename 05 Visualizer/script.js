@@ -1,5 +1,5 @@
 "use strict";
-import weights from "https://github.com/jeeves1618/HTML-CSS-JS/blob/main/05%20Visualizer/weights.json" assert { type: "json" };
+import weights from "./weights.json" assert { type: "json" };
 let politicalStabilityIndex;
 let yuanExRate;
 let goodsAndServices;
