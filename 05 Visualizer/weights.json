@@ -1,0 +1,70 @@
+{
+    "Consumer price index ": 1.2847247113377098,
+    "Foreign direct investment": 0.03762769740984749,
+    "Unemployment": 0.15607248811454924,
+    "Inflation": -0.06171501477548973,
+    "GDP per capita": -0.2583786198341716,
+    "GDP growth": 0.23308494801899304,
+    "Exports of goods and services": -0.1715686530689254,
+    "Imports": -0.001458616818265846,
+    "Current acct balance": 0.0021155838903453342,
+    "Exchange Rate": -0.27839430850484165,
+    "Political stability index": 0.0426464437356018,
+    "Intercept": "-0.000000000000003"
+}
+{
+    "Consumer price index ": 1.8144369683456165,
+    "Foreign direct investment": 0.09597644928980902,
+    "Unemployment": 0.14377844381434962,
+    "Inflation": -0.08291604597727432,
+    "GDP per capita": -0.4900970961004649,
+    "GDP growth": 0.28260318936157347,
+    "Exports of goods and services": -0.7760714415440271,
+    "Imports": 0.3466545547099243,
+    "Current acct balance": -0.04540976595814498,
+    "Exchange Rate": -0.3494963190651389,
+    "Political stability index": 0.032342301173190084,
+    "Intercept": "-0.000000000000003"
+}
+{
+    "Consumer price index ": 1.6606537851590102,
+    "Foreign direct investment": 0.11728989158653347,
+    "Unemployment": 0.16445792369165077,
+    "Inflation": -0.05468381967095089,
+    "GDP per capita": -0.060044035792274776,
+    "GDP growth": 0.31159012134149694,
+    "Exports of goods and services": -0.7329093352799738,
+    "Imports": 0.12118547656111092,
+    "Current acct balance": -0.049272896117262696,
+    "Exchange Rate": -0.2722017982508976,
+    "Political stability index": 0.0836386314606304,
+    "Intercept": "-0.000000000000003"
+}
+{
+    "Consumer price index ": 2.2906662848032306,
+    "Foreign direct investment": -0.057707225279186126,
+    "Unemployment": 0.4144681324332862,
+    "Inflation": -0.12399704293041058,
+    "GDP per capita": -0.9111104576139252,
+    "GDP growth": 0.9619850326158866,
+    "Exports of goods and services": 1.3094758359794878,
+    "Imports": -1.8969941230312004,
+    "Current acct balance": -0.08302317603564394,
+    "Exchange Rate": -0.4112070481495484,
+    "Political stability index": 0.7017471270976738,
+    "Intercept": "-0.000000000000003"
+}
+{
+    "Consumer price index ": 2.349403684998324,
+    "Foreign direct investment": -0.011784377327200165,
+    "Unemployment": 0.09003288356267701,
+    "Inflation": -0.19122842214235455,
+    "GDP per capita": -2.1634234575517715,
+    "GDP growth": 0.2406803040969317,
+    "Exports of goods and services": -0.6232545667209289,
+    "Imports": 0.9009016473687325,
+    "Current acct balance": -0.03251541107875108,
+    "Exchange Rate": -0.6315332280601971,
+    "Political stability index": -0.08039229328089673,
+    "Intercept": "-0.000000000000003"
+}
