@@ -225,38 +225,100 @@ document.querySelector(".submitInput").addEventListener(
     console.log("Political Stability Index :" + politicalStabilityIndex);
     console.log("Intercept :" + weights[0].intercept);
 
-    netSales =
-      cpiIndex * weights[0].cpi +
-      fdiGDP * weights[0].fdi +
-      unemployment * weights[0].unemployment +
-      inflation * weights[0].inflation +
-      gdpPerCapita * weights[0].gdpPerCapita +
-      gdpGrowth * weights[0].gdpGrowth +
-      exports * weights[0].exports +
-      imports * weights[0].imports +
-      cad * weights[0].cad +
-      yuanExRate * weights[0].exchangeRate +
-      politicalStabilityIndex * weights[0].PSI +
-      weights[0].intercept;
+    netSales = (
+      (cpiIndex * weights[0].cpi +
+        fdiGDP * weights[0].fdi +
+        unemployment * weights[0].unemployment +
+        inflation * weights[0].inflation +
+        gdpPerCapita * weights[0].gdpPerCapita +
+        gdpGrowth * weights[0].gdpGrowth +
+        exports * weights[0].exports +
+        imports * weights[0].imports +
+        cad * weights[0].cad +
+        yuanExRate * weights[0].exchangeRate +
+        politicalStabilityIndex * weights[0].PSI +
+        weights[0].intercept) *
+      1000000
+    ).toFixed();
     console.log("Predicted netSales : " + netSales);
     document.getElementById("output1").innerHTML = formatAmount(
-      "587824179824",
+      netSales.toString(),
       "$"
     );
+    grossProfit = (
+      (cpiIndex * weights[1].cpi +
+        fdiGDP * weights[1].fdi +
+        unemployment * weights[1].unemployment +
+        inflation * weights[1].inflation +
+        gdpPerCapita * weights[1].gdpPerCapita +
+        gdpGrowth * weights[1].gdpGrowth +
+        exports * weights[1].exports +
+        imports * weights[1].imports +
+        cad * weights[1].cad +
+        yuanExRate * weights[1].exchangeRate +
+        politicalStabilityIndex * weights[1].PSI +
+        weights[1].intercept) *
+      1000000
+    ).toFixed();
     document.getElementById("output2").innerHTML = formatAmount(
-      "144594179824",
+      grossProfit.toString(),
       "$"
     );
+    totalSGandA = (
+      (cpiIndex * weights[2].cpi +
+        fdiGDP * weights[2].fdi +
+        unemployment * weights[2].unemployment +
+        inflation * weights[2].inflation +
+        gdpPerCapita * weights[2].gdpPerCapita +
+        gdpGrowth * weights[2].gdpGrowth +
+        exports * weights[2].exports +
+        imports * weights[2].imports +
+        cad * weights[2].cad +
+        yuanExRate * weights[2].exchangeRate +
+        politicalStabilityIndex * weights[2].PSI +
+        weights[2].intercept) *
+      1000000
+    ).toFixed();
     document.getElementById("output3").innerHTML = formatAmount(
-      "120743587824",
+      totalSGandA.toString(),
       "$"
     );
+    membershipAndOtherIncome = (
+      (cpiIndex * weights[3].cpi +
+        fdiGDP * weights[3].fdi +
+        unemployment * weights[3].unemployment +
+        inflation * weights[3].inflation +
+        gdpPerCapita * weights[3].gdpPerCapita +
+        gdpGrowth * weights[3].gdpGrowth +
+        exports * weights[3].exports +
+        imports * weights[3].imports +
+        cad * weights[3].cad +
+        yuanExRate * weights[3].exchangeRate +
+        politicalStabilityIndex * weights[3].PSI +
+        weights[3].intercept) *
+      1000000
+    ).toFixed();
     document.getElementById("output4").innerHTML = formatAmount(
-      "124179824",
+      membershipAndOtherIncome.toString(),
       "$"
     );
+    segmentOperatingIncome = (
+      (cpiIndex * weights[4].cpi +
+        fdiGDP * weights[4].fdi +
+        unemployment * weights[4].unemployment +
+        inflation * weights[4].inflation +
+        gdpPerCapita * weights[4].gdpPerCapita +
+        gdpGrowth * weights[4].gdpGrowth +
+        exports * weights[4].exports +
+        imports * weights[4].imports +
+        cad * weights[4].cad +
+        yuanExRate * weights[4].exchangeRate +
+        politicalStabilityIndex * weights[4].PSI +
+        weights[4].intercept) *
+      1000000
+    ).toFixed();
     document.getElementById("output5").innerHTML = formatAmount(
-      "379241824",
+      segmentOperatingIncome.toString(),
       "$"
     );
     document.getElementById("output_title").innerHTML =
