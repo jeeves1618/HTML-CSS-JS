@@ -125,11 +125,11 @@ slider6.oninput = function () {
 // Setting the slider value for Exports of Goods and Services
 let slider7 = document.getElementById("goodsAndServicesRange");
 let output7 = document.getElementById("goodsAndServicesRangeValue");
-output7.innerHTML = formatAmount(slider7.value, "$");
+output7.innerHTML = slider7.value + " Trillion USD";
 
 // Update the current slider value (each time you drag the slider handle)
 slider7.oninput = function () {
-  output7.innerHTML = formatAmount(this.value, "$");
+  output7.innerHTML = this.value + " Trillion USD";
 };
 
 // Setting the slider value for Exchange rate of Yuan against USD
