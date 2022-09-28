@@ -18,6 +18,10 @@ let totalSGandA = 0;
 let membershipAndOtherIncome = 0;
 let segmentOperatingIncome = 0;
 
+document.getElementById("training_page").onclick = function () {
+  location.href = "training.html";
+};
+
 let formatAmount = function (amount, currencySymbol) {
   let amountString = amount; //.toFixed(2).toString();
   let lengthOfString = amountString.length;
