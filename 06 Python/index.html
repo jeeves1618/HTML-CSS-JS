@@ -206,6 +206,60 @@
         </div>
       </div>
     </div>
+    //** Beginning of fourth row**/
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_4">
+          <p>10. Tuples and sets</p>
+          <div id="menu_text">
+            Tuples are immutable sequences. They are lists that cannot be
+            mutated like <code>list(0)=7</code>. Tuples are created in the same
+            way as lists by replacing [] with (). <code>t = (0,1,3)</code> is a
+            tuple. They are accessed in the same way as lists using []. Sets are
+            unordered collection of unique elements.
+            <code>s = set() s.add(1) s.add(4)</code> is how a set is
+            constructed. if you do s.add(4) again, set will remain as {1,4}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_5">
+          <p>11. Conditions</p>
+          <div id="menu_text">
+            Equality checks in python are <code>a == b c &gt; d</code>. There is
+            no type coercion is python. So <code>1 == "1"</code> will return
+            false. Logical operators are literally <code>or</code> and
+            <code>and</code>. Python uses intendation to define the block and
+            block starts with a :.
+            <code
+              ><br />if 1 < 2: <br />
+              &nbsp;&nbsp;&nbsp;&nbsp; print("good") <br />else: <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print("weird")</code
+            ><code>. <br />elif</code> is the else-if in python.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_6">
+          <p>12. Iterating</p>
+          <div id="menu_text">
+            Consider <code>my_seq= [1,2,3,4,5,6]</code>. To traverse through
+            this list,<br />
+            <code
+              >for item in my_seq: <br />&nbsp;&nbsp;&nbsp;&nbsp; print(item) </code
+            ><br />This will print 1,2,3,4,5,6. For a dictionary
+            <code>d = {"one":1, "two":2, "three":3}</code>,
+            <code
+              >for item in d:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print(item) print(d[item])</code
+            >
+            will print one 1 two 2 three 3.
+            <code>for item in d.keys:</code> or
+            <code>for item in d.values:<br /></code> are also possible.
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script type="module" src="script.js"></script>
 </html>
