@@ -57,6 +57,36 @@
         <div class="Info"><h1>Python Basics</h1></div>
       </div>
 
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c04.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>Python Basics</h1></div>
+      </div>
+
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c05.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>Python Basics</h1></div>
+      </div>
+
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c06.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>Python Basics</h1></div>
+      </div>
+
       <!-- Back and forward buttons -->
       <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
       <a class="forward" onclick="plusSlides(1)">&#10095;</a>
@@ -265,6 +295,64 @@
             will print one 1 two 2 three 3.
             <code>for item in d.keys:</code> or
             <code>for item in d.values:<br /></code> are also possible.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_1">
+          <p>13. Tuple Unpacking</p>
+          <div id="menu_text">
+            Consider a set of tuples within a set.
+            <code>mypairs=[(1,2),(3,4),(5,6)]</code><br />
+            <code
+              >for items in mypairs: <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print(items)</code
+            >
+            will result in (1,2) (3,4) (5,6). <br />
+            <code
+              >for t1,t2 in mypairs: <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print(t1)<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print(t2)</code
+            >
+            will result in 1,2,3,4,5,6.<br />
+            Ah, here is a while loop in python.
+            <code
+              >while i<5: <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print(i)<br />
+            </code>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_2">
+          <p>14. Functions</p>
+          <div id="menu_text">
+            Functions in python are defined using <code>def</code> keyword. You
+            can define the function, its parameters and their defaults as below.
+            <br /><code
+              >def my_intro(parm = "John"):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;""" This is a doc string """<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print("I am {}".format(parm))</code
+            ><br />
+            And invoke the function by <code>my_intro()</code>. You can also
+            return value. <code>return ("I am {}".format(parm))</code>. Python
+            doesn't ensue type safety.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_3">
+          <p>15. Filter and Lambda</p>
+          <div id="menu_text">
+            Here is how filter function works.
+            <code
+              >nlist=[1,2,3,4,5,6]<br />def is_even(num):<br />&nbsp;&nbsp;&nbsp;&nbsp;return
+              num%2==0<br />evens = filter(is_even,nlist)<br />print(list(evens))</code
+            >. This will print [2,4,6]. You can replace the function with lambda
+            as <code><br />evens = filter(lambda num:num%2 == 0,nlist)</code>
+            Lambda got rid of function name and return.
           </div>
         </div>
       </div>
