@@ -75,11 +75,11 @@
         <div id="menu_desc_1">
           <p>1. Setting up</p>
           <div id="menu_text">
-            I am using Atoms editor. If you are using atoms editor, go to file >
+            I am using Atoms editor. If you using atoms editor, go to file >
             settings > installer and install platformio-ide-terminal. If it
             shows error, delete the .atoms folder, restart atoms and try
             installing again. If you are in windows, go to terminal settings and
-            give the path of cmd.exe file as Shell Override to use the command
+            give the path of cmd.exe file in as Shell Override to use command
             prompt. Install autocomplete-python and atom-django as well.
           </div>
         </div>
@@ -107,9 +107,9 @@
             <code>my_str=[-1]</code> (which gives 'o') etc. You can slice it as
             <code>my_str[1:]</code> which gives 'ello' or
             <code>my_str[:2]</code> to get 'He' or <code>my_str[2:4]</code> will
-            give 'llo'. You can give step size as <code>my_str[::2]</code> to
-            get 'Hlo'. <code>my_str[2]</code> = 'v' will give error since
-            Strings are immutable.
+            give 'llo'. You can give step size as or
+            <code>my_str[::2]</code> gives 'Hlo'. <code>my_str[2]</code> = 'v'
+            will give error since Strings are immutable.
           </div>
         </div>
       </div>
@@ -119,11 +119,11 @@
         <div id="menu_desc_4">
           <p>4. String Methods</p>
           <div id="menu_text">
-            <code>print(my_str.upper())</code> is going to print HELLO and
-            <code>print(my_str.lower())</code> is going to print hello.
+            print(my_str.upper()) is going to print HELLO and
+            print(my_str.lower()) is going to print hello.
             <code>my_phrase = "Hello Earthilings!" my_phrase.split()</code>
-            will give this list as output; ['Hello', 'Earthilings!']. More
-            String functions in python are available
+            will give this list as output ['Hello', 'Earthilings!']. More String
+            functions in python are available in
             <a href="https://www.w3schools.com/python/python_ref_string.asp."
               >here</a
             >. <code>my_phrase.split('l')</code> will result in ['He', '', 'o
@@ -138,12 +138,15 @@
           <p>5. Lists</p>
           <div id="menu_text">
             Lists behave in the same way of JS array.
-            <code>list=[1,2,ball, 3.7, [5,6,7]]</code> is an example of a list.
-            You can get the length of Python list using <code>len(list)</code>.
-            You can access the list using indexes. As it was with Strings,
-            list[0] will return 1 and list[-1] will return [5,6,7]. List can be
-            sliced (<code>list[1:], list[:2], list[2,2]</code> etc.). Unlike
-            Strings lists are mutable. <code>list[0]=7</code> is ok.
+            <code>list=[1,2,ball, 3.7, [5,6,7]]</code> is an example of a
+            python. You can get the length of list by using
+            <code>len(list)</code>. You can access the link using indexes. As it
+            was with arrays list[0] will return 1 and list[-1] will return
+            [5,6,7]. List can be sliced (<code
+              >list[1:], list[:2], list[2,2]</code
+            >
+            etc.). Unlike Strings lists are mutable. <code>list[0]=7</code> is
+            ok.
           </div>
         </div>
       </div>
@@ -152,7 +155,7 @@
           <p>6. List Manipulation</p>
           <div id="menu_text">
             Consider <code>my_list = ['a','b','c']</code>. If you do
-            <code>my_list.append(['c','d'])</code>, you will get
+            <code>my_list.append(['c','d'])</code> will result in
             ['a','b','c',['c','d']]. But,
             <code>my_list.extend(['c','d'])</code> will result in
             ['a','b','c','c','d']. <code>temp = my_list.pop()</code> will pop
@@ -236,7 +239,7 @@
           <p>11. Conditions</p>
           <div id="menu_text">
             Equality checks in python are <code>a == b c &gt; d</code>. There is
-            no type coercion in python. So <code>1 == "1"</code> will return
+            no type coercion is python. So <code>1 == "1"</code> will return
             false. Logical operators are literally <code>or</code> and
             <code>and</code>. Python uses intendation to define the block and
             block starts with a :.
