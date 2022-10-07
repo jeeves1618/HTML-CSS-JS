@@ -84,7 +84,7 @@
 /* Faint animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1400s;
+  -webkit-animation-duration: 140000s;
   animation-name: fade;
   animation-duration: intial;
 }

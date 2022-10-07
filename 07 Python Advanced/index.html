@@ -34,7 +34,7 @@
           style="width: 100%"
           height="100px"
         />
-        <div class="Info"><h1>Functions and Objects in Python</h1></div>
+        <div class="Info"><h1>Python Advanced</h1></div>
       </div>
 
       <div class="Containers">
@@ -44,7 +44,7 @@
           style="width: 100%"
           height="100px"
         />
-        <div class="Info"><h1>Functions and Objects in Python</h1></div>
+        <div class="Info"><h1>Python Advanced</h1></div>
       </div>
 
       <div class="Containers">
@@ -54,7 +54,7 @@
           style="width: 100%"
           height="100px"
         />
-        <div class="Info"><h1>Functions and Objects in Python</h1></div>
+        <div class="Info"><h1>Python Advanced</h1></div>
       </div>
 
       <div class="Containers">
@@ -64,7 +64,7 @@
           style="width: 100%"
           height="100px"
         />
-        <div class="Info"><h1>Functions and Objects in Python</h1></div>
+        <div class="Info"><h1>Python Advanced</h1></div>
       </div>
 
       <div class="Containers">
@@ -74,7 +74,7 @@
           style="width: 100%"
           height="100px"
         />
-        <div class="Info"><h1>Functions and Objects in Python</h1></div>
+        <div class="Info"><h1>Python Advanced</h1></div>
       </div>
 
       <div class="Containers">
@@ -84,7 +84,7 @@
           style="width: 100%"
           height="100px"
         />
-        <div class="Info"><h1>Functions and Objects in Python</h1></div>
+        <div class="Info"><h1>Python Advanced</h1></div>
       </div>
 
       <!-- Back and forward buttons -->
@@ -103,43 +103,67 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_1">
-          <p>1. Setting up</p>
+          <p>1. Scope</p>
           <div id="menu_text">
-            I am using Atoms editor. If you using atoms editor, go to file >
-            settings > installer and install platformio-ide-terminal. If it
-            shows error, delete the .atoms folder, restart atoms and try
-            installing again. If you are in windows, go to terminal settings and
-            give the path of cmd.exe file in as Shell Override to use command
-            prompt. Install autocomplete-python and atom-django as well.
+            Python looks for variables in the LEGB order. 1. Local 2. Enclosing
+            Function Locals 3. Global 4. Built-in.<code
+              ><br />
+              name = "John"</code
+            >&nbsp;&nbsp;#Gloal Variable<code
+              ><br />
+              greeting = "Hi"</code
+            >&nbsp;&nbsp;#Gloal Variable<code
+              ><br />
+              def greet():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;name = "Jane"</code
+            >&nbsp;&nbsp;#EFL Variable<code
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;def say_greet():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(greeting + "
+              " + name)<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;say_greet()<br />
+              greet()<br />
+            </code>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_2">
-          <p>2. Variables</p>
+          <p>2. Global</p>
           <div id="menu_text">
-            In python we name the variables in snake_case rather than camelCase.
-            Just remember that you can't start the variables with numbers.
-            Numeric variables can be integer or float and you don't define the
-            variable in python. You can't concatenate numbers with strings. So
-            you got to write <code>print ("Your age is : ", too_old)</code> and
-            not <code> sout ("Your age is : " + tooOld)</code> as you do in Java
+            <code>
+              x = 50<br />
+              def func():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;global x;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;x = 100;<br />
+              print("Before the func, x is ",x)<br />
+              func()<br />
+              print("After the func, x is ",x)<br />
+            </code>
+            x would have been 50 second time if global wasn't used. Now the
+            output is<br />
+            Before the func, x is 50<br />
+            After the func, x is 100<br />
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div id="menu_desc_3">
-          <p>3. Strings</p>
+          <p>3. Defining Class</p>
           <div id="menu_text">
-            <code>'Hello'</code> and <code>"Hello"</code> are valid. "I'm
-            wrapping a quote" as well. <code>my_str = "Hello"</code> can be
-            substringed as <code>my_str[0]</code> (which gives 'H'),
-            <code>my_str=[-1]</code> (which gives 'o') etc. You can slice it as
-            <code>my_str[1:]</code> which gives 'ello' or
-            <code>my_str[:2]</code> to get 'He' or <code>my_str[2:4]</code> will
-            give 'llo'. You can give step size as or
-            <code>my_str[::2]</code> gives 'Hlo'. <code>my_str[2]</code> = 'v'
-            will give error since Strings are immutable.
+            <code
+              >class car():<br />
+              &nbsp;&nbsp;&nbsp;engine="IC" #static<br />
+              &nbsp;&nbsp;&nbsp;def __init__(self,brnd,mileage):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;self.brnd =
+              brand<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;self.mileage
+              =mileage<br />
+              mycar = car("Hyundai",15);<br />
+              print(mycar.brand, "runs on",car.engine,"engine and
+              gives",mycar.mileage,"kmpl")
+            </code>
+            gives an output of Hyundai runs on IC engine and gives 15 kmpl
           </div>
         </div>
       </div>
@@ -147,53 +171,53 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_4">
-          <p>4. String Methods</p>
+          <p>4. Class with Method</p>
           <div id="menu_text">
-            print(my_str.upper()) is going to print HELLO and
-            print(my_str.lower()) is going to print hello.
-            <code>my_phrase = "Hello Earthilings!" my_phrase.split()</code>
-            will give this list as output ['Hello', 'Earthilings!']. More String
-            functions in python are available in
-            <a href="https://www.w3schools.com/python/python_ref_string.asp."
-              >here</a
-            >. <code>my_phrase.split('l')</code> will result in ['He', '', 'o
-            Earth', 'ings!'].
-            <code>x = "{p} and {q} are here".format (p="tom", q="jerry"</code>
-            is tom and jerry are here.
+            <code
+              >class Circle(object):<br />
+              &nbsp;&nbsp;&nbsp;pi = 22/7<br />
+              &nbsp;&nbsp;&nbsp;def __init__(self, r=10):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;self.r = r<br />
+              &nbsp;&nbsp;&nbsp;def area(self):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;return self.r**2*Circle.pi<br />
+              c1 = Circle()<br />
+              print(c1.area())<br /> </code
+            >c2 = Circle(r=20) will override the default radius of 10. pi is a
+            static variable and is a property of class here.
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_5">
-          <p>5. Lists</p>
+          <p>5. Inheritance</p>
           <div id="menu_text">
-            Lists behave in the same way of JS array.
-            <code>list=[1,2,ball, 3.7, [5,6,7]]</code> is an example of a
-            python. You can get the length of list by using
-            <code>len(list)</code>. You can access the link using indexes. As it
-            was with arrays list[0] will return 1 and list[-1] will return
-            [5,6,7]. List can be sliced (<code
-              >list[1:], list[:2], list[2,2]</code
+            <code
+              >class Shape():<br />
+              &nbsp;&nbsp;&nbsp;def nameit(self,name="Shape"):<br />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;print(name)<br />
+              &nbsp;&nbsp;&nbsp;def area(self):<br />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;print("No way!")<br />
+              class Square(Shape):<br />
+              &nbsp;&nbsp;&nbsp;def nameit(self,name="Square"):<br />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;print(name)<br />
+              sq = Square()<br />
+              sq.nameit() #->Square<br />
+              sq.area() #->No way!</code
             >
-            etc.). Unlike Strings lists are mutable. <code>list[0]=7</code> is
-            ok.
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div id="menu_desc_6">
-          <p>6. List Manipulation</p>
+          <p>6. Special Methods</p>
           <div id="menu_text">
-            Consider <code>my_list = ['a','b','c']</code>. If you do
-            <code>my_list.append(['c','d'])</code> will result in
-            ['a','b','c',['c','d']]. But,
-            <code>my_list.extend(['c','d'])</code> will result in
-            ['a','b','c','c','d']. <code>temp = my_list.pop()</code> will pop
-            the last item and store it in temp. You can remove the specific item
-            by providing index as parameter in the pop menthod.<code
-              >my_list.reverse</code
-            >
-            will result in ['c','b','a']
+            The Python interpreter invokes special methods to perform basic
+            object operations. The special method names are always written with
+            leading and trailing double underscores.
+            <code>__init__(self,args) #Constructor</code><br />
+            <code>__str__(self) #class object as string</code><br />
+            <code>__len__(self) #gives the length</code><br />
+            <code>__del__(self) #gets involed on del of object</code><br />
           </div>
         </div>
       </div>
@@ -202,48 +226,50 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_1">
-          <p>7. List Operations</p>
+          <p>7. Error Handling</p>
           <div id="menu_text">
-            This segment, <code>my_list.sort()</code>, will sort the my_list and
-            store the output in the same variable, my_list. Let
-            <code>n_list=[1,2,[7,8]</code> be a nested list.
-            <code>n_list[2]</code> will give [7,8] and
-            <code>n_list[2][1]</code> will return 8.
-            <b>List comprehension</b> is another powerful feature in Python.
-            Consider <code>matrix = [[1,2,3], [4,5,6], [7,8,9]]</code>.
-            <code>[row[0] for row in matrix] </code>will return [1,4,7].
-            <code>[row[1] for row in matrix] </code>will return [2,5,8]
+            <code
+              >try: <br />&nbsp;&nbsp;&nbsp;f = open ('somefile.txt','r')
+              <br />&nbsp;&nbsp;&nbsp;f.write("Bazzinga!") <br />except
+              FileNotFoundError: <br />&nbsp;&nbsp;&nbsp;print("No file")
+              <br />else: <br />&nbsp;&nbsp;&nbsp;print("Gotcha!")<br />
+              &nbsp;&nbsp;&nbsp;f.close()<br />finally:<br />&nbsp;&nbsp;&nbsp;
+              print("no matter what")</code
+            ><br />In w mode, python wud've created file.
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_2">
-          <p>8. Dictionaries</p>
+          <p>8. Reg Expressions 101</p>
           <div id="menu_text">
-            Dictionaries are python's version of hash table. In Javascript we
-            called the similar key value pairs as objects. Unlike lists,
-            dictionaries do not retain any order and are accessed through their
-            keys. An example of dictionary is
             <code
-              >my_detail = {"fname":"Jane",
-              'lname':"smith",'fav_nums':[5,7,8]}</code
-            >. To access 7, a element in a list nested in dictionary, we write
-            <code>my_detail['fav_nums'][1]</code>
+              >import re<br />
+              words=['cat','dog']<br />
+              text='Tom is a famous cat'<br />
+              for word in words:<br />
+              &nbsp;&nbsp;&nbsp;if re.search(word,text):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Searching ' + word + '
+              :found')<br />
+              &nbsp;&nbsp;&nbsp;else:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Searching ' + word + '
+              :not found')</code
+            >. O/P: Searching cat :found & Searching dog :not found
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div id="menu_desc_3">
-          <p>9. Manipulate dictionary</p>
+          <p>9. Reg Expressions 201</p>
           <div id="menu_text">
-            To update a value in the dictionary, just use the key.
-            <code>my_detail['fname'] ='John'</code>. If you want to add a new
-            key value pair, use a new key <code>my_detail ['age'] = 38</code>.
-            my_detail.popitem() will remove the last item in the dictionary.
-            <code>my_detail.pop('age')</code> will remove the age.
-            <code>del my_detail['fname']</code> will delete the element whereas
-            <code>del my_detail</code> will delete the dictionary.
-            <code>my_detail.clear()</code> just empties it.
+            <code>re.split(splitter,text)</code> will split the text at the
+            splitter. <code>type(re.search (word,text))</code> will return
+            <code>&lt;class 're.Match'&gt;</code>. This class has many in built
+            functions to leverage. For instance,
+            <code>re.search(word, text).start()</code> gives the index at which
+            the word starts. <code>re.findall('a',text)</code> returns a list
+            <code>['a', 'a', 'a']</code>. Repetition syntax can be used instead
+            of <code>'a'</code>
           </div>
         </div>
       </div>
@@ -252,52 +278,59 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_4">
-          <p>10. Tuples and sets</p>
+          <p>10. Modules & Packages</p>
           <div id="menu_text">
-            Tuples are immutable sequences. They are lists that cannot be
-            mutated like <code>list(0)=7</code>. Tuples are created in the same
-            way as lists by replacing [] with (). <code>t = (0,1,3)</code> is a
-            tuple. They are accessed in the same way as lists using []. Sets are
-            unordered collection of unique elements.
-            <code>s = set() s.add(1) s.add(4)</code> is how a set is
-            constructed. if you do s.add(4) again, set will remain as {1,4}
+            Here is my module, mymodule.py<br />
+            <code
+              >def say_hello(name):<br />
+              &nbsp;&nbsp;&nbsp; print("Hello " + name)</code
+            >. Here is the program that calls the function in the module,
+            myprogram.py<br /><code
+              >import mymodule<br />
+              mymodule.say_hello('John') </code
+            ><br /><code>import mymodule as m</code> and
+            <code>m.say_hello('John')</code>,
+            <code>from mymodule import say_hello</code>,
+            <code>from mymodule import *</code> are also possible.
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="menu_desc_5">
-          <p>11. Conditions</p>
+          <p>11. Returning Functions</p>
           <div id="menu_text">
-            Equality checks in python are <code>a == b c &gt; d</code>. There is
-            no type coercion is python. So <code>1 == "1"</code> will return
-            false. Logical operators are literally <code>or</code> and
-            <code>and</code>. Python uses intendation to define the block and
-            block starts with a :.
             <code
-              ><br />if 1 < 2: <br />
-              &nbsp;&nbsp;&nbsp;&nbsp; print("good") <br />else: <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;print("weird")</code
-            ><code>. <br />elif</code> is the else-if in python.
+              >def greet(gender='female'):<br />
+              &nbsp;&nbsp;&nbsp;def greetmam():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Mam')<br />
+              &nbsp;&nbsp;&nbsp;def greetsir():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Sir')<br />
+              &nbsp;&nbsp;&nbsp;if (gender=='female'):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetmam<br />
+              &nbsp;&nbsp;&nbsp;else:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetsir<br />
+              x=greet() #returns the function<br />
+              x() #invokes and prints Hello Mam</code
+            >
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div id="menu_desc_6">
-          <p>12. Iterating</p>
+          <p>12. Passing functions</p>
           <div id="menu_text">
-            A list here: <code>my_seq= [1,2,3,4,5,6]</code>. To traverse through
-            this list,<br />
             <code
-              >for item in my_seq: <br />&nbsp;&nbsp;&nbsp;&nbsp; print(item) </code
-            ><br />This will print 1,2,3,4,5,6. For a dictionary
-            <code>d = {"one":1, "two":2, "three":3}</code>,
-            <code
-              >for item in d:<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;print(item) print(d[item])</code
-            >
-            will print one 1 two 2 three 3.
-            <code>for item in d.keys:</code> or
-            <code>for item in d.values:<br /></code> are also possible.
+              >def calling(func):<br />
+              &nbsp;&nbsp;&nbsp;def insider():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('before func')<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func()<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('after func')<br />
+              &nbsp;&nbsp;&nbsp;return insider<br />
+              def called():<br />
+              &nbsp;&nbsp;&nbsp;print('its twisted')<br />
+              called = calling(called)<br />
+              called()</code
+            >. And the o/p will be before func, its twisted and after func
           </div>
         </div>
       </div>
