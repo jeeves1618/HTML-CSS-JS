@@ -351,4 +351,13 @@ body {
     width: 280px;
     margin: 0 auto 15px;
   }
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    width: 100%;
+  }
 }
