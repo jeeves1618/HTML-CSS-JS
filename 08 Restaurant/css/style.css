@@ -241,6 +241,36 @@ body {
   background-color: #557c3e;
   text-align: center;
 }
+
+.shop-item-photo {
+  position: relative;
+  border: 2px solid #3f0c1f;
+  overflow: hidden;
+  padding: 0;
+  margin-right: -15px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  max-width: 75px;
+}
+.shop-item-photo div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  background-color: #557c3e;
+  text-align: center;
+}
+
+.shop-item-total {
+  position: relative;
+  border: 0px solid #3f0c1f;
+  overflow: hidden;
+  padding: 0;
+  margin-right: -15px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  max-width: 285px;
+}
 .menu-item-description {
   padding-right: 30px;
 }
