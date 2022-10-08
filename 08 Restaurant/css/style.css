@@ -229,4 +229,10 @@ body {
     font-size: 1em;
     margin-right: 5px;
   }
+
+  #menu-tile,
+  #specials-tile {
+    width: 360px;
+    margin: 0 auto 15px;
+  }
 }
