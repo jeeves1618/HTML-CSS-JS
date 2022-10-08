@@ -92,7 +92,7 @@ body {
 /* END HEADER */
 /********** Large devices only **********/
 @media (min-width: 1200px) {
-  .jumbotron {
+  .container .jumbotron {
     background: url("../img/jumbotran_1200.jpg") no-repeat;
     height: 675px;
     box-shadow: 0 0 50px #3f0c1f;
@@ -110,7 +110,7 @@ body {
     margin: 25px 5px 5px 0;
   }
   /* End Header */
-  .jumbotron {
+  .container .jumbotron {
     background: url("../img/jumbotran_992.jpg") no-repeat;
     height: 558px;
     box-shadow: 0 0 50px #3f0c1f;
@@ -120,7 +120,7 @@ body {
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-  .jumbotron {
+  .container .jumbotron {
     background: url("../img/jumbotran_768.jpg") no-repeat;
     height: 432px;
     box-shadow: 0 0 50px #3f0c1f;
@@ -173,6 +173,12 @@ body {
     font-size: 0.7em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+  }
+  .container .jumbotron {
+    margin-top: 30px;
+    padding: 0;
+    box-shadow: 0 0 50px #3f0c1f;
+    border: 2px solid #3f0c1f;
   }
   #collapsable-nav a {
     font-size: 1.2em;
