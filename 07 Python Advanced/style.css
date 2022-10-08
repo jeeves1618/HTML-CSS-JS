@@ -94,6 +94,14 @@ p {
 
 /***************** Desktop Version ******************/
 @media (min-width: 992px) {
+  #menu_desc_1,
+  #menu_desc_2,
+  #menu_desc_3,
+  #menu_desc_4,
+  #menu_desc_5,
+  #menu_desc_6 {
+    min-height: 340px;
+  }
   .col-lg-1,
   .col-lg-2,
   .col-lg-3,

@@ -109,16 +109,17 @@
             Function Locals 3. Global 4. Built-in.<code
               ><br />
               name = "John"</code
-            >&nbsp;&nbsp;#Gloal Variable<code
-              ><br />
-              greeting = "Hi"</code
-            >&nbsp;&nbsp;#Gloal Variable<code
+            >&nbsp;&nbsp;#Global Variable<code
               ><br />
               def greet():<br />
               &nbsp;&nbsp;&nbsp;&nbsp;name = "Jane"</code
             >&nbsp;&nbsp;#EFL Variable<code
               ><br />
               &nbsp;&nbsp;&nbsp;&nbsp;def say_greet():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;greeting =
+              "Hi"</code
+            >
+            #Local Var<code>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(greeting + "
               " + name)<br />
               &nbsp;&nbsp;&nbsp;&nbsp;say_greet()<br />
@@ -317,6 +318,67 @@
       </div>
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div id="menu_desc_6">
+          <p>12. Passing functions</p>
+          <div id="menu_text">
+            <code
+              >def calling(func):<br />
+              &nbsp;&nbsp;&nbsp;def insider():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('before func')<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func()<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('after func')<br />
+              &nbsp;&nbsp;&nbsp;return insider<br />
+              def called():<br />
+              &nbsp;&nbsp;&nbsp;print('its twisted')<br />
+              called = calling(called)<br />
+              called()</code
+            >. And the o/p will be before func, its twisted and after func
+          </div>
+        </div>
+      </div>
+    </div>
+    //** Beginning of fifth row**/
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_1">
+          <p>13. Decorator</p>
+          <div id="menu_text">
+            <code
+              >def calling(func):<br />
+              &nbsp;&nbsp;&nbsp;def insider():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('before func')<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func()<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('after func')<br />
+              &nbsp;&nbsp;&nbsp;return insider<br />
+              @calling #decorator<br />
+              def called():<br />
+              &nbsp;&nbsp;&nbsp;print('its twisted')<br />
+              called()</code
+            >. And the o/p will be before func, its twisted and after func
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_2">
+          <p>14. Name and Main</p>
+          <div id="menu_text">
+            <code
+              >def greet(gender='female'):<br />
+              &nbsp;&nbsp;&nbsp;def greetmam():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Mam')<br />
+              &nbsp;&nbsp;&nbsp;def greetsir():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Sir')<br />
+              &nbsp;&nbsp;&nbsp;if (gender=='female'):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetmam<br />
+              &nbsp;&nbsp;&nbsp;else:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetsir<br />
+              x=greet() #returns the function<br />
+              x() #invokes and prints Hello Mam</code
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_3">
           <p>12. Passing functions</p>
           <div id="menu_text">
             <code
