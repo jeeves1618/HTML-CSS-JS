@@ -192,6 +192,14 @@ body {
   color: #fff;
   opacity: 0.8;
 }
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  position: relative;
+  margin-left: 45%;
+  background-color: #f6b319 !important;
+}
 /* MENU CATEGORIES PAGE */
 .category-tile {
   position: relative;
