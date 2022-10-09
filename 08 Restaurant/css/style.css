@@ -43,7 +43,6 @@ body {
   font-family: "Lora", serif;
   color: #557c3e;
   font-size: 1.5em;
-  text-transform: uppercase;
   font-weight: bold;
   text-shadow: 1px 1px 1px #222;
   margin-top: 0;
@@ -57,7 +56,8 @@ body {
 }
 
 .navbar-brand p {
-  color: #000;
+  color: #557c3e;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 0.7em;
   margin-top: 15px;
@@ -356,6 +356,18 @@ h3.menu-item-title {
     margin-left: 25%;
     background-color: #f6b319 !important;
   }
+
+  #nvbr01 h1 {
+    /*Restaurant Name*/
+    font-family: "Lora", serif;
+    color: #3f0c1f;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0.75;
+  }
 }
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
@@ -453,6 +465,18 @@ h3.menu-item-title {
     position: relative;
     margin-left: 40%;
     background-color: #f6b319 !important;
+  }
+
+  #nvbr01 h1 {
+    /*Restaurant Name*/
+    font-family: "Lora", serif;
+    color: #3f0c1f;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0.75;
   }
 }
 
