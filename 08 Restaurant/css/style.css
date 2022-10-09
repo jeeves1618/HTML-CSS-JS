@@ -343,6 +343,15 @@ h3.menu-item-title {
     box-shadow: 0 0 50px #3f0c1f;
     border: 2px solid #3f0c1f;
   }
+
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    position: relative;
+    margin-left: 40%;
+    background-color: #f6b319 !important;
+  }
 }
 
 /********** Small devices only **********/
@@ -359,7 +368,7 @@ h3.menu-item-title {
   .btn-primary:active,
   .btn-primary:visited {
     position: relative;
-    margin-left: 25%;
+    margin-left: 45%;
     background-color: #f6b319 !important;
   }
 
