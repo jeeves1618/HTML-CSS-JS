@@ -23,6 +23,21 @@ body {
   padding-top: 25px;
 }
 
+#jumbotran-main-text {
+  position: relative;
+  text-align: center;
+  font-size: 3em;
+}
+
+#jumbotran-sub-text p {
+  position: relative;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+#jumbotran-main-text hr {
+  width: 40%;
+}
 .navbar-brand h1 {
   /*Restaurant Name*/
   font-family: "Lora", serif;
