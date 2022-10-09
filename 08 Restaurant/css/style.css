@@ -311,6 +311,12 @@ h3.menu-item-title {
   color: white;
 }
 /* END SINGLE CATEGORY PAGE */
+/* Start Success Page */
+#success-title {
+  margin-bottom: 50px;
+}
+/* End Success Page */
+
 /********** Large devices only **********/
 @media (min-width: 1200px) {
   .container .jumbotron {
@@ -367,6 +373,11 @@ h3.menu-item-title {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 0.75;
+  }
+
+  #success-title {
+    font-size: 1em;
+    margin-bottom: 10px;
   }
 }
 /********** Extra small devices only **********/
@@ -477,6 +488,11 @@ h3.menu-item-title {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 0.75;
+  }
+
+  #success-title {
+    font-size: 1em;
+    margin-bottom: 10px;
   }
 }
 
