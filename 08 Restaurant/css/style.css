@@ -347,6 +347,14 @@ h3.menu-item-title {
     box-shadow: 0 0 50px #3f0c1f;
     border: 2px solid #3f0c1f;
   }
+
+  .btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  position: relative;
+  margin-left: 35%;
+  background-color: #f6b319 !important;
 }
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
