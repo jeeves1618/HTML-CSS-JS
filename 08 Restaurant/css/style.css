@@ -353,7 +353,7 @@ h3.menu-item-title {
   .btn-primary:active,
   .btn-primary:visited {
     position: relative;
-    margin-left: 35%;
+    margin-left: 25%;
     background-color: #f6b319 !important;
   }
 }
@@ -445,6 +445,14 @@ h3.menu-item-title {
   }
   .menu-item-description {
     text-align: center;
+  }
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    position: relative;
+    margin-left: 40%;
+    background-color: #f6b319 !important;
   }
 }
 
