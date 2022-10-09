@@ -349,12 +349,13 @@ h3.menu-item-title {
   }
 
   .btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited {
-  position: relative;
-  margin-left: 35%;
-  background-color: #f6b319 !important;
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    position: relative;
+    margin-left: 35%;
+    background-color: #f6b319 !important;
+  }
 }
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
