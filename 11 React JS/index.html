@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React JS Basics</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="carousal.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+  </head>
+  <body class="container">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+
+    <div class="slideshow-container fade">
+      <!-- Full images with numbers and message Info -->
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c01.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>React JS Basics</h1></div>
+      </div>
+
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c02.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>React JS Basics</h1></div>
+      </div>
+
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c03.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>React JS Basics</h1></div>
+      </div>
+
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c04.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>React JS Basics</h1></div>
+      </div>
+
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c05.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>React JS Basics</h1></div>
+      </div>
+
+      <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img
+          src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/06%20Python/img/c06.jpg?raw=true"
+          style="width: 100%"
+          height="100px"
+        />
+        <div class="Info"><h1>React JS Basics</h1></div>
+      </div>
+
+      <!-- Back and forward buttons -->
+      <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <!-- The circles/dots -->
+    <div style="text-align: center">
+      <span class="dots" onclick="currentSlide(1)"></span>
+      <span class="dots" onclick="currentSlide(2)"></span>
+      <span class="dots" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_1">
+          <p>1. Creating React Project</p>
+          <div id="menu_text">
+            First install NodeJS. Once NodeJS is installed, cd into the folder
+            (or drive) in which the react app is going to be created, and give
+            the command<br />
+            <code>npx create-react-app folder-name</code><br />
+            This will create a folder by name, folder-name, downloads the files
+            and create a local Git repository. The local git will not have any
+            remote assigned. You can CD into the repository and type
+            <code>npm start</code> to start the app.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_2">
+          <p>2. Running the Project</p>
+          <div id="menu_text">
+            There is an easier way to run the project in VS Code. Stop the
+            project in the terminal by providing Ctrl+C. Then open a new
+            terminal in VS Code. It is in your project folder by default. So,
+            type
+            <code>npm start</code> to start the app.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_3">
+          <p>3. Defining Class</p>
+          <div id="menu_text">
+            <code
+              >class car():<br />
+              &nbsp;&nbsp;&nbsp;engine="IC" #static<br />
+              &nbsp;&nbsp;&nbsp;def __init__(self,brnd,mileage):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;self.brnd =
+              brand<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;self.mileage
+              =mileage<br />
+              mycar = car("Hyundai",15);<br />
+              print(mycar.brand, "runs on",car.engine,"engine and
+              gives",mycar.mileage,"kmpl")
+            </code>
+            gives an output of Hyundai runs on IC engine and gives 15 kmpl
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_4">
+          <p>4. Class with Method</p>
+          <div id="menu_text">
+            <code
+              >class Circle(object):<br />
+              &nbsp;&nbsp;&nbsp;pi = 22/7<br />
+              &nbsp;&nbsp;&nbsp;def __init__(self, r=10):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;self.r = r<br />
+              &nbsp;&nbsp;&nbsp;def area(self):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;return self.r**2*Circle.pi<br />
+              c1 = Circle()<br />
+              print(c1.area())<br /> </code
+            >c2 = Circle(r=20) will override the default radius of 10. pi is a
+            static variable and is a property of class here.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_5">
+          <p>5. Inheritance</p>
+          <div id="menu_text">
+            <code
+              >class Shape():<br />
+              &nbsp;&nbsp;&nbsp;def nameit(self,name="Shape"):<br />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;print(name)<br />
+              &nbsp;&nbsp;&nbsp;def area(self):<br />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;print("No way!")<br />
+              class Square(Shape):<br />
+              &nbsp;&nbsp;&nbsp;def nameit(self,name="Square"):<br />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;print(name)<br />
+              sq = Square()<br />
+              sq.nameit() #->Square<br />
+              sq.area() #->No way!</code
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_6">
+          <p>6. Special Methods</p>
+          <div id="menu_text">
+            The Python interpreter invokes special methods to perform basic
+            object operations. The special method names are always written with
+            leading and trailing double underscores.
+            <code>__init__(self,args) #Constructor</code><br />
+            <code>__str__(self) #class object as string</code><br />
+            <code>__len__(self) #gives the length</code><br />
+            <code>__del__(self) #gets involed on del of object</code><br />
+          </div>
+        </div>
+      </div>
+    </div>
+    //** Beginning of third row**/
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_1">
+          <p>7. Error Handling</p>
+          <div id="menu_text">
+            <code
+              >try: <br />&nbsp;&nbsp;&nbsp;f = open ('somefile.txt','r')
+              <br />&nbsp;&nbsp;&nbsp;f.write("Bazzinga!") <br />except
+              FileNotFoundError: <br />&nbsp;&nbsp;&nbsp;print("No file")
+              <br />else: <br />&nbsp;&nbsp;&nbsp;print("Gotcha!")<br />
+              &nbsp;&nbsp;&nbsp;f.close()<br />finally:<br />&nbsp;&nbsp;&nbsp;
+              print("no matter what")</code
+            ><br />In w mode, python wud've created file.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_2">
+          <p>8. Reg Expressions 101</p>
+          <div id="menu_text">
+            <code
+              >import re<br />
+              words=['cat','dog']<br />
+              text='Tom is a famous cat'<br />
+              for word in words:<br />
+              &nbsp;&nbsp;&nbsp;if re.search(word,text):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Searching ' + word + '
+              :found')<br />
+              &nbsp;&nbsp;&nbsp;else:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Searching ' + word + '
+              :not found')</code
+            >. O/P: Searching cat :found & Searching dog :not found
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_3">
+          <p>9. Reg Expressions 201</p>
+          <div id="menu_text">
+            <code>re.split(splitter,text)</code> will split the text at the
+            splitter. <code>type(re.search (word,text))</code> will return
+            <code>&lt;class 're.Match'&gt;</code>. This class has many in built
+            functions to leverage. For instance,
+            <code>re.search(word, text).start()</code> gives the index at which
+            the word starts. <code>re.findall('a',text)</code> returns a list
+            <code>['a', 'a', 'a']</code>. Repetition syntax can be used instead
+            of <code>'a'</code>
+          </div>
+        </div>
+      </div>
+    </div>
+    //** Beginning of fourth row**/
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_4">
+          <p>10. Modules & Packages</p>
+          <div id="menu_text">
+            Here is my module, mymodule.py<br />
+            <code
+              >def say_hello(name):<br />
+              &nbsp;&nbsp;&nbsp; print("Hello " + name)</code
+            >. Here is the program that calls the function in the module,
+            myprogram.py<br /><code
+              >import mymodule<br />
+              mymodule.say_hello('John') </code
+            ><br /><code>import mymodule as m</code> and
+            <code>m.say_hello('John')</code>,
+            <code>from mymodule import say_hello</code>,
+            <code>from mymodule import *</code> are also possible.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_5">
+          <p>11. Returning Functions</p>
+          <div id="menu_text">
+            <code
+              >def greet(gender='female'):<br />
+              &nbsp;&nbsp;&nbsp;def greetmam():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Mam')<br />
+              &nbsp;&nbsp;&nbsp;def greetsir():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Sir')<br />
+              &nbsp;&nbsp;&nbsp;if (gender=='female'):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetmam<br />
+              &nbsp;&nbsp;&nbsp;else:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetsir<br />
+              x=greet() #returns the function<br />
+              x() #invokes and prints Hello Mam</code
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_6">
+          <p>12. Passing functions</p>
+          <div id="menu_text">
+            <code
+              >def calling(func):<br />
+              &nbsp;&nbsp;&nbsp;def insider():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('before func')<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func()<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('after func')<br />
+              &nbsp;&nbsp;&nbsp;return insider<br />
+              def called():<br />
+              &nbsp;&nbsp;&nbsp;print('its twisted')<br />
+              called = calling(called)<br />
+              called()</code
+            >. And the o/p will be before func, its twisted and after func
+          </div>
+        </div>
+      </div>
+    </div>
+    //** Beginning of fifth row**/
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_1">
+          <p>13. Decorator</p>
+          <div id="menu_text">
+            <code
+              >def calling(func):<br />
+              &nbsp;&nbsp;&nbsp;def insider():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('before func')<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func()<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('after func')<br />
+              &nbsp;&nbsp;&nbsp;return insider<br />
+              @calling #decorator<br />
+              def called():<br />
+              &nbsp;&nbsp;&nbsp;print('its twisted')<br />
+              called()</code
+            >. And the o/p will be before func, its twisted and after func
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div id="menu_desc_2">
+          <p>14. Name and Main</p>
+          <div id="menu_text">
+            <code
+              >def greet(gender='female'):<br />
+              &nbsp;&nbsp;&nbsp;def greetmam():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Mam')<br />
+              &nbsp;&nbsp;&nbsp;def greetsir():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hello Sir')<br />
+              &nbsp;&nbsp;&nbsp;if (gender=='female'):<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetmam<br />
+              &nbsp;&nbsp;&nbsp;else:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return greetsir<br />
+              x=greet() #returns the function<br />
+              x() #invokes and prints Hello Mam</code
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div id="menu_desc_3">
+          <p>12. Passing functions</p>
+          <div id="menu_text">
+            <code
+              >def calling(func):<br />
+              &nbsp;&nbsp;&nbsp;def insider():<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('before func')<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func()<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('after func')<br />
+              &nbsp;&nbsp;&nbsp;return insider<br />
+              def called():<br />
+              &nbsp;&nbsp;&nbsp;print('its twisted')<br />
+              called = calling(called)<br />
+              called()</code
+            >. And the o/p will be before func, its twisted and after func
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>

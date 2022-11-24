@@ -1,0 +1,272 @@
+body {
+  font-family: "Libre Baskerville", sans-serif;
+  margin: 50px;
+}
+
+#one {
+  height: 225px;
+  width: 100%;
+  background-color: rgb(243, 241, 237);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#two {
+  height: 300px;
+  width: 100%;
+  background-color: rgb(204, 205, 207);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#three {
+  height: 275px;
+  width: 100%;
+  background-color: rgb(229, 234, 238);
+  padding: 10px;
+  box-sizing: border-box;
+}
+#four {
+  height: 275px;
+  width: 100%;
+  background-color: rgb(243, 241, 237);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#five {
+  height: 525px;
+  width: 100%;
+  background-color: rgb(165, 152, 117);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#five ul {
+  width: 900px;
+}
+
+#five [id^="section"] {
+  padding: 10px 20px;
+}
+
+main section {
+  display: flex;
+  justify-content: space-between;
+}
+
+main #three {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+main section div ul {
+  list-style: none;
+}
+
+main #two div ul li::before,
+main #three div ul li::before,
+main #four div ul li::before {
+  content: "\2022";
+  color: rgb(0, 72, 94);
+  font-weight: bolder;
+  display: inline-block;
+  width: 2em;
+  margin-left: -1em;
+}
+
+main section ul li {
+  padding-bottom: 20px;
+}
+
+main section ul li {
+  padding-left: 10px;
+}
+
+.right-section {
+  text-align: right;
+  width: 50%;
+}
+
+.left-section {
+  text-align: left;
+  width: 50%;
+}
+
+#one .right-section {
+  background-image: url("/images/section1.jpg");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+#two .left-section p,
+#three .left-section p,
+#four .left-section p,
+#five .left-section p {
+  padding-left: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#two .left-section li,
+#three .left-section li,
+#four .left-section li,
+#five .left-section li {
+  padding-left: 0px;
+}
+
+#one span {
+  color: rgb(0, 72, 94);
+  margin-left: 0px;
+  width: 400px;
+  padding-top: 90px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#five h2 {
+  font-size: 20px;
+}
+
+#section-img-2,
+#section-img-1 {
+  padding-left: 50px;
+}
+
+#section-img-2 img,
+#section-img-1 img {
+  width: 300px;
+}
+
+#section-img-2 {
+  margin-top: -90px;
+  margin-left: 90px;
+}
+
+#section-img-1 {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+#section-img-3 img {
+  width: 250px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+#section-img-4 img,
+#section-img-5 img,
+#section-img-6 img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+#five li {
+  display: flex;
+  justify-content: space-between;
+}
+
+#section-desc-4,
+#section-desc-5,
+#section-desc-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#six .left-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#six .right-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#six #contribution-1,
+#six #contribution-3 {
+  width: 90%;
+  height: 350px;
+  border-radius: 10px;
+  margin: 40px 20px 0 0;
+}
+#six #contribution-2,
+#six #contribution-4 {
+  width: 90%;
+  height: 350px;
+  border-radius: 10px;
+  margin: 40px 0 0 20px;
+}
+#six {
+  display: flex;
+  flex-direction: column;
+}
+#six [id^="contribution"] {
+  text-align: left;
+  padding-left: 20px;
+  box-shadow: 0 0 10px #3f0c1f;
+}
+
+#six #contribution-1 {
+  border: green solid;
+  background-color: rgb(233, 243, 233);
+  color: green;
+}
+
+#six #contribution-2 {
+  border: rgb(255, 115, 0) solid;
+  background-color: rgb(238, 238, 215);
+  color: rgb(255, 115, 0);
+}
+
+#six #contribution-3 {
+  border: rgb(11, 124, 189) solid;
+  background-color: rgb(226, 231, 235);
+  color: rgb(11, 103, 189);
+}
+
+#six #contribution-4 {
+  border: rgb(184, 5, 5) solid;
+  background-color: rgb(241, 233, 235);
+  color: rgb(184, 5, 5);
+}
+
+#six [id^="contribution"] {
+  text-align: left;
+  padding-left: 20px;
+  box-shadow: 0 0 10px #3f0c1f;
+}
+
+#six li {
+  padding: 0;
+  color: black;
+}
+
+footer {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(12, 12, 20);
+  margin-top: 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+footer #span-1 {
+  padding-top: 10px;
+  padding-left: 10px;
+  text-align: left;
+  width: 50%;
+}
+
+footer #span-2 {
+  padding-top: 10px;
+  padding-right: 10px;
+  text-align: right;
+  width: 50%;
+}

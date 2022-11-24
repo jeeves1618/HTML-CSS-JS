@@ -1,0 +1,58 @@
+* {
+  font-family: "Oxygen", sans-serif;
+}
+.navbar {
+  /* 40 Hour Challenge Caption*/
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+  border: 0;
+}
+
+body {
+  font-size: 16px;
+  color: white;
+  background-color: #160438;
+  font-family: "Oxygen", sans-serif;
+}
+
+.navbar-brand h1 {
+  /* 40 Hour Challenge Caption*/
+  font-family: "Lora", serif;
+  color: #160438;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #fff;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 10px;
+  line-height: 0.75;
+}
+
+.d-flex {
+  /* Search area */
+  padding-top: 6px;
+  padding-right: 10px;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
+  /* overriding the color of bootstrap button*/
+  background-color: #160438;
+}
+
+.btn-primary:hover {
+  color: #160438;
+  background-color: white;
+}
+
+.card {
+  /* Overriding the edges of the card */
+  border-radius: 0;
+  border: 0;
+}
