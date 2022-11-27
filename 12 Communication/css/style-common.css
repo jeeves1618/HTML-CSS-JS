@@ -1,6 +1,6 @@
 body {
   font-family: "Libre Baskerville", sans-serif;
-  margin: 50px;
+  margin: 70px;
 }
 
 #one {
@@ -67,6 +67,7 @@ main section div ul {
 
 main #two div ul li::before,
 main #three div ul li::before,
+main #product div ul li::before,
 main #four div ul li::before {
   content: "\2022";
   color: rgb(0, 72, 94);
@@ -99,11 +100,17 @@ main section ul li {
   background-position: center;
   background-size: cover;
   opacity: 0.1;
+  width: 40%;
+}
+
+#one .left-section {
+  width: 60%;
 }
 
 #two .left-section p,
 #three .left-section p,
 #four .left-section p,
+#product .left-section p,
 #five .left-section p {
   padding-left: 40px;
   font-size: 24px;
@@ -128,6 +135,18 @@ main section ul li {
 
 #five h2 {
   font-size: 20px;
+}
+
+#five #header1 {
+  color: rgb(255, 208, 0);
+}
+
+#five #header2 {
+  color: rgb(161, 201, 224);
+}
+
+#five #header3 {
+  color: teal;
 }
 
 #section-img-2,
@@ -244,6 +263,11 @@ main section ul li {
 #six li {
   padding: 0;
   color: black;
+}
+
+#product {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 footer {
