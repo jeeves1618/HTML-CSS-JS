@@ -4,6 +4,19 @@ let headerElement = document.createElement("header");
 let mainElement = document.createElement("main");
 let footerElement = document.createElement("footer");
 
+let titleText = document.querySelector("title");
+console.log(titleText.textContent);
+
+function changeTitle() {
+  if (titleText.textContent == "DOM Manipulation") {
+    titleText.textContent = "My Learning";
+  } else {
+    titleText.textContent = "DOM Manipulation";
+  }
+}
+
+document.addEventListener("click", changeTitle);
+
 bodyElement.append(headerElement);
 bodyElement.append(mainElement);
 bodyElement.append(footerElement);
