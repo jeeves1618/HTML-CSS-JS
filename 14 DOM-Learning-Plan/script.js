@@ -3,10 +3,11 @@ console.log(bodyElement);
 let headerElement = document.createElement("header");
 let mainElement = document.createElement("main");
 let footerElement = document.createElement("footer");
+let sectionElementOne = document.createElement("section");
 
 let titleText = document.querySelector("title");
 console.log(titleText.textContent);
-
+titleText.textContent = "My Learning";
 function changeTitle() {
   if (titleText.textContent == "DOM Manipulation") {
     titleText.textContent = "My Learning";
@@ -18,8 +19,8 @@ function changeTitle() {
 document.addEventListener("click", changeTitle);
 
 bodyElement.append(headerElement);
+bodyElement.append(sectionElementOne);
 bodyElement.append(mainElement);
-bodyElement.append(footerElement);
 
 bodyElement.style.backgroundColor = "rgb(228,206,182)";
 bodyElement.style.padding = "1% 1%";
@@ -33,9 +34,20 @@ headerElement.append(headerHeading);
 headerHeading.textContent = "2023 Learning Priorities";
 headerHeading.style.textAlign = "center";
 let horizontalLine = document.createElement("hr");
-
 horizontalLine.style.background = "rgb(238,164,80)";
 horizontalLine.style.height = "2px";
+
+sectionElementOne.style.height = "40px";
+sectionElementOne.style.margin = "10px 0 10px 0";
+sectionElementOne.style.border = "0px solid rgb(44,41,38)";
+let h3Element = document.createElement("h3");
+sectionElementOne.append(h3Element);
+h3Element.textContent = "Udemy Courses";
+h3Element.style.textAlign = "center";
+h3Element.style.fontSize = "2rem";
+h3Element.style.margin = "0";
+sectionElementOne.style.backgroundColor = "rgb(238,164,80)";
+
 let olMainElement = document.createElement("ol");
 mainElement.append(olMainElement);
 
@@ -146,6 +158,82 @@ liMainTimeElement.style.listStyle = "none";
 h2LiElement.style.display = "flex";
 h2LiElement.style.justifyContent = "space-between";
 
+sectionElementOne = document.createElement("section");
+bodyElement.append(sectionElementOne);
+sectionElementOne.style.height = "40px";
+sectionElementOne.style.margin = "10px 0 10px 0";
+sectionElementOne.style.border = "0px solid rgb(44,41,38)";
+h3Element = document.createElement("h3");
+sectionElementOne.append(h3Element);
+h3Element.textContent = "Books";
+h3Element.style.textAlign = "center";
+h3Element.style.fontSize = "2rem";
+h3Element.style.margin = "0";
+sectionElementOne.style.backgroundColor = "rgb(238,164,80)";
+
+mainElement = document.createElement("main");
+bodyElement.append(mainElement);
+olMainElement = document.createElement("ol");
+mainElement.append(olMainElement);
+mainElement.style.margin = "0 0 10px -30px";
+h2LiElement = document.createElement("h2");
+olMainElement.append(h2LiElement);
+liMainElement = document.createElement("li");
+h2LiElement.append(liMainElement);
+liMainTimeElement = document.createElement("li");
+h2LiElement.append(liMainTimeElement);
+liMainElement.style.listStyle = "none";
+liMainElement.style.padding = "0";
+liMainElement.style.margin = "0";
+liMainElement.textContent =
+  "Data Structures and Algorithms in Java by Robert Lafore";
+liMainTimeElement.textContent = "01-Dec To 31-Mar";
+liMainTimeElement.style.listStyle = "none";
+h2LiElement.style.display = "flex";
+h2LiElement.style.justifyContent = "space-between";
+
+h2LiElement = document.createElement("h2");
+olMainElement.append(h2LiElement);
+liMainElement = document.createElement("li");
+h2LiElement.append(liMainElement);
+liMainTimeElement = document.createElement("li");
+h2LiElement.append(liMainTimeElement);
+liMainElement.style.listStyle = "none";
+liMainElement.textContent = "Cracking the Coding Interview by Gayle McDowell";
+liMainTimeElement.textContent = "01-Apr To 31-Jul";
+liMainTimeElement.style.listStyle = "none";
+h2LiElement.style.display = "flex";
+h2LiElement.style.justifyContent = "space-between";
+
+h2LiElement = document.createElement("h2");
+olMainElement.append(h2LiElement);
+liMainElement = document.createElement("li");
+h2LiElement.append(liMainElement);
+liMainTimeElement = document.createElement("li");
+h2LiElement.append(liMainTimeElement);
+liMainElement.style.listStyle = "none";
+liMainElement.textContent =
+  "Fundementals of Software Architecture by Mark Richards";
+liMainTimeElement.textContent = "01-Aug To 30-Sep";
+liMainTimeElement.style.listStyle = "none";
+h2LiElement.style.display = "flex";
+h2LiElement.style.justifyContent = "space-between";
+
+h2LiElement = document.createElement("h2");
+olMainElement.append(h2LiElement);
+liMainElement = document.createElement("li");
+h2LiElement.append(liMainElement);
+liMainTimeElement = document.createElement("li");
+h2LiElement.append(liMainTimeElement);
+liMainElement.style.listStyle = "none";
+liMainElement.textContent =
+  "Designing Data Intensive Applications by Martin Klepmann";
+liMainTimeElement.textContent = "01-Oct To 31-Dec";
+liMainTimeElement.style.listStyle = "none";
+h2LiElement.style.display = "flex";
+h2LiElement.style.justifyContent = "space-between";
+
+bodyElement.append(footerElement);
 footerElement.style.height = "3px";
 footerElement.style.background = "rgb(44,41,38)";
 
