@@ -1,0 +1,22 @@
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: rgb(37, 35, 35);
+}
+
+header {
+  background-color: rgb(44, 41, 38);
+  color: rgb(238, 164, 80);
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  background-color: rgb(238, 164, 80);
+  color: rgb(44, 41, 38);
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 5px;
+}

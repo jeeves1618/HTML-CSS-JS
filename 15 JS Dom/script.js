@@ -17,7 +17,10 @@ function logtheinput(defaultEventFromBrowser) {
     100
   ) {
     document.getElementById("char-remaining").style.color = "red";
-    inputElement.style.backgroundColor = "rgb(228, 150, 160);";
+    //inputElement.style.backgroundColor = "rgb(228, 150, 160);";
+    //inputElement.className = "warning"; Class name is a problem because it overrides existing classes.
+    inputElement.classList.add("warning");
+    //inputElement.classList.remove("warning"); you can also remove a specific class from the class list
   }
   //console.log(defaultEventFromBrowser);
 }
