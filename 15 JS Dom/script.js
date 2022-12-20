@@ -21,6 +21,7 @@ function logtheinput(defaultEventFromBrowser) {
     //inputElement.className = "warning"; Class name is a problem because it overrides existing classes.
     inputElement.classList.add("warning");
     //inputElement.classList.remove("warning"); you can also remove a specific class from the class list
+    //inputElement.classList.toggle("warning") is also useful
   }
   //console.log(defaultEventFromBrowser);
 }
