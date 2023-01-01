@@ -9,7 +9,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="style1.css" media="all">
+    <link rel="stylesheet" type="text/css" href="style1.css" media="all" />
   </head>
   <body class="container">
     <h1 style="text-align: center">Basics of HTML and CSS</h1>
@@ -35,21 +35,25 @@
     </p>
     <h2>Basics of CSS</h2>
     <p>
-      CSS declaration block contains one or more declarations. A declaration is always formatted
-      as a property followed by a colon and then a value followed by a semicolon.
-      The colon and semicolon can be followed by zero or more spaces. In nearly all cases,
-      a value is either a single keyword or a space-separated list of one or more keywords
-      that are permitted for that property. If you use an incorrect property or value in a
-      declaration, the whole rule will be ignored.
+      CSS declaration block contains one or more declarations. A declaration is
+      always formatted as a property followed by a colon and then a value
+      followed by a semicolon. The colon and semicolon can be followed by zero
+      or more spaces. In nearly all cases, a value is either a single keyword or
+      a space-separated list of one or more keywords that are permitted for that
+      property. If you use an incorrect property or value in a declaration, the
+      whole rule will be ignored.
     </p>
     <h2>Selectors in CSS</h2>
-    <p><strong>Selectors can be grouped.</strong>h2, p {color: gray;} By placing the h2 and p selectors on the left side of the rule and separating them with
-      a comma, you’ve defined a rule where the style on the right (color: gray;) applies to
-      the elements referenced by both selectors. The comma tells the browser that there are
-      two different selectors involved in the rule. Leaving out the comma would give the
-      rule a completely different meaning, which we’ll explore in “Descendant Selectors”</p>
-    
-    
+    <p>
+      <strong>Selectors can be grouped.</strong>h2, p {color: gray;} By placing
+      the h2 and p selectors on the left side of the rule and separating them
+      with a comma, you’ve defined a rule where the style on the right (color:
+      gray;) applies to the elements referenced by both selectors. The comma
+      tells the browser that there are two different selectors involved in the
+      rule. Leaving out the comma would give the rule a completely different
+      meaning, which we’ll explore in “Descendant Selectors”
+    </p>
+
     <p>
       If you want the attributes to be applied to multiple selectors at a time,
       then you have to specify the selectors with comma in between. For example,
@@ -84,8 +88,8 @@
       <strong>Multiple Classes</strong> If you want to specify two classes for a
       HTML element, you can just list them under class attribute separated by
       spaces<strong> &lt;div class="classone classtwo"&gt; </strong>
-      
-   
+    </p>
+
     <p>
       <strong
         >The child and descendant selectors are not limited to HTML elements.
@@ -109,14 +113,15 @@
       A CSS pseudo-class is a keyword added to a selector that specifies a
       special state of the selected element(s). For example, :hover can be used
       to change a button's color when the user's pointer hovers over it. The
-      syntax of pseudo-classes: <section class="w3-code notranslate cssHigh"></section>selector:pseudo-class { property: value; }</section>
-      You can also have multiple pseudo classes like <section class="w3-code notranslate cssHigh"></section>selector:pseudo-class1:pseudo-class2 { property: value; }</section>
+      syntax of pseudo-classes: <section class="w3-code notranslate cssHigh">selector:pseudo-class { property: value; }</section>
+      You can also have multiple pseudo classes like <section class="w3-code notranslate cssHigh">selector:pseudo-class1:pseudo-class2 { property: value; }</section>
       For example, <code>
         div:nth-child(3):hover{
           background-color: green;
           cursor: pointer;
         }
       </code> is valid. 
+    
     </p>
   
   <p>
@@ -128,6 +133,7 @@
       <li>:active</li>
       <li>:nth-child</li>
     </ul>
+    
   </p>
   <h2>CSS Style Placement</h2>
     <p>
@@ -254,6 +260,27 @@
             <b>Relative Positioning: </b> Relative positioning offsets the element relative to its normal document flow position.
           </p>
         </div>
+        <hr>
+        <h2>Responsive Design</h2>
+    <div>
+      Be Water, My Friend. Empty your mind. Be formless, shapeless, like water.
+      You put water into a cup, it becomes the cup. You put water into a bottle,
+      it becomes the bottle. You put it into a teapot, it becomes the teapot.
+      Now water can flow or it can crash. Be water, my friend.<i>- Bruce Lee</i>
+    </div>
+    <br />
+    <div align="center">
+      <img
+        src="https://github.com/jeeves1618/HTML-CSS-JS/blob/main/02%20Responsive%20Design/css-box-model.png?raw=true"
+      />
+      <div>
+        &copy;
+        <a
+          href="https://www.enyosolutions.com/news/en/responsive-design-an-essential-element/"
+          >enyosolutions.com</a
+        >
+      </div>
+    </div>
         <h2>Media Queries</h2>
         <div id="list04">
           <p id="p7">
