@@ -1,105 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FAQs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <title>Web Development with HTML and CSS</title>
+    <!-- CSS only -->
+    <!-- Latest compiled and minified CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Libre+Bodoni&family=Lora&family=Mukta&family=Oxygen&family=Source+Serif+Pro&family=Tiro+Kannada&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="container">
+  <body>
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header" id="navbar-header-id">
+            <!--pull left is bootstrap way of saying float left. visible-md and visible-lg will ensure that the impage is visible only when the screen is not small-->
+            <a
+              href="index.html"
+              class="pull-left visible-md visible-lg visible-sm visible-xs"
+              id="a-element-behind-logo"
+            >
+              <div id="logo-img" alt="Logo image"></div>
+            </a>
+            <div class="navbar-brand" id="nvbr01">
+              <a
+                href="https://jeeves1618.github.io/Learnings/"
+                class="pull-right visible-md visible-lg visible-xs visible-sm"
+                id="a-element-behind-brandname"
+                ><h1>Vijay's Learnings</h1></a
+              >
+              <p>
+                <!--<img src="img/x.jpg" alt="sub text" />-->
+              </p>
+            </div>
+          </div>
+
+          <!-- .collapse .navbar-collapse -->
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="complete-body-under-nav"></div>
+      <h1>Web Development with HTML and CSS</h1>
+      <div id="main-content" class="container">
+        <div id="home-tiles" class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="webdev.html"
+              ><div id="webdev-tile"><span>Basics</span></div></a
+            >
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="html.html"
+              ><div id="html-tile"><span>HTML</span></div></a
+            >
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="java-categories.html?cat=Spring Boot"
+              ><div id="CSS-tile"><span>CSS</span></div></a
+            >
+          </div>
+        </div>
+        <!-- End of #home-tiles -->
+      </div>
+    </main>
+    <!-- End of #Main Content -->
+    <footer class="panel-footer">
+      <div class="container">
+        <div class="row">
+          <section id="hours" class="col-sm-4">
+            <span>Work on your conversations!</span><br />
+            <a href="https://www.econtalk.org/" target="_blank"
+              >https://www.econtalk.org/</a
+            ><br />
+            <a href="https://seenunseen.in/" target="_blank"
+              >https://seenunseen.in/<br
+            /></a>
+            <a href="https://lexfridman.com/podcast/" target="_blank"
+              >https://lexfridman.com/podcast/</a
+            >
+            <hr class="visible-xs" />
+          </section>
+
+          <section id="address" class="col-sm-4">
+            <span>Get your questions answered!</span><br />
+            <a href="https://stackoverflow.com/" target="_blank"
+              >https://stackoverflow.com/ </a
+            ><br /><a href="https://www.baeldung.com/" target="_blank"
+              >https://www.baeldung.com/</a
+            ><br />
+            <a href="https://www.geeksforgeeks.org/" target="_blank"
+              >https://www.geeksforgeeks.org/</a
+            >
+
+            <hr class="visible-xs" />
+          </section>
+
+          <section id="address" class="col-sm-4">
+            <span>Test your skills!</span><br />
+            <a href="https://leetcode.com/" target="_blank"
+              >https://leetcode.com/</a
+            >
+            <br /><a href="https://www.kaggle.com/" target="_blank"
+              >https://www.kaggle.com/</a
+            ><br />
+            <a href="https://www.hackerrank.com" target="_blank"
+              >https://www.hackerrank.com</a
+            >
+          </section>
+        </div>
+      </div>
+    </footer>
+    <!--Java Script -->
+    <!-- jQuery is needed for JS -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      src="https://code.jquery.com/jquery-2.2.4.js"
+      integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
       crossorigin="anonymous"
     ></script>
+    <!-- Latest compiled and minified JavaScript -->
     <script
-      src="https://code.jquery.com/jquery-3.6.1.js"
-      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
       crossorigin="anonymous"
     ></script>
-    <h1 style="text-align: center">How to build a website?</h1>
-    <hr />
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div id="menu_desc_1">
-          <p>First Things...</p>
-          <div id="menu_text">
-            Your client doesn't know what he wants. They know their business,
-            but they do not know how to express their business through a website
-            or mbile. Encourage your client not to cram information on the site.
-            Find a way for the client to INVEST in the project. Have a single
-            person responsible for decisions. Limit the number of revisions (or
-            free revisions, if it is a paying job) upfront.
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div id="menu_desc_2">
-          <p>Get Help!</p>
-          <div id="menu_text">
-            Involve others when and if they are needed. You may not know all the
-            technologies in the world. By involving others, you learn from them
-            as well. Get an idea of what the client has right now. Talk to the
-            existing users and understand how useful it is. Take help from the
-            internet. Explore the examples of relevant sites to help the client
-            figure out what they really want.
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 col-sm-12">
-        <div id="menu_desc_3">
-          <p>Take a field trip</p>
-          <div id="menu_text">
-            Yes... thats right. Understand the operations at a very granular
-            level. Find out what the client wants to improve in their
-            operations. Show them the different websites and ask what they like
-            most in those websites. It could be color, fonts or anything. Ask
-            the client who the single point of contact is. Get the commitment
-            that the client will provide all required information.
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div id="menu_desc_4">
-            <p>Design Overview</p>
-            <div id="menu_text">
-              Don't start coding. Do your wireframes through websites like
-              https://balsamiq.com/. Once the wireframes are ready, get the
-              colors added either through phtoshop or powerpoint. Get the
-              combinations from https://coolors.co/palettes, if colors are not
-              your forte. These wireframes and color combinations don't have to
-              be accurate. But, it should pivot you in the right direction.
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div id="menu_desc_5">
-            <p>Learn the Tech</p>
-            <div id="menu_text">
-              To be precise, learn the underlying tech first. They are the constants in the endless fluxes of frameworks thrown at us. 
-              The basic building blocks of web development twenty years back were <a href="https://jeeves1618.github.io/HTML-CSS-JS/01%20Basic%20HTML/" target="_blank">HTML, CSS</a> and <a href="https://jeeves1618.github.io/HTML-CSS-JS/09%20JS/" target="_blank">JavaScript</a>. 
-              And they are still the foundation over which bootstraps, ReachJS etc. are built. So, gain expertise in these three before flauting your skills in the frameworks.
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-12 col-sm-12">
-          <div id="menu_desc_6">
-            <p>Overview of Set up</p>
-            <div id="menu_text">
-              You need a code editor. My choice is Visual Studio Code. You can use Atoms, notepadd or whatever editor you like. Please ensure you are connected to the internet since we will CDN the content necessary for Bootstrap. Have a github account. 
-              It will help you to host the site in github pages. Chrome, because of its sophisticated developer tools, is my browser option. 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>

@@ -1,0 +1,801 @@
+/**   L I T E    M O D E   **/
+body {
+  /*newlook*/
+  color: #61122f;
+  /*newlook*/
+  background-color: rgb(44, 41, 38);
+  font-family: "Open Sans", sans-serif;
+}
+#a-element-behind-logo {
+  display: inline-block;
+  width: 200px;
+}
+/**Header**/
+#header-nav {
+  /*background-color: #fdc426;*/
+  background-color: rgb(29, 26, 24);
+  border-radius: 0;
+  border: 0;
+  /* Make the nav bar fixed */
+  position: fixed;
+  width: 100%;
+  /* Make the nav bar come to the front */
+  z-index: 1100;
+}
+
+#logo-img {
+  background: url("../img/HDlogo.jpg") no-repeat;
+  display: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 140px;
+  margin: 10px 15px 10px 0;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+  height: 110px;
+  align-items: center;
+  float: none;
+}
+
+.card {
+  /* Overriding the edges of the card */
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-brand h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: rgb(238, 164, 80);
+  text-transform: uppercase;
+  float: none;
+  /*text-shadow: 1px 1px 1px #222;*/
+  margin-bottom: 0;
+  padding-bottom: 35px;
+  display: block;
+  line-height: 0.75;
+  text-align: center;
+}
+
+.navbar-brand a:hover,
+.navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-brand a {
+  float: none !important;
+}
+
+.navbar-brand p {
+  color: #557c3e;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  margin-top: 15px;
+}
+
+.navbar-brand p span {
+  vertical-align: middle;
+}
+
+.navbar-brand li .active {
+  background: #264653;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+#nav-list a {
+  /*color: #951c49;*/
+  color: white;
+  text-align: center;
+}
+#nav-list a:hover,
+a:active,
+a:focus {
+  background: #264653;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+#nav-no-of-items-cart {
+  font-size: 0.5em;
+}
+
+.navbar-header {
+  width: 100%;
+}
+
+.navbar-header button.navbar-toggle,
+.navbar-header .icon-bar {
+  border: 1px solid white;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -50px;
+}
+/* END HEADER */
+/* Main Content Begins*/
+/* Main Content Ends*/
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0;
+}
+.panel-footer div.row {
+  margin-bottom: 35px;
+  /*newlook*/
+  background-color: rgb(29, 26, 24);
+  color: rgb(238, 164, 80);
+}
+#hours,
+#address {
+  line-height: 2;
+}
+#hours > span,
+#address > span {
+  font-size: 1.3em;
+}
+#address p {
+  color: #557c3e;
+  font-size: 0.8em;
+  line-height: 1.8;
+}
+#testimonials {
+  font-style: italic;
+}
+#testimonials p:nth-child(2) {
+  margin-top: 25px;
+}
+main h1 {
+  text-align: center;
+  color: rgb(238, 164, 80);
+  font-size: 3rem;
+  padding-bottom: 20px;
+}
+
+/* Overflow hidden will ensure that nothing comes out of the tile*/
+#webdev-tile,
+#html-tile,
+#CSS-tile,
+#linked-tile,
+#stack-tile,
+#tree-tile,
+#graph-tile,
+#recur-tile,
+#sort-tile,
+#search-tile,
+#dynamic-tile,
+#greedy-tile {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  background-color: rgb(44, 41, 38);
+  overflow: hidden;
+}
+#webdev-tile:hover,
+#html-tile:hover,
+#CSS-tile:hover,
+#linked-tile:hover,
+#stack-tile:hover,
+#tree-tile:hover,
+#graph-tile:hover,
+#recur-tile:hover,
+#sort-tile:hover,
+#search-tile:hover,
+#dynamic-tile:hover,
+#greedy-tile:hover {
+  box-shadow: 0 1px 15px 1px #3f0c1f;
+}
+
+#add-to-cart-division {
+  position: absolute;
+  vertical-align: bottom;
+}
+
+#webdev-tile {
+  background: url("../img/web_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#html-tile {
+  background: url("../img/html_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#CSS-tile {
+  background: url("../img/css_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#linked-tile {
+  background: url("../img/linked_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#stack-tile {
+  background: url("../img/stack_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#tree-tile {
+  background: url("../img/tree_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#graph-tile {
+  background: url("../img/graph_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#recur-tile {
+  background: url("../img/recur_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#sort-tile {
+  background: url("../img/sort_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#search-tile {
+  background: url("../img/search_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#dynamic-tile {
+  background: url("../img/dynamic_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#greedy-tile {
+  background: url("../img/greedy_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#webdev-tile span,
+#html-tile span,
+#CSS-tile span,
+#linked-tile span,
+#stack-tile span,
+#tree-tile span,
+#graph-tile span,
+#recur-tile span,
+#sort-tile span,
+#search-tile span,
+#dynamic-tile span,
+#greedy-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: rgb(29, 26, 24);
+  color: rgb(238, 164, 80);
+  opacity: 1;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  position: relative;
+  margin-left: 45%;
+  background-color: #ffc220 !important;
+  width: 200px;
+}
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .container .jumbotron {
+    background: url("../img/jumbotran_1200.jpg") no-repeat;
+    height: 675px;
+    box-shadow: 0 0 50px #3f0c1f;
+    border: 2px solid #3f0c1f;
+  }
+
+  #complete-body-under-nav {
+    height: 130px;
+  }
+  #menu-categories-title {
+    margin-top: 0px;
+  }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Header */
+  #logo-img {
+    background: url("../img/HDlogo.jpg") no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 190px;
+    margin: 0px 15px 10px 0;
+  }
+  #menu-categories-title {
+    margin-top: 0px;
+  }
+  #complete-body-under-nav {
+    height: 130px;
+  }
+
+  .navbar-brand {
+    padding-top: auto;
+  }
+
+  /* End Header */
+  .container .jumbotron {
+    background: url("../img/jumbotran_992.jpg") no-repeat;
+    height: 558px;
+    box-shadow: 0 0 50px #3f0c1f;
+    border: 2px solid #3f0c1f;
+  }
+
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    position: relative;
+    margin-left: 40%;
+    background-color: #ffc220 !important;
+  }
+
+  #nvbr01 h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(238, 164, 80);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0.75;
+    max-width: auto;
+    line-height: 1.2;
+    word-wrap: break-word;
+    margin-left: 0px;
+  }
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .jumbotron {
+    background: url("../img/jumbotran_768.jpg") no-repeat;
+    height: 432px;
+    box-shadow: 0 0 50px #3f0c1f;
+    border: 2px solid #3f0c1f;
+  }
+
+  .navbar-brand {
+    padding-top: auto;
+  }
+
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    position: relative;
+    margin-left: 35%;
+    background-color: #ffc220 !important;
+  }
+
+  #menu-categories-title {
+    margin-top: 10px;
+  }
+
+  #nvbr01 h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(238, 164, 80);
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 10px;
+    margin-bottom: 0;
+    line-height: 1.2;
+
+    word-wrap: break-word;
+  }
+
+  #success-title {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  #complete-body-under-nav {
+    height: 130px;
+  }
+
+  #call-btn > a {
+    font-size: 1.5em;
+    display: block;
+    margin: 0 20px;
+    padding: 10px;
+    border: 2px solid #ffc220;
+    background-color: white;
+    color: #264653;
+  }
+
+  #xs-deliver {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  #jumbotran-main-text {
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  #jumbotran-sub-text p {
+    position: relative;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  #jumbotran-main-text,
+  #jumbotran-sub-text {
+    color: white;
+    padding-top: 10px;
+  }
+}
+/********** Extra small devices only **********/
+@media (min-width: 478px) and (max-width: 767px) {
+  /* Header */
+  .navbar-brand {
+    padding-top: auto;
+    height: 80px;
+  }
+
+  #a-element-behind-logo {
+    display: inline-block;
+    width: 34%;
+  }
+
+  /* Footer */
+  .panel-footer section {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .panel-footer section:nth-child(3) {
+    margin-bottom: 0; /* margin already exists on the whole row */
+  }
+  .panel-footer section hr {
+    width: 50%;
+    color: #951c49;
+  }
+  /* End Footer */
+  .navbar-brand h1 {
+    /* Restaurant name */
+    align-items: center;
+    padding-top: 10px;
+    /* font-size: 5vw;1vw = 1% of viewport width */
+  }
+  .navbar-brand p {
+    /* Kosher cert */
+    font-size: 0.6em;
+    margin-top: 12px;
+  }
+  .navbar-brand p img {
+    /* Star-K */
+    height: 20px;
+  }
+
+  #collapsable-nav a {
+    /* Collapsed nav menu text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span {
+    /* Collapsed nav menu glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+
+  #complete-body-under-nav {
+    height: 130px;
+  }
+
+  #xs-deliver {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  #webdev-tile,
+  #html-tile,
+  #CSS-tile,
+  #linked-tile,
+  #stack-tile,
+  #tree-tile,
+  #graph-tile,
+  #recur-tile,
+  #sort-tile,
+  #search-tile,
+  #dynamic-tile,
+  #greedy-tile {
+    width: 360px;
+    margin: 0 auto 15px;
+  }
+
+  .menu-item-photo {
+    margin-right: auto;
+  }
+  .menu-item-tile .menu-item-price {
+    text-align: right;
+  }
+  .menu-item-description,
+  .road-map-description {
+    text-align: center;
+    padding: 0px;
+  }
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    position: relative;
+    background-color: #fdc426;
+  }
+
+  #nvbr01 h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(238, 164, 80);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0.75;
+    line-height: 1.2;
+    word-wrap: break-word;
+    margin-left: 0px;
+  }
+
+  #success-title {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  #add-to-cart-division .btn-primary {
+    display: block;
+    margin: auto;
+  }
+  #add-to-cart-division {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+  #check-out-division,
+  #back-from-checkout,
+  #place-order-division {
+    height: 50px;
+    width: 100%;
+    align-items: center;
+  }
+
+  #check-out-division .btn-primary,
+  #back-from-checkout .btn-primary,
+  #place-order-division .btn-primary {
+    margin: auto;
+    display: block;
+  }
+  #place-order-division .btn-primary {
+    margin: auto;
+    display: block;
+  }
+
+  #success-division .btn-primary {
+    margin: auto;
+    display: block;
+  }
+
+  #jumbotran-main-text {
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  #jumbotran-sub-text p {
+    position: relative;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  #jumbotran-main-text,
+  #jumbotran-sub-text {
+    color: white;
+    padding-top: 10px;
+  }
+  .menu-item-details {
+    font-size: 0.9em;
+    margin: auto;
+    width: 85%;
+  }
+}
+
+/********** Super extra small devices Only :-) (e.g., iPhone 8) **********/
+@media (max-width: 478px) {
+  /* Header */
+  /* Header */
+  .navbar-brand {
+    padding-top: 5px;
+    height: 80px;
+  }
+
+  #a-element-behind-logo {
+    display: inline-block;
+    width: 37%;
+  }
+
+  .navbar-brand h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(238, 164, 80);
+    text-transform: uppercase;
+    margin-top: 10;
+    line-height: 0.75;
+    margin-left: 0px;
+    display: block;
+    word-wrap: break-word;
+    line-height: 1.2;
+    text-align: center;
+  }
+  /* Header */
+  #logo-img {
+    background: url("../img/HDlogo.jpg") no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 95px;
+    width: 134px;
+    margin: 5px 0px 5px 0px;
+  }
+  /* End Header */
+  .menu-item-photo {
+    margin-right: auto;
+  }
+  .menu-item-tile .menu-item-price {
+    text-align: center;
+  }
+  .menu-item-description,
+  .road-map-description {
+    text-align: center;
+    padding: 0px;
+  }
+
+  /* Footer */
+  .panel-footer section {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .panel-footer section:nth-child(3) {
+    margin-bottom: 0; /* margin already exists on the whole row */
+  }
+  .panel-footer section hr {
+    width: 50%;
+    color: #951c49;
+  }
+  /* End Footer */
+  /* Home page */
+  #webdev-tile,
+  #html-tile,
+  #CSS-tile,
+  #linked-tile,
+  #stack-tile,
+  #tree-tile,
+  #graph-tile,
+  #recur-tile,
+  #sort-tile,
+  #search-tile,
+  #dynamic-tile,
+  #greedy-tile {
+    width: 280px;
+    margin: 0 auto 15px;
+  }
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    width: 100%;
+  }
+
+  #complete-body-under-nav {
+    height: 110px;
+  }
+
+  #call-btn > a {
+    font-size: 1.5em;
+    display: block;
+    margin: 0 20px;
+    padding: 10px;
+    padding-bottom: 5px;
+    border: 2px solid #ffc220;
+    background-color: white;
+    color: #264653;
+  }
+
+  #xs-deliver {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .container .jumbotron {
+    margin-top: 30px;
+    padding: 0;
+    box-shadow: 0 0 50px #3f0c1f;
+    border: 2px solid #3f0c1f;
+  }
+
+  #check-out-division,
+  #back-from-checkout {
+    height: 50px;
+    width: 100%;
+    align-items: center;
+  }
+
+  #check-out-division .btn-primary,
+  #back-from-checkout .btn-primary {
+    margin: auto;
+    display: block;
+  }
+  #place-order-division .btn-primary {
+    margin: auto;
+    display: block;
+  }
+
+  #success-division .btn-primary {
+    margin: auto;
+    display: block;
+  }
+
+  #add-to-cart-division .btn-primary {
+    display: block;
+    margin: auto;
+  }
+  #add-to-cart-division {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+  .menu-item-details {
+    width: 75%;
+  }
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    position: relative;
+    background-color: #ffc220;
+  }
+
+  hr {
+    width: 60%;
+    color: #264653;
+  }
+  .menu-item-details {
+    font-size: 0.9em;
+    margin: auto;
+    width: 85%;
+  }
+}
