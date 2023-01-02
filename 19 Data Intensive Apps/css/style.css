@@ -163,7 +163,7 @@ main h1 {
 
 /* Overflow hidden will ensure that nothing comes out of the tile*/
 #mongo-file,
-#html-tile,
+#rdbms-tile,
 #CSS-tile,
 #linked-tile,
 #stack-tile,
@@ -182,7 +182,7 @@ main h1 {
   overflow: hidden;
 }
 #mongo-file:hover,
-#html-tile:hover,
+#rdbms-tile:hover,
 #CSS-tile:hover,
 #linked-tile:hover,
 #stack-tile:hover,
@@ -202,12 +202,12 @@ main h1 {
 }
 
 #mongo-file {
-  background: url("../img/web_tile.jpg") no-repeat;
+  background: url("../img/mongo_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#html-tile {
-  background: url("../img/html_tile.jpg") no-repeat;
+#rdbms-tile {
+  background: url("../img/web_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -263,7 +263,7 @@ main h1 {
   background-size: cover;
 }
 #mongo-file span,
-#html-tile span,
+#rdbms-tile span,
 #CSS-tile span,
 #linked-tile span,
 #stack-tile span,
@@ -518,7 +518,7 @@ main h1 {
   }
 
   #mongo-file,
-  #html-tile,
+  #rdbms-tile,
   #CSS-tile,
   #linked-tile,
   #stack-tile,
@@ -693,7 +693,7 @@ main h1 {
   /* End Footer */
   /* Home page */
   #mongo-file,
-  #html-tile,
+  #rdbms-tile,
   #CSS-tile,
   #linked-tile,
   #stack-tile,
