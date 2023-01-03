@@ -44,133 +44,67 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">DBs, Collections & Documents</h2>
+                <h2 class="content">JUnit Basics</h2>
                 <p>
-                  MongoDB is nothing but an application that creates a MongoDB
-                  server. A MongoDB server can host one or more databases. A
-                  database in MongoDB is equivalant to the schema in RDBMS.
-                </p>
-                <p>
-                  A database can have one or more collections and the
-                  collections are the table equivalant from SQL world. The
-                  documents inserted into the collections are the rows of data.
-                  There is no proper equivalant for SQL columns since MongoDB is
-                  predominantly schema on write.
-                </p>
-              </div>
-            </article>
-          </li>
-
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Accessing MongoDB</h2>
-                <p>
-                  MongoDB can be accessed through Mongo shell and also through
-                  the
+                  Get the JUnit Jupiter dependency from
                   <a
-                    href="https://www.mongodb.com/docs/drivers/"
+                    href="https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter"
                     target="_blank"
-                    >drivers provided</a
+                    >mvn repository</a
                   >
-                  for different languages and frameworks. The syntax for
-                  querying MongoDB is native to the language or framework in
-                  which it is embedded in (unlike SQL which has the same syntax
-                  everywhere) and differs accordingly. So, it makes lot of sense
-                  to understand the basics of MongoDB through the shell and then
-                  progress towards its drivers.
+                  Then you can write tests like these <br />
+                  <code>
+                    @Test<br />
+                    void equalityTest(){<br />
+                    DemoUtils demoUtils = new DemoUtils();<br />
+                    assertEquals(6, demoUtils.add(2,4),"The add function is not
+                    working properly");<br />
+                    assertNotEquals(7,demoUtils.add(2,4),"The add function
+                    should not return this output");<br />
+                    }<br />
+                  </code>
+                  @Test annotation will get the code tested. Here the
+                  instantiation of DemoUtils is something that may have to be
+                  done before each test. In that case you can bundle that up in
+                  a separate method called lifecycle method.
                 </p>
                 <p>
-                  Mongo Shell or compass can be downloaded for free for
-                  accessing MongoDB server.
+                  There are 4 such methods: <code>@BeforeEach</code> ,
+                  <code>@AfterEach</code>, <code>@BeforeAll</code> and
+                  <code>@AfterAll</code>
                 </p>
               </div>
             </article>
           </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Basic Shell Commands</h2>
-                <p>
-                  <span class="language-text">show dbs</span> will list down the
-                  databases. <span class="language-text">use dbname</span> will
-                  switch to the corresponding DB.
-                  <span class="language-text">show collections</span> will list
-                  down the collections.
-                </p>
-                <p>
-                  Since this is schema on write, we can start inserting the
-                  documents without creating the collections and the databases.
-                </p>
-                <p>
-                  Typing down <span class="language-text">use emp</span> will
-                  switch to the emp database. Then the command
-                  <span class="language-text"
-                    >db.empdata.inserOne({id:"1552", name:"Joe Smith"})</span
-                  >
-                  will insert a row into the newly created collection empdata
-                  under the emp DB.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">deleteOne & updateOne</h2>
-                <p>
-                  To delete one row in a table we can use
-                  <span class="language-text"
-                    >db.empdata.deleteOne ({id :"1552"})</span
-                  >.
-                </p>
-                <p>
-                  Lets say you want to update the document of the employee Adam
-                  Smith by adding his location as Edinburgh.<br />
-                  <span class="language-text"
-                    >db.empdata.updateOne ({name :"Adam Smith"},{$set{location:
-                    "Edinburgh"}})</span
-                  >. If the location already exists, this statement will change
-                  it to Edinburgh. Otherwise, it will add the location as
-                  Edinburgh.
-                </p>
-                <p>
-                  If you remove the selection criteria, then the update will be
-                  done across all documents in the collection.<br />
-                  <span class="language-text"
-                    >db.empdata.updateOne ({},{$set{location:
-                    "Edinburgh"}})</span
-                  >
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">deleteMany & insertMany</h2>
-                <p>
-                  If you want to delete all employees in the empdata collection
-                  you can use
-                  <span class="language-text">db.empdata.deleteMany ({})</span>
-                </p>
 
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Lifecycle Methods</h2>
                 <p>
-                  If you want to delete employees in the empdata collection with
-                  the location as Moscow you can use
-                  <span class="language-text"
-                    >db.empdata.deleteMany ({location: "Moscow"})</span
-                  >
-                </p>
-                <p>deleteMany can work with and without parameters.</p>
-                <p>
-                  If you want to insert multiple employees into empdata
-                  collection you pass the employees as an array of objects
-                  <span class="language-text"
-                    >db.empdata.insertMany ([<br />{id: "1555",name: "Sandy B",
-                    location: "Seattle"}, <br />{id: "1556",name: "Sarah Paul",
-                    location: "Dallas"}<br />])</span
-                  >
+                  We can introduce the code to be executed before or after a
+                  test method through the annotations
+                  <code>@BeforeEach</code> and <code>@AfterEach</code>. Here is
+                  how the code looks.<br />
+                  <code>
+                    DemoUtils demoUtils;<br />
+                    @BeforeEach<br />
+                    void createObject(){<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;demoUtils = new DemoUtils();<br />
+                    }<br />
+                    @Test<br />
+                    void equalityTest(){<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;assertEquals(6,
+                    demoUtils.add(2,4),"The add function is not working
+                    properly");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;assertNotEquals(7,demoUtils.add(2,4),"The
+                    add function should not return this output");<br />
+                    } </code
+                  ><br />
+                  <code>@BeforeAll</code> and <code>@AfterAll</code> will get
+                  executed only once before all tests and after all tests
+                  respectively.
+                  <strong>These two methods must be static.</strong>
                 </p>
               </div>
             </article>
@@ -178,33 +112,28 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Finding Data</h2>
+                <h2 class="content">Display Names</h2>
                 <p>
-                  <span class="language-text">db.empdata.find()</span> will find
-                  all documents from the empdata collection. You add
-                  <span class="language-text">.pretty()</span>
-                  to the command to format the data.
-                </p>
-                <p>
-                  <span class="language-text"
-                    >db.empdata.find({name: "Sandy B"}).pretty()</span
+                  We can give a display names for the test functions.<br />
+                  <code>
+                    @Test<br />
+                    <strong>@DisplayName</strong>("JIRA1234 - Acceptance
+                    Criteria 7") <br />void equalityTest(){<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;DemoUtils demoUtils = new
+                    DemoUtils();<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;assertEquals(6,
+                    demoUtils.add(2,4),"Not working properly");<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;assertNotEquals(7,demoUtils.add(2,4),"Should
+                    not return this");<br />
+                    }<br /> </code
+                  ><br />
+                  We can also have the names generated.
+                  <code
+                    >@DisplayNameGeneration
+                    (DisplayNameGenerator.ReplaceUnderscores.class)</code
                   >
-                  will find all documents from the empdata collection where the
-                  name of the employee is Sandy B.
-                </p>
-                <p>
-                  <span class="language-text"
-                    >db.empdata.find({id: {$gt: "1553"}}).pretty()</span
-                  >
-                  will find all documents where the employee id is greater than
-                  1553.
-                </p>
-                <p>
-                  <span class="language-text"
-                    >db.empdata.findOne({id: {$gt: "1553"}})</span
-                  >
-                  will find first mathching document where the employee id is
-                  greater than 1553.
+                  will generate a name by replacing underscores. There are few
+                  other options while generating names.
                 </p>
               </div>
             </article>
@@ -212,211 +141,18 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Diving into Updates</h2>
+                <h2 class="content">Few other assertions</h2>
                 <p>
-                  There are three update functions, update, updateOne and
-                  updateMany. We saw an example of updateOne above.
-                  <span class="language-text"
-                    >db.empdata.updateMany({location: "Tokyo"}, {$set{id:
-                    "JP99"}}})</span
-                  >
-                  will update all documents from the empdata collection with the
-                  id as JP99.
+                  <span class="language-text">assertTrue()</span> will check if
+                  the returned Boolean Value is true.
+                  <span class="language-text">assertFalse()</span> will check
+                  for the opposite.
                 </p>
                 <p>
-                  updateMany and updateOne will not work without $set. For
-                  example,
-                  <span class="language-text"
-                    >db.empdata.updateMany({location: "Tokyo"}, {id:
-                    "JP99"}})</span
-                  >
-                  will result in error.
-                </p>
-                <p>
-                  But, update without $set will remove all other name value
-                  pairs. For example, if we execute
-                  <span class="language-text"
-                    >db.empdata.update({location: "Tokyo"}, {id: "JP99"}})</span
-                  >
-                  on a document
-                  <span class="language-text">
-                    {id: "1559", name: "Oshin", location: "Tokyo"} </span
-                  >, the document will become
-                  <span class="language-text"> {id: "JP99"} </span>
-                </p>
-                <p>
-                  Other than this difference update and updateMany are one and
-                  the same
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Changing document structure</h2>
-                <p>
-                  if you want to change the structure of the document, you
-                  should use replaceOne. For instance,
-                  <span class="language-text"
-                    >db.empdata.replaceOne({_id:
-                    ObjectId("63ad814759f3cc8483a01f97")}, {<br />
-                    id : "JP12", <br />
-                    firstName : "Oshin", <br />
-                    lastName : "Yakamoto", <br />
-                    email : "oya@jp.com", <br />})</span
-                  >
-                  will change the structure of the document from
-                  <span class="language-text">
-                    {<br />id: "1559", <br />name: "Oshin", <br />location:
-                    "Tokyo"<br />}
-                  </span>
-                  to
-                  <span class="language-text">
-                    {<br />
-                    id : "JP12", <br />
-                    firstName : "Oshin", <br />
-                    lastName : "Yakamoto", <br />
-                    email : "oya@jp.com", <br />}
-                  </span>
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Understanding find()</h2>
-                <p>
-                  If you query the empdata collection with find(), a cursor
-                  object is returned with the ability to scroll through the
-                  results by typing 'it' for every 20 documents or so.
-                  <span class="language-text">db.empdata.find()</span>
-                  will return the cursor object that has cycled through the
-                  first 20 documents. You will see those first 20 documents in
-                  the screen with the prompt to type 'it' to see more. Cursor
-                  object is available only for find. It is not available for
-                  update, insert or delete.
-                </p>
-                <p>
-                  If you want all the documents to be retrieved and listed in
-                  the shell then use
-                  <span class="language-text">db.empdata.find().toArray()</span
-                  >. While this returns all the documents, this may not be
-                  optimal for large collections.
-                </p>
-                <p>
-                  In a program, we will typically code like this -
-                  <span class="language-text"
-                    >db.empdata.find().forEach(function(){ ... })</span
-                  >.
-                </p>
-                <p>
-                  Within shell we can do arrow functions like this -
-                  <span class="language-text"
-                    >db.empdata.find().forEach((emp) => {printjson(emp)}))</span
-                  >. This will also list down all the documents.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Projection</h2>
-                <p>
-                  Projection is nothing but selecting a subset of key value
-                  pairs from a collection. It is equivalant to specifying the
-                  required column names in SQL instead of using SELECT *. Lets
-                  say we want only the name of the employees from empdata
-                  collection.
-                </p>
-                <p>
-                  <span class="language-text"
-                    >db.empdata.find({},{name: 1})</span
-                  >
-                  will return only the _id and name from the collection.
-                </p>
-                <p>
-                  Why is _id get included when we are asking only for name? It
-                  is because, when we request name: 1, all other keys by default
-                  will be set to 0 and are excluded. But, _id doesn't get
-                  excluded by default. So, we have to exclude it explicitly as
-                  below.
-                  <span class="language-text"
-                    >db.empdata.find({},{name: 1, _id: 0})</span
-                  >.
-                </p>
-                <p>
-                  We could also do the same for email as in
-                  <span class="language-text"
-                    >db.empdata.find({},{name: 1, _id: 0, email: 0})</span
-                  >. But, that is not needed since email is excluded by default.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Embeded Documents</h2>
-                <p>
-                  You can embed one document into another in MongoDB. It is
-                  similar to embedding an object under another object. But,
-                  there are couple of rules around embedding.
-                </p>
-                <ol>
-                  <li>Only 100 levels of nesting is allowed</li>
-                  <li>The size of a single document should not exceed 16MB</li>
-                </ol>
-                <p>
-                  An example creating an embedded document below.
-                  <span class="language-text"
-                    >db.empdata.updateMany({},{$set:{promotion: {designation:
-                    "Developer", lastPromoted: "2020-01-03"}}})</span
-                  >
-                </p>
-                <p>
-                  It will update the documents as below <br /><code>
-                    {<br />
-                    _id: ObjectId("63b2c327a83cba5a202b1646"),<br />
-                    id: '1554',<br />
-                    name: 'Monny S', <br />location: 'Vegas', <br />promotion: {
-                    designation: 'Developer', lastPromoted: '2020-01-03' }<br />
-                    }</code
-                  >
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Working with Arrays</h2>
-                <p>
-                  We can also store an array or list of documents in a document.
-                </p>
-
-                <p>
-                  Here is how we add array of strings, numbers or objects to an
-                  existing document <br /><span class="language-text"
-                    >db.empdata.updateMany({},{$set:{skills:["Java", "Spring
-                    Boot","NodeJS","MongoDB","Kafka"] }})</span
-                  >
-                </p>
-                <p>
-                  It will update the documents as below <br /><code>
-                    {<br />
-                    &nbsp;&nbsp;_id: ObjectId("63b2c327a83cba5a202b1646"),<br />
-                    &nbsp;&nbsp;id: '1554',<br />
-                    &nbsp;&nbsp;name: 'Monny S',<br />
-                    &nbsp;&nbsp;location: 'Vegas',<br />
-                    &nbsp;&nbsp;promotion: { designation: 'Developer',
-                    lastPromoted: '2020-01-03' },<br />
-                    &nbsp;&nbsp;skills: [ 'Java', 'Spring Boot', 'NodeJS',
-                    'MongoDB', 'Kafka']<br />
-                    }</code
-                  >
+                  <span class="language-text">assertSame()</span> will check if
+                  the returned addresses refer to the same Object.
+                  <span class="language-text">assertNotSame()</span> will check
+                  for the opposite.
                 </p>
               </div>
             </article>
