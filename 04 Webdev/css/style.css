@@ -83,7 +83,7 @@ body {
 }
 
 .navbar-brand li .active {
-  background: #264653;
+  background: rgb(29, 26, 24);
 }
 
 #nav-list {
@@ -97,7 +97,7 @@ body {
 #nav-list a:hover,
 a:active,
 a:focus {
-  background: #264653;
+  background: rgb(29, 26, 24);
 }
 #nav-list a span {
   font-size: 1.8em;
@@ -424,7 +424,7 @@ main h1 {
     padding: 10px;
     border: 2px solid #ffc220;
     background-color: white;
-    color: #264653;
+    color: rgb(29, 26, 24);
   }
 
   #xs-deliver {
@@ -729,7 +729,7 @@ main h1 {
     padding-bottom: 5px;
     border: 2px solid #ffc220;
     background-color: white;
-    color: #264653;
+    color: rgb(29, 26, 24);
   }
 
   #xs-deliver {
@@ -791,7 +791,7 @@ main h1 {
 
   hr {
     width: 60%;
-    color: #264653;
+    color: rgb(29, 26, 24);
   }
   .menu-item-details {
     font-size: 0.9em;
