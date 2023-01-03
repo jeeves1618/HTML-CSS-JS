@@ -162,9 +162,9 @@ main h1 {
 }
 
 /* Overflow hidden will ensure that nothing comes out of the tile*/
-#mongo-file,
-#rdbms-tile,
-#CSS-tile,
+#junit-tile,
+#mockito-tile,
+#collections-tile,
 #linked-tile,
 #stack-tile,
 #tree-tile,
@@ -181,9 +181,9 @@ main h1 {
   background-color: rgb(44, 41, 38);
   overflow: hidden;
 }
-#mongo-file:hover,
-#rdbms-tile:hover,
-#CSS-tile:hover,
+#junit-tile:hover,
+#mockito-tile:hover,
+#collections-tile:hover,
 #linked-tile:hover,
 #stack-tile:hover,
 #tree-tile:hover,
@@ -201,18 +201,18 @@ main h1 {
   vertical-align: bottom;
 }
 
-#mongo-file {
-  background: url("../img/mongo_tile.jpg") no-repeat;
+#junit-tile {
+  background: url("../img/junit_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#rdbms-tile {
-  background: url("../img/web_tile.jpg") no-repeat;
+#mockito-tile {
+  background: url("../img/mock_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#CSS-tile {
-  background: url("../img/css_tile.jpg") no-repeat;
+#collections-tile {
+  background: url("../img/collection_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -262,9 +262,9 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#mongo-file span,
-#rdbms-tile span,
-#CSS-tile span,
+#junit-tile span,
+#mockito-tile span,
+#collections-tile span,
 #linked-tile span,
 #stack-tile span,
 #tree-tile span,
@@ -517,9 +517,9 @@ main h1 {
     text-transform: uppercase;
   }
 
-  #mongo-file,
-  #rdbms-tile,
-  #CSS-tile,
+  #junit-tile,
+  #mockito-tile,
+  #collections-tile,
   #linked-tile,
   #stack-tile,
   #tree-tile,
@@ -692,9 +692,9 @@ main h1 {
   }
   /* End Footer */
   /* Home page */
-  #mongo-file,
-  #rdbms-tile,
-  #CSS-tile,
+  #junit-tile,
+  #mockito-tile,
+  #collections-tile,
   #linked-tile,
   #stack-tile,
   #tree-tile,
