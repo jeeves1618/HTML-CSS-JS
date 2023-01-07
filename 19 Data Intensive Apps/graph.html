@@ -52,9 +52,10 @@
                   are also well managed by document databases like MongoDB.
                 </p>
                 <p>
-                  But, what if complex many-to-many relationships are common in
-                  our data? As the connections between our data gets
-                  sophisticated, it becomes natural to model the data as graph.
+                  But, these two data bases do not have an easy answer for
+                  complex many-to-many relationships in the data. As the
+                  connections between our data gets more and more sophisticated,
+                  it becomes natural to model the data as graph.
                 </p>
               </div>
             </article>
@@ -67,8 +68,8 @@
                   A graph consists of two different kinds of objects: nodes
                   <em>(or vertices or entities)</em> and relationships
                   <em>(or edges or arcs)</em>. Similar type of nodes are clubbed
-                  together and are assigned a label. So, you can think of nodes
-                  as records in a RDMS table and label as the table.
+                  together under a label. So, you can think of nodes as records
+                  in a RDMS table and label as the table itself.
                 </p>
                 <p>
                   Unlike RDMS, where relationships are defined at the table
@@ -85,7 +86,7 @@
                 <p>
                   We can assign the properties to nodes and relationships. A
                   relationship will have a direction and a label. The label will
-                  say something lile 'belongs to', 'travelling to' etc.
+                  say something like 'belongs to', 'travelling to' etc.
                 </p>
                 <p>
                   For instance, we can have a node with properties
@@ -103,13 +104,13 @@
                 <h2 class="content">Neo4j</h2>
                 <p>
                   Neo4j is the most popular enterprise strength graph database
-                  in use. It is schema on read and the properties of nodes and
-                  relationships can differ under similar label.
+                  in use. It is a schema on read database. So, the properties of
+                  nodes and relationships can differ under similar label.
                 </p>
                 <p>
                   Neo4j does not allow nested properties for node and
-                  relationship. The easiest way to try creating and accessing
-                  Graph DBs is to install Neo4j Desktop by going to neo4j.com ->
+                  relationship. The easiest way to create and access Graph DBs
+                  is to install Neo4j Desktop by going to neo4j.com ->
                   Developers -> Download Center.
                 </p>
               </div>
@@ -122,7 +123,7 @@
                 <p>
                   Once the neo4j desktop is installed, create a new project, a
                   new DBMS and start the DBMS. The DBMS will be running in the
-                  local and will be exposes in the port 7474. You can click on
+                  local and will be exposed in the port 7474. You can click on
                   open button next to the DBMS. It will have an option to open
                   the Neo4j browser.
                 </p>
@@ -147,8 +148,8 @@
                 <p>
                   The query language used in the Neo4j is the Cypher (after
                   matrix character) Query Language or CQL.
-                  <code class="language-text">drop database-name</code> is the
-                  CQL for dropping database-name.
+                  <code class="language-text">drop database db-name</code> is
+                  the CQL for dropping database-name.
                 </p>
                 <p>
                   CQL refers to node with parantheses. So,
@@ -171,15 +172,306 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Match Statement</h2>
+                <h2 class="content">Viewing Nodes</h2>
                 <p>
-                  <code class="language-text">match (abc) return abc</code> will
-                  retrieve all the nodes and will display them as graph. abc is
-                  just an alias. The nodes will have default ids assigned.
+                  The nodes can be viewed in the graphical mode in the Neo4j
+                  browser. We can also view them in table format.
                 </p>
                 <p>
-                  The above query is a SELECT ALL in RDBMS parlance. We will see
-                  how we can write efficient matches below.
+                  <code class="language-text">create(:Author)</code> node would
+                  have been structured as below in the table view<code
+                    ><br />{<br />
+                    "identity": 0,<br />
+                    "labels": [<br />
+                    "Author"<br />],<br />
+                    "properties": {<br />
+                    },<br />
+                    "elementId": "0"<br />
+                    }<br
+                  /></code>
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Creating with Properties</h2>
+                <p>
+                  Now, let us add some properties to a node and create it under
+                  Author label.
+                  <code class="language-text"
+                    >create(:Author {firstName: "Betrand", lastName:
+                    "Russel"})</code
+                  >
+                  will create the node as below
+                  <code
+                    ><br />{<br />
+                    &nbsp;&nbsp;"identity": 3,<br />
+                    &nbsp;&nbsp;"labels": [<br />
+                    &nbsp;&nbsp;"Author"<br />&nbsp;&nbsp;&nbsp;&nbsp;],<br />
+                    &nbsp;&nbsp;"properties": {,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;"firstName": "Betrand",,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;"lastName": "Russel",<br />
+                    &nbsp;&nbsp;},<br />
+                    &nbsp;&nbsp;"elementId": "3"<br />
+                    }<br
+                  /></code>
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Filtering Nodes</h2>
+                <p>
+                  <code class="language-text"
+                    >match (abc:Author) return abc</code
+                  >
+                  will retrieve only the nodes with the label as Author.
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match (abc:Author:Reader) return abc</code
+                  >
+                  will retrieve the nodes with the label as Author
+                  <strong>and</strong> Reader.
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(abc{firstName:"Bertrand"}) return abc</code
+                  >
+                  will retrieve all the nodes with the firstName property as
+                  Bertrand
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(abc{firstName:"Bertrand", lastName:"Russel"}) return
+                    abc</code
+                  >
+                  will retrieve all the nodes with the firstName property as
+                  Bertrand <strong>and</strong> lastName as Russel.
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(abc:Author{firstName:"Bertrand", lastName:"Russel"})
+                    return abc</code
+                  >
+                  will retrieve all the nodes with label as Author
+                  <strong>and</strong> firstName property as Bertrand
+                  <strong>and</strong> lastName as Russel.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">WHERE Condition</h2>
+                <p>
+                  You can also use where clause to retrieve nodes from the
+                  database. For example,
+                  <code class="language-text"
+                    >match(abc:Author) where abc.firstName = "Betrand" and
+                    abc.lastName = "Russel" return abc</code
+                  >
+                  will retrieve all the nodes with label as Author
+                  <strong>and</strong> firstName property as Bertrand
+                  <strong>and</strong> lastName as Russel.
+                </p>
+                <p>
+                  In the same way, we can use OR condition as below.
+                  <code class="language-text"
+                    >match(abc:Author) where abc.firstName = "Betrand" OR
+                    abc.firstName = "Bertrand" return abc</code
+                  >
+                  will retrieve all the nodes with label as Author
+                  <strong>and</strong> firstName property as Bertrand
+                  <strong>OR</strong> firstName as Bertrand.
+                </p>
+                <p>
+                  We can also use IN condition as below.
+                  <code class="language-text"
+                    >match(abc:Author) where abc.lastName IN ["Russel"] return
+                    abc</code
+                  >
+                  will retrieve all the nodes with label as Author
+                  <strong>and</strong> lastName as Russel.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Select by ID</h2>
+                <p>
+                  If you try selecting using the default attributes (like
+                  elementId or identity) using<code class="language-text"
+                    >match(abc{identity:3}) return abc</code
+                  >then you will get an error stating "The provided property key
+                  is not in the database".
+                </p>
+                <p>
+                  The right way to retrieve using system assgined IDs is
+                  <code class="language-text"
+                    >match(abc) where ID(abc) = 3 return abc</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Update and Add Properties</h2>
+                <p>
+                  Here is how we can update the last name as "Russell" and add a
+                  new property called born with the value 1872.
+                  <code class="language-text"
+                    >match(abc) where ID(abc) = 3 set abc.lastName = "Russell",
+                    abc.born = 1872 return abc</code
+                  >
+                </p>
+                <p>
+                  We can update using the property value as below.
+                  <code class="language-text"
+                    >match(abc{firstName:"Betrand"}) set abc.lastName =
+                    "Russell", abc.firstName = "Bertrand", abc.born = 1872
+                    return abc</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Label Manipulation</h2>
+                <p>
+                  <code class="language-text"
+                    >match(abc{firstName:"Bertrand"}) set abc:British return
+                    abc</code
+                  >
+                  will add the label "British" to all nodes with the first name
+                  of Bertrand. Please note if the node already has the label as
+                  British, this statement will not make any changes to that
+                  node.
+                </p>
+                <p>
+                  Now I want to remove the British label for the ID 3 alone.
+                  Here is how I will go about it.
+                  <code class="language-text"
+                    >match(abc:British) where ID(abc) = 3
+                    <strong>remove</strong> abc:British return abc</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Removing Properties</h2>
+                <p>
+                  If I want to remove the birth property for the ID 3 alone, I
+                  will use the remove keyword along with dot operator to specify
+                  the propery to be deleted.
+                  <code class="language-text"
+                    >match(abc:British) where ID(abc) = 3
+                    <strong>remove</strong> abc.birth return abc</code
+                  >
+                </p>
+                <p>
+                  You can also remove the label and properties in a single go.
+                  <code class="language-text"
+                    >match(abc:British) where ID(abc) = 3
+                    <strong>remove</strong> abc.birth, abc:British return
+                    abc</code
+                  >.
+                </p>
+                <p>
+                  Above statement will remove the propery birth and the label
+                  British.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Deleting a node</h2>
+                <p>
+                  Deleting the node is simple. While retrieving, we use the
+                  match... return combination. Now, for deleting we have to use
+                  the match delete combination.
+                  <code class="language-text"
+                    >match(abc:British) where ID(abc) = 3
+                    <strong>delete</strong> abc</code
+                  >
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(abc:British) <strong>delete</strong> abc</code
+                  >
+                  will delete all the nodes with label as British.
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(abc) <strong>delete</strong> abc</code
+                  >
+                  will delete all nodes from that particular database. Above
+                  deletes are working because the nodes do not have any
+                  relationship. Things will be slightly different for nodes with
+                  relationship.
+                </p>
+                <p>
+                  If you want to delete the nodes without any label then you can
+                  use this query.
+
+                  <code class="language-text"
+                    >match (node) WHERE size(labels(node)) = 0 delete node</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Relationship</h2>
+                <p>
+                  Deleting the node is simple. While retrieving, we use the
+                  match... return combination. Now, for deleting we have to use
+                  the match delete combination.
+                  <code class="language-text"
+                    >match(abc:British) where ID(abc) = 3
+                    <strong>delete</strong> abc</code
+                  >
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(abc:British) <strong>delete</strong> abc</code
+                  >
+                  will delete all the nodes with label as British.
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(abc) <strong>delete</strong> abc</code
+                  >
+                  will delete all nodes from that particular database. Above
+                  deletes are working because the nodes do not have any
+                  relationship. Things will be slightly different for nodes with
+                  relationship.
+                </p>
+                <p>
+                  If you want to delete the nodes without any label then you can
+                  use this query.
+
+                  <code class="language-text"
+                    >match (node) WHERE size(labels(node)) = 0 delete node</code
+                  >
                 </p>
               </div>
             </article>
