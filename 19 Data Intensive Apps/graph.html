@@ -440,38 +440,210 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Relationship</h2>
+                <h2 class="content">Relationships</h2>
                 <p>
-                  Deleting the node is simple. While retrieving, we use the
-                  match... return combination. Now, for deleting we have to use
-                  the match delete combination.
+                  Let us now create a relationship between the nodes under
+                  Author label to the nodes under Book label.
                   <code class="language-text"
-                    >match(abc:British) where ID(abc) = 3
-                    <strong>delete</strong> abc</code
-                  >
+                    >create (au:Author{firstName: "Robert", lastName: "Caro",
+                    born: 1935}), (bk:Book{title: "The Power Broker", publisher:
+                    "Knopf", born: 1974})<br />
+                    <strong>create (au)-[:HAS_WRITTEN]-> (bk)</strong><br />
+                    return au,bk<br /></code
+                  >. The above code will create two nodes and establish a
+                  HAS_WRITTEN relationship between them.
                 </p>
                 <p>
+                  The above relationship can also be written like this. The
+                  direction of the arrow matters.
                   <code class="language-text"
-                    >match(abc:British) <strong>delete</strong> abc</code
+                    >create (bk)<-[:HAS_WRITTEN]- (au)</code
                   >
-                  will delete all the nodes with label as British.
                 </p>
-                <p>
-                  <code class="language-text"
-                    >match(abc) <strong>delete</strong> abc</code
-                  >
-                  will delete all nodes from that particular database. Above
-                  deletes are working because the nodes do not have any
-                  relationship. Things will be slightly different for nodes with
-                  relationship.
-                </p>
-                <p>
-                  If you want to delete the nodes without any label then you can
-                  use this query.
 
+                <p>
                   <code class="language-text"
-                    >match (node) WHERE size(labels(node)) = 0 delete node</code
+                    >(au)-[:HAS_WRITTEN {pages:497}]->(bk)</code
                   >
+                  will add pages property to the relationship.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Relationship properties</h2>
+                <p>
+                  If you have the nodes created already, then use match to fetch
+                  them using ID and create the relationship between them.<br />
+                  <code class="language-text">
+                    match (au:Author),(bk:Book)<br />
+                    where ID(au) = 2 and ID(bk) = 6<br />
+                    create (au)-[:HAS_WRITTEN {pages:497}]->(bk)<br />
+                    return au,bk<br /> </code
+                  ><br />
+                  If you run the above script again, it will create another
+                  duplicate relationship. So, we have to use merge instead of
+                  create to avoid duplicates. <br />
+                  <code class="language-text">
+                    match (au:Author),(bk:Book)<br />
+                    where ID(au) = 2 and ID(bk) = 6<br />
+                    create (au)-[:HAS_WRITTEN {pages:497}]->(bk)<br />
+                    return au,bk<br /> </code
+                  ><br />
+                  The merge will also work only as long as the properties are
+                  the same. If you are adding a new property, merge will also
+                  create a new relationship.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Multiple Relationships</h2>
+                <p>
+                  You can create multiple relationships through a single command
+                  as below.<br />
+                  <code class="language-text">
+                    create (au:Author{firstName: "Mathew", lastName: "Walker",
+                    born: 1972}), (bk:Book{title: "Why we sleep", publisher:
+                    "Allen", published: 2017}), (ct:City{City: "Berkeley",
+                    state: "CA", Country: "US"})
+                    <br />create (ct)<-[:LIVES_IN]-(au)-[:HAS_WRITTEN]->(bk)
+                    <br />return au,bk<br /> </code
+                  ><br />
+                  <img src="/img/graph.jpg" />
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Fetching Relationships</h2>
+                <p>
+                  <code class="language-text">
+                    match(au:Author)-[]-(node) where ID(au) = 10 return au, node
+                  </code>
+                  will fetch Author node with ID as 10, all the related nodes
+                  which have any relationships with it in any direction.
+                  (au:Author)-[]-(node) can also be written as
+                  <code class="language-text"> (au:Author)<-[]->(node) </code>.
+                  If you want to see only the nodes with relationship in the
+                  outward direction you can use
+                  <code class="language-text"> (au:Author)-[]->(node) </code>
+                  and
+                  <code class="language-text"> (au:Author)<-[]-(node) </code>
+                  for inward directed nodes.
+                </p>
+                <p>
+                  <code class="language-text">
+                    match(au:Author)-[]-(node:City) where ID(au) = 10 return au,
+                    node
+                  </code>
+                  will fetch Author node with ID as 10, only the related nodes
+                  labeled as City and have relationships with it in any
+                  direction.
+                </p>
+                <p>
+                  We can also filter based on the type of the learning as below.
+                  <code class="language-text"
+                    >match(au:Author)-[:LIVES_IN]-(node) where ID(au) = 10
+                    return au, node</code
+                  >. Type of relationship can also take OR filter like this
+                  <code class="language-text"
+                    >(au:Author)-[:LIVES_IN | HAS_WRITTEN]-(node) </code
+                  >. Notice there is no : for the type after pipe.
+                </p>
+                <p>
+                  Relationships will not be displayed by default if the browser
+                  settings is not configured so. If you want to see the
+                  relationships irrespective of browser settings, then return
+                  the alias for relationship as below
+                  <code class="language-text"
+                    >match(au:Author)<-[rel:LIVES_IN]->(node) where ID(au) = 10
+                    return au, node, rel</code
+                  >.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">More on Multiples</h2>
+                <p>
+                  You can create multiple relationships through a single command
+                  as below.<br />
+                  <code class="language-text">
+                    create (au:Author{firstName: "Doris", lastName: "Goodwin",
+                    born: 1943}), <br />(bk1:Book{title: "Leadership",
+                    publisher: "Simon", published: 2018}),<br />
+                    (bk2:Book{title: "Team of Rivals", publisher: "Simon",
+                    published: 2005}),<br />
+                    (bk3:Book{title: "American Saga", publisher: "Martins",
+                    published: 1987}),<br />
+                    (ct:City{City: "Concord", state: "MA", Country: "US"})<br />
+                    create
+                    (ct)<-[:LIVES_IN]-(au)-[:HAS_WRITTEN]->(bk1),(bk2)<-[:HAS_WRITTEN]-(au)-[:HAS_WRITTEN]->(bk3)<br />
+                    return au,bk1,bk2,bk3,ct<br /> </code
+                  ><br />
+                  <img src="/img/multi.jpg" />
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Update/Delete the properties</h2>
+                <p>
+                  Now, lets say we want to add few properties to the HAS_WRITTEN
+                  relationship between two specific nodes. We will first
+                  identitfy those two nodes through labels and properties (or
+                  ID) like this:
+                  <code class="language-text">
+                    match(au:Author)<-[rel]->(node:Book {title:"Leadership"})
+                    where ID(au) = 10 return au, node, rel
+                  </code>
+                </p>
+                <p>
+                  Then add the set clause to it.
+                  <code class="language-text"
+                    >match(au:Author)<-[rel]->(node:Book {title:"Leadership"})
+                    where ID(au) = 10
+                    <strong>rel.percent = "70%"</strong> return au, node,
+                    rel</code
+                  >.
+                </p>
+                <p>
+                  And this is how we remove the properties
+                  <code class="language-text">
+                    match(au:Author)<-[rel]->(node:Book {title:"Leadership"})
+                    where ID(au) = 10 remove rel.percent return au, node,
+                    rel</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Multiple Relationships</h2>
+                <p>
+                  You can create multiple relationships through a single command
+                  as below.<br />
+                  <code class="language-text">
+                    create (au:Author{firstName: "Mathew", lastName: "Walker",
+                    born: 1972}), (bk:Book{title: "Why we sleep", publisher:
+                    "Allen", published: 2017}), (ct:City{City: "Berkeley",
+                    state: "CA", Country: "US"})
+                    <br />create (ct)<-[:LIVES_IN]-(au)-[:HAS_WRITTEN]->(bk)
+                    <br />return au,bk<br /> </code
+                  ><br />
                 </p>
               </div>
             </article>

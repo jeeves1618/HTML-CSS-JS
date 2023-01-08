@@ -7,6 +7,10 @@ body {
 a {
   text-decoration: none;
 }
+
+img {
+  contain: size;
+}
 .language-text {
   font-family: "Courier New", Courier, monospace;
   background-color: rgb(44, 41, 38);
