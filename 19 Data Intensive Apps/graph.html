@@ -664,8 +664,8 @@
                 <h2 class="content">Nodes with Edges</h2>
                 <p>
                   We have an Author node in relationship with a Book node here.
-                  The nodes cannot be deleted without taking care of the
-                  relationship. Because, if you delete the node, the
+                  Such nodes with relationships cannot be deleted without taking
+                  care of the relationship. Because, if you delete the node, the
                   relationships will be hanging in the air.
                   <img src="img/bill.jpg" /><br />
 
@@ -714,6 +714,151 @@
                   We can also use detach delete to do the same.<br />
                   <code class="language-text">
                     match (anynode) detach delete anynode
+                  </code>
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Unique Constraint</h2>
+                <p>
+                  In Neo4j, we can have unique constraints in Node only. We
+                  can't have unique constraints on relationships.
+                </p>
+
+                <p>
+                  <code class="language-text">
+                    create constraint unique_author for (au:Author)
+                    require(au.firstName, au.lastName) is unique
+                  </code>
+                </p>
+                <p>
+                  If you try creating an author with same first and last names,
+                  you will get this error
+                  <code
+                    >Node(0) already exists with label `Author` and properties
+                    `firstName` = 'Bill', `lastName` = 'Bryson'</code
+                  >. But the unique constaint is not applicable to null values.
+                  You can create as many nodes with null names as you want.
+                </p>
+                <p>
+                  If we want to create a constraint that is a combination of
+                  unique and not null,called
+                  <strong>node key constraint</strong>, it can be done as below.
+                </p>
+                <p>
+                  <code class="language-text">
+                    create constraint town_key for (tw:Towns)
+                    require(tw.zipCode) is node key
+                  </code>
+                  will result in the error
+                  <code
+                    >Node(10) with label `Towns` must have the property
+                    `zipCode`</code
+                  >
+                  if violated
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Property Existence</h2>
+                <p>
+                  If your project requires that the nodes should be created with
+                  specific propert always, then you can create a constraint as
+                  below.
+                </p>
+                <p>
+                  <code class="language-text">
+                    create constraint born_is_must for (au:Author) require
+                    au.born is not null
+                  </code>
+                </p>
+                <p>
+                  If you try creating an author with the born property, you will
+                  get this error
+                  <code
+                    >Node(4) with label `Author` must have the property
+                    `born`</code
+                  >. More on the syntax is available
+                  <a
+                    href="https://neo4j.com/docs/cypher-manual/current/constraints/syntax/"
+                    target="_blank"
+                    >here
+                  </a>
+                </p>
+                <p>
+                  We can create property existence constraint on relationship as
+                  well.
+                  <code class="language-text"
+                    >create constraint on_relationship for
+                    ()-[rel:IS_LIVING]->() require rel.forNoOfYears is not
+                    null</code
+                  >
+                </p>
+                <p>
+                  This will result in the error
+                  <code
+                    >Relationship(3) with type `IS_LIVING` must have the
+                    property `forNoOfYears`</code
+                  >
+                  if we attempt to create the relationship without that property
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Manipulating Constraints</h2>
+
+                <p>
+                  <code class="language-text"> show constraint </code> will list
+                  down all the constraints in a database. Lists constraints will
+                  have the name, id, type etc..
+                </p>
+                <p>
+                  If you want to delete a constraint, you can use the name as
+                  below
+                  <code class="language-text">
+                    drop constraint on_relationship</code
+                  >
+                </p>
+                <p>
+                  If you want to limit the number of nodes and order them,
+                  <code class="language-text">
+                    match(au:Author) return au order by au.firstName desc skip 0
+                    limit 5</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">String Manipulation</h2>
+
+                <p>
+                  <code class="language-text">
+                    match (bk:Book) where bk.title contains 'Hero' return bk
+                  </code>
+                  will list down all the books where the title contains the
+                  string Hero. Please note the string comparision is case
+                  sensitive. The
+                  <code class="language-text"> contains </code> can be replaced
+                  with <code class="language-text"> starts with </code> as well.
+                </p>
+                <p>
+                  To address the case descrepancy, we can use the function
+                  toLower or toUpper.
+                  <code class="language-text">
+                    match (bk:Book) where toUpper(bk.title) contains
+                    toUpper('Hero') return bk
                   </code>
                 </p>
               </div>

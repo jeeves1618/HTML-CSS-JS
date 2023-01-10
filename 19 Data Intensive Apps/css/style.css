@@ -165,6 +165,7 @@ main h1 {
 #mongo-file,
 #rdbms-tile,
 #CSS-tile,
+#spring-tile,
 #graph-tile,
 #stack-tile,
 #tree-tile,
@@ -184,6 +185,7 @@ main h1 {
 #mongo-file:hover,
 #rdbms-tile:hover,
 #CSS-tile:hover,
+#spring-tile:hover,
 #graph-tile:hover,
 #stack-tile:hover,
 #tree-tile:hover,
@@ -213,6 +215,11 @@ main h1 {
 }
 #CSS-tile {
   background: url("../img/css_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#spring-tile {
+  background: url("../img/spring_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -265,6 +272,7 @@ main h1 {
 #mongo-file span,
 #rdbms-tile span,
 #CSS-tile span,
+#spring-tile span,
 #graph-tile span,
 #stack-tile span,
 #tree-tile span,
@@ -520,6 +528,7 @@ main h1 {
   #mongo-file,
   #rdbms-tile,
   #CSS-tile,
+  #spring-tile,
   #graph-tile,
   #stack-tile,
   #tree-tile,
@@ -695,6 +704,7 @@ main h1 {
   #mongo-file,
   #rdbms-tile,
   #CSS-tile,
+  #spring-tile,
   #graph-tile,
   #stack-tile,
   #tree-tile,
