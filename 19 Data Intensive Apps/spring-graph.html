@@ -44,105 +44,77 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">First Things...</h2>
-                <p>
-                  Your client doesn't know what he wants. They know their
-                  business, but they do not know how to express their business
-                  through a website or mbile. Encourage your client not to cram
-                  information on the site. Find a way for the client to INVEST
-                  in the project. Have a single person responsible for
-                  decisions. Limit the number of revisions (or free revisions,
-                  if it is a paying job) upfront.
-                </p>
+                <h2 class="content">Maven Dependencies</h2>
+
+                <pre>
+&lt;dependency&gt;
+   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+   &lt;artifactId&gt;spring-boot-starter-data-neo4j&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+   &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;
+               </pre
+                >
+
+                Please do not use
+                <code>spring-boot-starter-data-jpa</code> along with
+                <code>spring-boot-starter-data-neo4j</code>. That will lead to
+                duplication definition.
               </div>
             </article>
           </li>
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Get Help!</h2>
+                <h2 class="content">Entity - JPA vs Neo4J</h2>
                 <p>
-                  Involve others when and if they are needed. You may not know
-                  all the technologies in the world. By involving others, you
-                  learn from them as well. Get an idea of what the client has
-                  right now. Talk to the existing users and understand how
-                  useful it is. Take help from the internet. Explore the
-                  examples of relevant sites to help the client figure out what
-                  they really want.
+                  Instead of annotating the class as
+                  <code>@Table(name = "authors")</code>, you should annotate as
+                  <code>@Node(labels = {"authors"})</code>
                 </p>
+                <p>
+                  <code>@Id</code> and <code>@GeneratedValue</code> annotations
+                  work the same. But, the
+                  <code>@Column(name="id")</code> becomes
+                  <code>@Property(name="id")</code>
+                </p>
+                <p>
+                  The RDBMS relationships of
+                  <code>@ManyToOne, @OneToOne</code> etc. will be annotated in
+                  Neo4J as <code>@Relationship</code>
+                </p>
+                A sample Neo4j entity class is available
+                <a
+                  href="https://github.com/jeeves1618/Spring-Learnings/blob/master/neo4j/src/main/java/net/phenotype/neo4j/grapDB/entity/Author.java"
+                  target="_blank"
+                  >here</a
+                >
               </div>
             </article>
           </li>
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Take a field trip</h2>
+                <h2 class="content">Defining relationships</h2>
                 <p>
-                  Yes... thats right. Understand the operations at a very
-                  granular level. Find out what the client wants to improve in
-                  their operations. Show them the different websites and ask
-                  what they like most in those websites. It could be color,
-                  fonts or anything. Ask the client who the single point of
-                  contact is. Get the commitment that the client will provide
-                  all required information.
+                  If you want to define an one to one or one to many
+                  relationships without properties, then it is as simple as
+                  adding the class of the target node in the originating class.
                 </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Design Overview</h2>
                 <p>
-                  Don't start coding. Do your wireframes through websites like
-                  https://balsamiq.com/. Once the wireframes are ready, get the
-                  colors added either through phtoshop or powerpoint. Get the
-                  combinations from https://coolors.co/palettes, if colors are
-                  not your forte. These wireframes and color combinations don't
-                  have to be accurate. But, it should pivot you in the right
-                  direction.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Learn the Building Blocks</h2>
-                <p>
-                  To be precise, learn the underlying tech first. They are the
-                  constants in the endless fluxes of frameworks thrown at us.
-                  The basic building blocks of web development twenty years back
-                  were
+                  It gets little complicated when you want to assigne properties
+                  to the relationships. You have to
                   <a
-                    href="https://jeeves1618.github.io/HTML-CSS-JS/01%20Basic%20HTML/"
+                    href="https://github.com/jeeves1618/Spring-Learnings/blob/master/neo4j/src/main/java/net/phenotype/neo4j/grapDB/entity/HasWrittenRelation.java"
                     target="_blank"
-                    >HTML, CSS</a
+                    >create a class</a
                   >
-                  and
-                  <a
-                    href="https://jeeves1618.github.io/HTML-CSS-JS/09%20JS/"
-                    target="_blank"
-                    >JavaScript</a
-                  >. And they are still the foundation over which bootstraps,
-                  ReachJS etc. are built. So, gain expertise in these three
-                  before flaunting your skills in the frameworks.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Set up the environment</h2>
-                <p>
-                  You need a code editor. My choice is Visual Studio Code. You
-                  can use Atoms, notepadd or whatever editor you like. Please
-                  ensure you are connected to the internet since we will CDN the
-                  content necessary for Bootstrap. Have a github account. It
-                  will help you to host the site in github pages. Chrome,
-                  because of its sophisticated developer tools, is my browser
-                  option.
+                  with the properties of the relationship. It should be
+                  annotated as <code>@RelationshipProperties</code> as opposed
+                  to <code>@Node</code> for nodes. This class should be iterated
+                  in a list in the originating class.
                 </p>
               </div>
             </article>
