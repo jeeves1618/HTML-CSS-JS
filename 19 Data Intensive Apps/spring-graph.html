@@ -189,19 +189,79 @@
               <div class="topic-item-content">
                 <h2 class="content">CQL in Spring Boot</h2>
                 <p>
-                  To write our own custom queries and pass values through host variables, we will use @Query annotation.
-                  <pre>
-<code class="language-text">@Query("match(bk:Book),(au:Author) where 
-  (bk)<-[:HAS_WRITTEN]-(au 
-    {firstName:$firstName,lastName:$lastName}
-    )
-   return bk")
-  public List<Book> getBooksByAuthor(String firstName, 
-      String lastName);</code
-></pre>
+                  To write our own custom queries and pass values through host
+                  variables, we will use @Query annotation.
+
+                  <code class="language-text"
+                    >@Query("match(bk:Book),(au:Author) where
+                    (bk)&lt;-[:HAS_WRITTEN]-(au
+                    {firstName:$firstName,lastName:$lastName} ) return bk")
+                    public List&lt;Book&gt; getBooksByAuthor(String firstName,
+                    String lastName);</code
+                  >
                 </p>
                 <p>
-                  Please note the $ can also be used for variables passed to WHERE condition. 
+                  Please note the $ can also be used for variables passed to
+                  WHERE condition.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Sorting and Paging</h2>
+                <p>
+                  Reference code is provided here.<br />
+
+                  <code class="language-text"
+                    >//Sorting <br />Sort sort =
+                    Sort.by(Sort.Direction.ASC,"title");<br />
+                    List&lt;Book&gt; bookList = bookRepository.findAll(sort);<br />
+                    System.out.println(bookList);<br />
+                    //Sorting with Pagenation<br />
+                    Pageable pageable = PageRequest.of(pageNo,
+                    pageSize,Sort.by(Sort.Direction.ASC,"title"));<br />
+                    return bookRepository.findAll(pageable).getContent();</code
+                  >
+                </p>
+                <p>
+                  You can sort by multiple attributes by adding them as comma
+                  separated values.
+                  <code>Sort.by(Sort.Direction.ASC,"title","publisher"))</code>
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Contains and Starts with</h2>
+                <p>
+                  Here is the method query for find by like. This works as a
+                  contains.<br />
+
+                  <code class="language-text"
+                    >public List&lt;Book&gt;
+                    findByTitle<strong>Like</strong>(String partialTitle);</code
+                  >
+                </p>
+                <p>
+                  If you have a scenario where you want starts with instead of
+                  contains, then you have to use the below method query.
+                  <code class="language-text"
+                    >public List&lt;Book&gt;
+                    findByTitle<strong>StartsWith</strong>(String
+                    partialTitle);</code
+                  >
+                </p>
+                <p>
+                  And, of course, ends with is also possible
+                  <code class="language-text"
+                    >public List&lt;Book&gt;
+                    findByTitle<strong>EndsWith</strong>(String
+                    partialTitle);</code
+                  >
                 </p>
               </div>
             </article>

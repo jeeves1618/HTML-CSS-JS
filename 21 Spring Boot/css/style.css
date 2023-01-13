@@ -165,7 +165,7 @@ main h1 {
 #mongo-file,
 #rdbms-tile,
 #CSS-tile,
-#spring-tile,
+#neo4j-tile,
 #graph-tile,
 #stack-tile,
 #tree-tile,
@@ -185,7 +185,7 @@ main h1 {
 #mongo-file:hover,
 #rdbms-tile:hover,
 #CSS-tile:hover,
-#spring-tile:hover,
+#neo4j-tile:hover,
 #graph-tile:hover,
 #stack-tile:hover,
 #tree-tile:hover,
@@ -218,8 +218,8 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#spring-tile {
-  background: url("../img/spring_tile.jpg") no-repeat;
+#neo4j-tile {
+  background: url("../img/neo4j_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -272,7 +272,7 @@ main h1 {
 #mongo-file span,
 #rdbms-tile span,
 #CSS-tile span,
-#spring-tile span,
+#neo4j-tile span,
 #graph-tile span,
 #stack-tile span,
 #tree-tile span,
@@ -528,7 +528,7 @@ main h1 {
   #mongo-file,
   #rdbms-tile,
   #CSS-tile,
-  #spring-tile,
+  #neo4j-tile,
   #graph-tile,
   #stack-tile,
   #tree-tile,
@@ -704,7 +704,7 @@ main h1 {
   #mongo-file,
   #rdbms-tile,
   #CSS-tile,
-  #spring-tile,
+  #neo4j-tile,
   #graph-tile,
   #stack-tile,
   #tree-tile,

@@ -268,6 +268,46 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
+                <h2 class="content">Aggregate Functions</h2>
+                <p>
+                  <code class="language-text"
+                    >match(bk:Book)<-[rel:HAS_WRITTEN]-(au:Author) return
+                    au.lastName, sum(bk.priceOfBook) as Price</code
+                  >
+                  will sum up the price of books grouped under an author's last
+                  name.
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(bk:Book)<-[rel:HAS_WRITTEN]-(au:Author) return
+                    au.lastName, avg(bk.priceOfBook) as Price</code
+                  >
+                  will find the average price of books grouped under an author's
+                  last name.
+                  <strong>and</strong> Reader.
+                </p>
+                <p>
+                  <code class="language-text"
+                    >match(bk:Book)<-[rel:HAS_WRITTEN]-(au:Author) return
+                    au.lastName, count(bk) as Price</code
+                  >
+                  will count the number of nodes under the label Book for each
+                  author.
+                </p>
+                <p>
+                  The count function can also count based on a property as
+                  below.
+                  <code class="language-text"
+                    >match(bk:Book)<-[rel:HAS_WRITTEN]-(au:Author) return
+                    au.lastName, count(bk.title) as Price</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
                 <h2 class="content">WHERE Condition</h2>
                 <p>
                   You can also use where clause to retrieve nodes from the
