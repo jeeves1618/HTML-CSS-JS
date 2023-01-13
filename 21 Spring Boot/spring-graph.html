@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neo4j with Spring Boot</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">Data Intensive Apps</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="index.html" id="sublogo">Data Intensive Apps</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Neo4j with Spring Boot</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Getting Started</h2>
+                <p>
+                  If you havent already,
+                  <a href="https://neo4j.com/download/" target="_blank"
+                    >download Neo4j Desktop</a
+                  >. A detailed documentation on how to install the software,
+                  create the database and start the same so that it is up and
+                  running in localhost:7474 is available
+                  <a
+                    href="https://neo4j.com/developer/neo4j-desktop/"
+                    target="_blank"
+                    >here</a
+                  >.
+                </p>
+                <p>
+                  The easiest way to set up a Spring Boot project is with the
+                  Spring Initializr at start.spring.io. More information is
+                  available
+                  <a
+                    href="https://neo4j.com/developer/spring-data-neo4j/"
+                    target="_blank"
+                    >here.</a
+                  >
+                </p>
+                <a
+                  href="https://github.com/jeeves1618/Spring-Learnings/tree/master/neo4j"
+                  target="_blank"
+                  >Sample project with basic CRUD operations is available
+                  here.</a
+                >
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Maven Dependencies</h2>
+
+                <pre>
+&lt;dependency&gt;
+   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+   &lt;artifactId&gt;spring-boot-starter-data-neo4j&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+   &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;
+               </pre
+                >
+
+                Please do not use
+                <code>spring-boot-starter-data-jpa</code> along with
+                <code>spring-boot-starter-data-neo4j</code>. That will lead to
+                duplication definition.
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Entity - JPA vs Neo4J</h2>
+                <p>
+                  Instead of annotating the class as
+                  <code>@Table(name = "authors")</code>, you should annotate as
+                  <code>@Node(labels = {"authors"})</code>
+                </p>
+                <p>
+                  <code>@Id</code> and <code>@GeneratedValue</code> annotations
+                  work the same. But, the
+                  <code>@Column(name="id")</code> becomes
+                  <code>@Property(name="id")</code>
+                </p>
+                <p>
+                  The RDBMS relationships of
+                  <code>@ManyToOne, @OneToOne</code> etc. will be annotated in
+                  Neo4J as <code>@Relationship</code>
+                </p>
+                A sample Neo4j entity class is available
+                <a
+                  href="https://github.com/jeeves1618/Spring-Learnings/blob/master/neo4j/src/main/java/net/phenotype/neo4j/grapDB/entity/Author.java"
+                  target="_blank"
+                  >here</a
+                >
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Defining relationships</h2>
+                <p>
+                  If you want to define an one to one or one to many
+                  relationships without properties, then it is as simple as
+                  adding the class of the target node in the originating class.
+                </p>
+                <p>
+                  It gets little complicated when you want to assigne properties
+                  to the relationships. You have to
+                  <a
+                    href="https://github.com/jeeves1618/Spring-Learnings/blob/master/neo4j/src/main/java/net/phenotype/neo4j/grapDB/entity/HasWrittenRelation.java"
+                    target="_blank"
+                    >create a class</a
+                  >
+                  with the properties of the relationship. It should be
+                  annotated as <code>@RelationshipProperties</code> as opposed
+                  to <code>@Node</code> for nodes. This class should be iterated
+                  in a list in the
+                  <a
+                    href="https://github.com/jeeves1618/Spring-Learnings/blob/master/neo4j/src/main/java/net/phenotype/neo4j/grapDB/entity/Author.java"
+                    target="_blank"
+                    >originating class.</a
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
