@@ -160,6 +160,52 @@
               </div>
             </article>
           </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Under the hood</h2>
+                <p>
+                  At times, we may want to know what kind of Cypher Queries
+                  actually get executed in the background by Neo4j. To find that
+                  out, add a logger in the properties file as
+                  <code>logging.level.org.springframework.data.neo4j=DEBUG</code
+                  >.
+                </p>
+                <p>
+                  This will list down the queries and the host variables in the
+                  console.
+                </p>
+                <p>
+                  The method queries provided by Neo4j will work for most of the
+                  simple CRUD operations and we can view those queries in the
+                  abovementioned logs. But, we may want data-neo4j to execute
+                  our custom queries to handled sophisticated scenarios.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">CQL in Spring Boot</h2>
+                <p>
+                  To write our own custom queries and pass values through host variables, we will use @Query annotation.
+                  <pre>
+<code class="language-text">@Query("match(bk:Book),(au:Author) where 
+  (bk)<-[:HAS_WRITTEN]-(au 
+    {firstName:$firstName,lastName:$lastName}
+    )
+   return bk")
+  public List<Book> getBooksByAuthor(String firstName, 
+      String lastName);</code
+></pre>
+                </p>
+                <p>
+                  Please note the $ can also be used for variables passed to WHERE condition. 
+                </p>
+              </div>
+            </article>
+          </li>
         </ul>
       </section>
     </main>
