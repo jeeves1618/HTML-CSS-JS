@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 and Beyond</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">JavaScript</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="index.html" id="sublogo">Web Development with HTML and CSS</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>ES6 and Beyond</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Let and Const</h2>
+                <p>
+                  Prior to ES6, we were declaring variables using
+                  <span class="js-text">var</span>. It is scoped by function.
+                  For instance if you declare a variable using
+                  <span class="js-text">var</span> inside a for loop within a
+                  function, that variable will be accessible ouside the loop
+                  within that function.
+                </p>
+                <p>
+                  ES6 streamlined it better with the key words
+                  <span class="js-text">let</span> and
+                  <span class="js-text">const</span> to assign variables scoped
+                  by block. So, if you have a variable defined within an if
+                  block, it will not available outside of it.
+                </p>
+                <p>
+                  So, when to use what? There is no right or wrong here. But,
+                  based on my readings, I have these thumb rules.
+                </p>
+                <ol>
+                  <li>Use <span class="js-text">const</span> by default.</li>
+                  <li>
+                    If you have to reassign values to that variable, which are
+                    also shared across many scopes, you may want to use
+                    <span class="js-text">var</span>. There are people who say
+                    <span class="js-text">var</span> shouldn't be used in ES6.
+                  </li>
+                  <li>
+                    For smaller scopes with reassignments, always use
+                    <span class="js-text">let</span>
+                  </li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Array Destructuring</h2>
+                <p>
+                  Destructuring is an efficient way to extract multiple values
+                  from the data that is stored in arrays or objects. In case of
+                  arrays, destructuring basically helps us to get the elements
+                  without iterating over the array. For instance,<br />
+                  <span class="js-text"
+                    >let team83 = [ "Kapil Dev", "Mohinder Amarnath", "Kirti
+                    Azad"]; <br />
+                    let [p,q,r] = team83;</span
+                  ><br />p, q and r will now have "Kapil Dev", "Mohinder
+                  Amarnath" and "Kirti Azad" assigned respectively. Array
+                  destructuring is based on the position of the elements. Here
+                  is an example of
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/arrayDestructuring.js"
+                    target="_blank"
+                    >array destructuring.</a
+                  >.
+                </p>
+                <p>
+                  A realistic example of Array Destructuring will be a function
+                  returning two values like
+                  <span class="js-text"
+                    >return [monthlyTakeHome, metaDataText];</span
+                  >
+                  and caller is interested in only the first value as in
+                  <span class="js-text"
+                    >const [monthlyTakeHome] = takeHomeCalc(272000);</span
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Object Destructuring</h2>
+
+                <p>
+                  Object destructuring is based on the name of the properties.
+                  You can use the name of the properties to destructure and get
+                  the values. Here is an example<br />
+                  <span class="js-text"
+                    >let sunseeker55evo = {<br />engine: "TWIN VOLVO PENTA
+                    D11-725 (2 X 725PS)",<br />
+                    performance: "32 KNOTS",};</span
+                  >
+                </p>
+                <p>
+                  <span class="js-text"
+                    >let { engine, performance } = sunseeker55evo;</span
+                  >
+                  will store the values from the object properties to the
+                  variables defined within curly braces. If you want the
+                  variable names to be different from the property names, you
+                  can use
+                  <span class="js-text"
+                    >let { engine: motor, performance: topSpeed } =
+                    sunseeker55evo;</span
+                  >. Now, motor and top speed will have the values of the engine
+                  and performance properties. An example of Objec Destructuring
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/objectDestructuring.js"
+                    target="_blank"
+                    >is available here</a
+                  >.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Revisiting Functions</h2>
+                <p>Function declaration Example:</p>
+                <ol class="js-text">
+                  <li>function loveList(name){</li>
+                  <li>const loveLog = `I love ${name}`;</li>
+                  <li>return loveLog;</li>
+                  <li>}</li>
+                  <li>console.log(loveList("Cricket")); //Calling</li>
+                </ol>
+
+                <p>Function Expression Example:</p>
+                <ol class="js-text">
+                  <li>let squaredNumber =</li>
+                  <li>function (number){</li>
+                  <li>return number * number</li>
+                  <li>}</li>
+                  <li>
+                    let squared = squatedNumber(10); //Calling the function
+                  </li>
+                </ol>
+                <p>
+                  Function Declarations can be called even before their
+                  definition in the code. So, Function Expression is used when
+                  we want the code to be tightly formatted.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Arrow functions in ES6</h2>
+                <p>
+                  Arrow function needs a return only if it has more than one
+                  line of code. Otherwise, it can be super simple as below.
+                </p>
+                <ol class="js-text">
+                  <li>let cubed = num => {</li>
+                  <li>console.log(num*num*num);</li>
+                  <li>};</li>
+                  <li>cubed(3);//Calling the arrow function</li>
+                </ol>
+                <p>
+                  If you want to pass multiple parameters, then the parameters
+                  should be enclosed within parentheses.
+                </p>
+                <ol class="js-text">
+                  <li>let cubed = (num1,num2,num3) => {</li>
+                  <li>console.log(num1*num2*num3); };</li>
+                  <li>cubed(3,4,5);//Calling the arrow function</li>
+                </ol>
+                <p>
+                  Arrow functions are used primarily for small pieces of
+                  repeatable code. If the only job of the arrow function is to
+                  return an value, then you can simplify it further as below.
+                </p>
+                <ol class="js-text">
+                  <li>let areaOfCircle = radius => 22/7*radius*radius;</li>
+
+                  <li>aresOfCircle(10); //Calling the above function.</li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Template Literals</h2>
+                <p>
+                  Without template literals, when you want to combine output
+                  from expressions with strings, you'd concatenate them using
+                  the addition operator +:
+                </p>
+                <ol class="js-text">
+                  <li>const a = 5;</li>
+                  <li>const b = 10;</li>
+                  <li>
+                    console.log("Fifteen is " + (a + b) + " and\nnot " + (2 * a
+                    + b) + ".");
+                  </li>
+                </ol>
+                <p>
+                  With template literals, you can avoid the concatenation
+                  operator — and improve the readability of your code — by using
+                  placeholders of the form
+                  <span class="js-text">${expression}</span> to perform
+                  substitutions for embedded expressions.
+                </p>
+                <ol class="js-text">
+                  <li>const a = 5;</li>
+                  <li>const b = 10;</li>
+                  <li>
+                    console.log(`Fifteen is ${a + b} and not ${2 * a + b}.`);
+                  </li>
+                </ol>
+                <p>
+                  Template literals coerce their expressions directly to
+                  strings, while addition coerces its operands to primitives
+                  first.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
