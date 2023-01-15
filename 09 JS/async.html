@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async JavaScript</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">JavaScript</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="index.html" id="sublogo">Web Development with HTML and CSS</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Asynchronous JavaScript</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">What is Asynchronous JS?</h2>
+                <p>
+                  Imagine having an alert statement in your program.
+                  <span class="js-text">alert("click on ok to proceed")</span
+                  >.This statement will block rest of the lines in your program
+                  from executing. Because, by default, JavaScript is going to
+                  execute the lines in synchronous fashion. And, synchronous
+                  code is blocking in nature.
+                </p>
+                <p>Now, imagine a piece of code like this.</p>
+                <p>
+                  <span class="js-text"
+                    >const a = "Synchronous processing is done!";<br />
+                    setTimeout(function () {<br />
+                    &nbsp;&nbsp;console.log("Asynchronous process is also
+                    done!");<br />
+                    }, 2000);<br />
+                    console.log(a);</span
+                  >
+                </p>
+                <p>
+                  Here, the line after setTimeout function will not wait for the
+                  setTimeout to complete. This is Asynchronous processing and it
+                  is non blocking in nature.
+                </p>
+                <p>
+                  The anonymous function passed as one of the two parameters to
+                  setTimeout is the <strong>callback function</strong>.
+                  Callback, as such, doesn't make the code asynchronous. Even in
+                  maps, we will use call back.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">AJAX - Ancient Way</h2>
+                <p>
+                  <strong>A</strong>synchronous <strong>J</strong>avascript
+                  <strong>A</strong>nd <strong>X</strong>ML is used to
+                  communicate with other web services in an asynchronous way.
+                  Though we have XML in the name of AJAX, no one uses XML these
+                  days. So, we will be doing AJAX calls with JSON.
+                </p>
+                <ol class="js-text">
+                  <li>const req = new XMLHttpRequest();</li>
+                  <li>
+                    req.open("GET", "https://restcountries.com<br />/v3.1/name/spain");
+                  </li>
+                  <li>req.send();</li>
+                  <li>req.addEventListener("load", function () {</li>
+                  <li>const [data] = JSON.parse(req.responseText);</li>
+                  <li>console.log(data);</li>
+                  <li>});</li>
+                </ol>
+                <p>
+                  We are doing few interesting things here. We are using
+                  XMLHttpRequest which is a built-in object in web browsers. It
+                  cannot be used in NodeJS. We are sending the request using
+                  <span class="js-text">req.send();</span>. If we log
+                  <span class="js-text">req.responseText</span> right after that
+                  it will be null. Because, send is an asynchronous call. We
+                  received the response as JSON in an array of one element. We
+                  convert that JSON into JavaScript object using parse function.
+                  Then we use Array destructuring to collect the object into a
+                  variable called data. We have created an anonymous callback
+                  function once the response is loaded and we listen to the
+                  response through addEventListener.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Problem with callback</h2>
+                <p>
+                  Let's we wrap the above code into a function,
+                  <span class="js-text">function getCounty (countryName)</span
+                  >,and invoke that in the following order.
+                </p>
+                <ol class="js-text">
+                  <li>getCounty("usa");</li>
+                  <li>getCounty("spain");</li>
+                  <li>getCounty("mexico");</li>
+                </ol>
+                <p>
+                  There is no guarantee that you will get the response in the
+                  same order. This is a problem when you invoke services which
+                  needs to be invoked in a consistent order.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
