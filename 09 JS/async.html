@@ -136,6 +136,70 @@
                   same order. This is a problem when you invoke services which
                   needs to be invoked in a consistent order.
                 </p>
+                <p>
+                  One way of mitigating that is to have nested callbacks. That
+                  is, you write the second service call inside the callback
+                  function of the first call, so on and so forth. This can get
+                  very complicated when you have to make multiple service calls.
+                </p>
+                <p>
+                  That is where Fetch and Promises from ES6 comes to our rescue.
+                  Instead of using
+                  <span class="js-text">XMLHttpRequest();</span>, if we use the
+                  fetch to get the response from the same URL, it will return a
+                  promise. A promise is nothing but a container for a future
+                  value. That is, JavaScript is promising that you will receive
+                  a value at an unknown time into the future.
+                </p>
+                <p>
+                  MDN docs defines the promise as an object representing the
+                  eventual completion or failure of an asynchronous operation.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Promises</h2>
+                <ol class="js-text">
+                  <li>
+                    const req =
+                    fetch("https://restcountries.com/v3.1/name/usa");
+                  </li>
+                  <li>console.log(req);</li>
+                </ol>
+                <p>
+                  Above fetch will kick start an async process and will return a
+                  promise in the pending status. Once, the async process is
+                  completed, the promise will go to the settled status. A
+                  settled promise can be either fulfilled or rejected.
+                </p>
+                <p>
+                  Promises are not going to eliminate callbacks. They will just
+                  prevent nested callbacks by chaining the promises more
+                  sequentially. Promises have the inbuilt 'then' method. We will
+                  define the callback functions within the then method.
+                </p>
+                <ol class="js-text">
+                  <li>const getCountryData = function (country) {</li>
+                  <li>
+                    fetch(`https://restcountries.com/v3.1/name/${country}`)
+                  </li>
+                  <li>.then(function (ajaxResponse) {</li>
+                  <li>return ajaxResponse.json();</li>
+                  <li>})</li>
+                  <li>.then(function (formatedData) {</li>
+                  <li>console.log(formatedData);</li>
+                  <li>});</li>
+                  <li>};</li>
+                </ol>
+                <p>
+                  ajaxResponse is a read stream and should be converted to JSON
+                  using .json method. But, the .json method itself is a async
+                  method returning a promise. That is why we have the second
+                  'then' to capture the formatted data.
+                </p>
               </div>
             </article>
           </li>

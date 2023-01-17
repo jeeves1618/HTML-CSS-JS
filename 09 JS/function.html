@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">JavaScript</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="index.html" id="sublogo">Web Development with HTML and CSS</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Functions</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">New in ES6</h2>
+                <p>
+                  Default parameters are allowed since ES6.
+                  <span class="js-text"
+                    >const calcAge = function (birth, now = 2023) {...}</span
+                  >
+                  can be called with only one argument as in
+                  <span class="js-text">calcAge(1990)</span>. Also, note that
+                  the default value can be an expression or use the previously
+                  defaulted parameter(s).
+                </p>
+                <ol class="js-text">
+                  <li>
+                    const calcAge = function (birth, now = 20 * 100) {...}
+                  </li>
+                  <li>
+                    const calcAge = function (birth = 1908, now = birth + 16)
+                    {...}
+                  </li>
+                </ol>
+                <p>
+                  Only thing is you cannot skip the arguments in the middle when
+                  the last argument needs to be overridden. You can pass
+                  undefined there.
+                </p>
+                <ol class="js-text">
+                  <li>const func = function (a, b, c=10) {...}</li>
+                  <li>func(10,undefined,20);</li>
+                </ol>
+                <p>You cannot omnit b and pass 10 and 20.</p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">First Class Functions</h2>
+                <p>
+                  Functions are just another type of objects in JavaScript. You
+                  can invoke functions on functions. Since, objects are values,
+                  functions are also values and can be stored in variables.
+                </p>
+                <ol class="js-text">
+                  <li>const greet = (person) => {</li>
+                  <li>console.log("hey " + person);</li>
+                  <li>};</li>
+                </ol>
+                <p>And you can pass this function to another function.</p>
+                <ol class="js-text">
+                  <li>const greeter = (fn, person) => {</li>
+                  <li>fn(person);</li>
+                  <li>};</li>
+                  <li>greeter(greet, "Universe");</li>
+                </ol>
+                <p>
+                  Here the greet function is passed as an argument to greeter
+                  function and, hence, the greet function will become the
+                  <strong>callback function</strong> and the greeter function
+                  will become the <strong>higher order function</strong>.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Returning Functions</h2>
+                <p>You can return a function like this.</p>
+                <ol class="js-text">
+                  <li>const fun = function (greet) {</li>
+                  <li>&nbsp;return function (name) {</li>
+                  <li>&nbsp;console.log(`${greet} ${name}`);</li>
+                  <li>&nbsp;};</li>
+                  <li>};</li>
+                  <li></li>
+                  <li>const greeter = fun("Hello");</li>
+                  <li>greeter("World");</li>
+                </ol>
+                <p>This will print Hello World</p>
+
+                <p>
+                  The awkward looking
+                  <span class="js-text">fun("Hello")("Universe");</span> will
+                  also work.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Call Method</h2>
+                <p>You can return a function like this.</p>
+                <ol class="js-text">
+                  <li>const fun = function (greet) {</li>
+                  <li>&nbsp;return function (name) {</li>
+                  <li>&nbsp;console.log(`${greet} ${name}`);</li>
+                  <li>&nbsp;};</li>
+                  <li>};</li>
+                  <li></li>
+                  <li>const greeter = fun("Hello");</li>
+                  <li>greeter("World");</li>
+                </ol>
+                <p>This will print Hello World</p>
+
+                <p>
+                  The awkward looking
+                  <span class="js-text">fun("Hello")("Universe");</span> will
+                  also work.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Apply Method</h2>
+                <p>You can return a function like this.</p>
+                <ol class="js-text">
+                  <li>const fun = function (greet) {</li>
+                  <li>&nbsp;return function (name) {</li>
+                  <li>&nbsp;console.log(`${greet} ${name}`);</li>
+                  <li>&nbsp;};</li>
+                  <li>};</li>
+                  <li></li>
+                  <li>const greeter = fun("Hello");</li>
+                  <li>greeter("World");</li>
+                </ol>
+                <p>This will print Hello World</p>
+
+                <p>
+                  The awkward looking
+                  <span class="js-text">fun("Hello")("Universe");</span> will
+                  also work.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Bind Method</h2>
+                <p>You can return a function like this.</p>
+                <ol class="js-text">
+                  <li>const fun = function (greet) {</li>
+                  <li>&nbsp;return function (name) {</li>
+                  <li>&nbsp;console.log(`${greet} ${name}`);</li>
+                  <li>&nbsp;};</li>
+                  <li>};</li>
+                  <li></li>
+                  <li>const greeter = fun("Hello");</li>
+                  <li>greeter("World");</li>
+                </ol>
+                <p>This will print Hello World</p>
+
+                <p>
+                  The awkward looking
+                  <span class="js-text">fun("Hello")("Universe");</span> will
+                  also work.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

@@ -164,7 +164,7 @@ main h1 {
 /* Overflow hidden will ensure that nothing comes out of the tile*/
 #mongo-file,
 #async-tile,
-#CSS-tile,
+#function-tile,
 #js-tile,
 #graph-tile,
 #stack-tile,
@@ -184,7 +184,7 @@ main h1 {
 }
 #mongo-file:hover,
 #async-tile:hover,
-#CSS-tile:hover,
+#function-tile:hover,
 #js-tile:hover,
 #graph-tile:hover,
 #stack-tile:hover,
@@ -213,8 +213,8 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#CSS-tile {
-  background: url("../img/css_tile.jpg") no-repeat;
+#function-tile {
+  background: url("../img/function_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -271,7 +271,7 @@ main h1 {
 }
 #mongo-file span,
 #async-tile span,
-#CSS-tile span,
+#function-tile span,
 #js-tile span,
 #graph-tile span,
 #stack-tile span,
@@ -527,7 +527,7 @@ main h1 {
 
   #mongo-file,
   #async-tile,
-  #CSS-tile,
+  #function-tile,
   #js-tile,
   #graph-tile,
   #stack-tile,
@@ -703,7 +703,7 @@ main h1 {
   /* Home page */
   #mongo-file,
   #async-tile,
-  #CSS-tile,
+  #function-tile,
   #js-tile,
   #graph-tile,
   #stack-tile,
