@@ -212,7 +212,6 @@
               </div>
             </article>
           </li>
-
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
@@ -243,7 +242,54 @@
                   <li>console.log(yacht116(12000));</li>
                   <li>console.log(yacht131(14000));</li>
                 </ol>
-                <p></p>
+                <p>
+                  This way of predefining part of the arguments to a function is
+                  called partial application.
+                </p>
+                <p>
+                  Bind method has one more very practical application. It is
+                  related to where the 'this' operator points to, when a
+                  function gets invoked on a click event from the DOM.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Binding DOM</h2>
+                <p>
+                  Let me add a new property and a method to the myYacht object.
+                </p>
+                <ol class="js-text">
+                  <li>myYacht.count = 1;</li>
+                  <li>myYacht.buyNewYacht = function () {</li>
+                  <li>&nbsp;&nbsp;this.count++;</li>
+                  <li>&nbsp;&nbsp;console.log(this.count);</li>
+                  <li>};</li>
+                  <li>
+                    document.querySelector(".button").addEventListener('click',myYacht.buyNewYacht)
+                  </li>
+                </ol>
+                <p>
+                  The above call back from addEventListener will not work.
+                  Because, the 'this' operator inside the buyNewYacht method
+                  will not point to myYacht object when the function is invoked
+                  from DOM. Instead, 'this' will point to DOM object and there
+                  will not be a count variable defined there.
+                </p>
+                <p>
+                  So, we have to force 'this' to point to myYacht object. We
+                  cannot use call or apply since they will execute the function
+                  right away. We do not want to execute the callback right away.
+                  We will use the bind method instead.
+                </p>
+                <ol class="js-text">
+                  <li>
+                    document.querySelector (".button").addEventListener('click',
+                    myYacht.buyNewYacht.bind(myYacht));
+                  </li>
+                </ol>
               </div>
             </article>
           </li>
