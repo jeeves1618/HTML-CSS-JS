@@ -127,7 +127,9 @@
                 <p>
                   The awkward looking
                   <span class="js-text">fun("Hello")("Universe");</span> will
-                  also work.
+                  also work. Remember fun("Hello") will return a function name
+                  and we are executing that function by passing a parameter
+                  through ("Universe").
                 </p>
               </div>
             </article>
@@ -135,75 +137,113 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Call Method</h2>
-                <p>You can return a function like this.</p>
+                <h2 class="content">Methods</h2>
+                <p>
+                  Functions defined within an object, like trip, are methods.
+                </p>
                 <ol class="js-text">
-                  <li>const fun = function (greet) {</li>
-                  <li>&nbsp;return function (name) {</li>
-                  <li>&nbsp;console.log(`${greet} ${name}`);</li>
-                  <li>&nbsp;};</li>
+                  <li>const myYacht = {</li>
+                  <li>&nbsp;model: "Sunseeker 95",</li>
+                  <li>&nbsp;trips: [],</li>
+                  <li>&nbsp;const trip(rangeInNM, fuelInL) {</li>
+                  <li>&nbsp;&nbsp;let tripAdvice = `${this.model} sailed ${</li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;rangeInNM * 1.852</li>
+                  <li>
+                    &nbsp;&nbsp;} Kilometers, consuming ${fuelInL} liters of
+                    Disel and providing a mileage of ${
+                  </li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;(rangeInNM * 1.852) / fuelInL</li>
+                  <li>&nbsp;&nbsp;} KMPL`;</li>
+                  <li>&nbsp;&nbsp;this.trips.push(tripAdvice);</li>
+                  <li>&nbsp;&nbsp;return tripAdvice;</li>
+                  <li>&nbsp;},</li>
                   <li>};</li>
                   <li></li>
-                  <li>const greeter = fun("Hello");</li>
-                  <li>greeter("World");</li>
+                  <li>console.log(myYacht.trip(1400, 12000));</li>
                 </ol>
-                <p>This will print Hello World</p>
-
-                <p>
-                  The awkward looking
-                  <span class="js-text">fun("Hello")("Universe");</span> will
-                  also work.
-                </p>
               </div>
             </article>
           </li>
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Apply Method</h2>
-                <p>You can return a function like this.</p>
+                <h2 class="content">Call and Apply</h2>
+                <p>
+                  Now, I add one more yacht to my collection. I don't want to
+                  rewrite the entire object again.
+                </p>
                 <ol class="js-text">
-                  <li>const fun = function (greet) {</li>
-                  <li>&nbsp;return function (name) {</li>
-                  <li>&nbsp;console.log(`${greet} ${name}`);</li>
-                  <li>&nbsp;};</li>
+                  <li>const myNewYacht = {</li>
+                  <li>&nbsp;model: "Sunseeker 116",</li>
+                  <li>&nbsp;trips: [],</li>
                   <li>};</li>
-                  <li></li>
-                  <li>const greeter = fun("Hello");</li>
-                  <li>greeter("World");</li>
                 </ol>
-                <p>This will print Hello World</p>
+                <p>
+                  So, I create another object for my new yacht with place holder
+                  for storing the yacht specific details. I want to reuse the
+                  method defined within myYacht.
+                </p>
 
                 <p>
-                  The awkward looking
-                  <span class="js-text">fun("Hello")("Universe");</span> will
-                  also work.
+                  If I just invoke the function
+                  <span class="js-text">console.log(trip(1600, 14450));</span>
+                  it will give me this error 'ReferenceError: trip is not
+                  defined'. So, we get the reference to the method from myYacht
+                  object using
+                  <span class="js-text">const trip = myYacht.trip;</span>. Then
+                  we invoke it by passing the new object and aruguments to the
+                  call function. This will point the this operator in the trip
+                  method to point to the myNewYacht object.<span class="js-text"
+                    >console.log(trip.call(myNewYacht, 1600, 14450));</span
+                  >
+                  You can also use apply instead of call, if you pack the
+                  arguments into an array.
+                </p>
+                <ol class="js-text">
+                  <li>const spec = [1600, 14450];</li>
+                  <li>console.log(trip.apply(myNewYacht, spec));</li>
+
+                  <li>};</li>
+                </ol>
+                <p>
+                  Also, once you have got the reference of the method once, you
+                  can use that same reference variable for multiple objects.
                 </p>
               </div>
             </article>
           </li>
+
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Bind Method</h2>
-                <p>You can return a function like this.</p>
-                <ol class="js-text">
-                  <li>const fun = function (greet) {</li>
-                  <li>&nbsp;return function (name) {</li>
-                  <li>&nbsp;console.log(`${greet} ${name}`);</li>
-                  <li>&nbsp;};</li>
-                  <li>};</li>
-                  <li></li>
-                  <li>const greeter = fun("Hello");</li>
-                  <li>greeter("World");</li>
-                </ol>
-                <p>This will print Hello World</p>
-
+                <h2 class="content">Binding a Method</h2>
                 <p>
-                  The awkward looking
-                  <span class="js-text">fun("Hello")("Universe");</span> will
-                  also work.
+                  Call and Apply invoke the method right away with the object
+                  passed as the parameter. But, bind will pass a function
+                  reference that you can use later to invoke the function.
                 </p>
+                <ol class="js-text">
+                  <li>const yacht095 = trip.bind(myYacht);</li>
+                  <li>const yacht116 = trip.bind(myNewYacht);</li>
+                  <li>const yacht131 = trip.bind(mySuperYacht);</li>
+                  <li>console.log(yacht095(2000, 10000));</li>
+                  <li>console.log(yacht116(2000, 12000));</li>
+                  <li>console.log(yacht131(2000, 14000));</li>
+                </ol>
+                <p>
+                  Well, the first parameter that I pass is always 2000. Yes, we
+                  don't have to repeat that, we can bind the object with the
+                  first parameter as 2000.
+                </p>
+                <ol class="js-text">
+                  <li>const yacht095 = trip.bind(myYacht, 2000);</li>
+                  <li>const yacht116 = trip.bind(myNewYacht, 2000);</li>
+                  <li>const yacht131 = trip.bind(mySuperYacht, 2000);</li>
+                  <li>console.log(yacht095(10000));</li>
+                  <li>console.log(yacht116(12000));</li>
+                  <li>console.log(yacht131(14000));</li>
+                </ol>
+                <p></p>
               </div>
             </article>
           </li>
