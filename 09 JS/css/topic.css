@@ -8,6 +8,11 @@ a {
   text-decoration: none;
 }
 
+ol {
+  list-style: none;
+  padding-left: 10px;
+}
+
 img {
   contain: size;
 }

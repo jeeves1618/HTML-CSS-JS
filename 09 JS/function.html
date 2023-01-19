@@ -268,7 +268,8 @@
                   <li>&nbsp;&nbsp;console.log(this.count);</li>
                   <li>};</li>
                   <li>
-                    document.querySelector(".button").addEventListener('click',myYacht.buyNewYacht)
+                    document.querySelector(".button"). addEventListener('click',
+                    myYacht.buyNewYacht)
                   </li>
                 </ol>
                 <p>
@@ -285,11 +286,185 @@
                   We will use the bind method instead.
                 </p>
                 <ol class="js-text">
-                  <li>
-                    document.querySelector (".button").addEventListener('click',
-                    myYacht.buyNewYacht.bind(myYacht));
-                  </li>
+                  <li>document.querySelector (".button").addEventListener</li>
+                  <li>('click', myYacht.buyNewYacht.bind(myYacht));</li>
                 </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Partial Application</h2>
+                <p>
+                  I want to create a function that takes the sale value and tax
+                  rate as inputs and computes the tax amount.
+                </p>
+                <ol class="js-text">
+                  <li>let compTax = (rate, value) => value * (1 + rate);</li>
+                </ol>
+                <p>
+                  We will invoke the function by passing two parameters.
+                  <span class="js-text">compTax(0.12, 1000)</span> Lets imagine
+                  the above function is much more complicated than above. So,
+                  when I create a function for VAT, where only change is rate
+                  should not be provided as input, but taken as a previously
+                  defined constant, we can bind the new function to the
+                  <span class="js-text">compTax</span> function. Remember, in
+                  all previous instances we bound the new function to a method
+                  defined within an object. Now, we are binding them to a stand
+                  alone function. So, in the place of providing an object, we
+                  will provide null.
+                </p>
+                <ol class="js-text">
+                  <li>let compVATax = compTax.bind(null, 0.25);</li>
+                </ol>
+                <p>
+                  Now, the <span class="js-text">compVATax</span> function will
+                  be invoked with only one parameter since the rate is
+                  predefined as in <span class="js-text">compVATax(1000)</span>.
+                  It is important that predefined argument(s) are in the
+                  beginning of the function that is being bound.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">IIFE</h2>
+                <p>
+                  If you want to write a function that should be invoked only
+                  once, you will use the immedietly invoked function
+                  expressions. For instance, the below function can not enforce
+                  the caller to not call again.
+                </p>
+                <ol class="js-text">
+                  <li>const runOnce = function () {</li>
+                  <li>&nbsp;&nbsp;console.log(</li>
+                  <li>&nbsp;&nbsp;"This should never run again!"</li>
+                  <li>&nbsp;&nbsp;);</li>
+                  <li>};</li>
+
+                  <li>runOnce();</li>
+                </ol>
+                <p>
+                  Now if I made it unavailable to other by not giving a name to
+                  invoke, JS will give this error - "SyntaxError: Function
+                  statements require a function name"
+                </p>
+                <ol class="js-text">
+                  <li>function () {</li>
+                  <li>&nbsp;&nbsp;console.log(</li>
+                  <li>&nbsp;&nbsp;"This won't work!"</li>
+                  <li>&nbsp;&nbsp;);</li>
+                  <li>};</li>
+                </ol>
+                <p>
+                  So, we will wrap it in () to make JS believe that it is an
+                  expression. But, now the problem is, it won't get invoked.
+                </p>
+                <ol class="js-text">
+                  <li>(function () {</li>
+                  <li>&nbsp;&nbsp;console.log(</li>
+                  <li>&nbsp;&nbsp;"This won't work!"</li>
+                  <li>&nbsp;&nbsp;);</li>
+                  <li>};)</li>
+                </ol>
+                <p>
+                  If you add an () next to the above function, you got yourself
+                  an iffy
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/iiefunctions.js"
+                    target="_blank"
+                    >(an example here).</a
+                  >
+                </p>
+                <ol class="js-text">
+                  <li>(function () {</li>
+                  <li>&nbsp;&nbsp;console.log(</li>
+                  <li>&nbsp;&nbsp;"This won't work!"</li>
+                  <li>&nbsp;&nbsp;);</li>
+                  <li>};)()</li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Closures</h2>
+                <p>
+                  Closure is an underlying JavaScript capability which gets
+                  invoked when a function returns another function. Once the
+                  parent function returns the child function, it goes out of
+                  execution context and code outside that function cannot use
+                  the variables defined inside the parent function.
+                </p>
+                <p>
+                  But, the child function returned by the parent function will
+                  continue to have access to the variable environment of the
+                  parent function. This is called closure.
+                </p>
+                <ol class="js-text">
+                  <li>const scoreEngineNext = function () {</li>
+                  <li>&nbsp;&nbsp;let player1 = null,</li>
+                  <li>&nbsp;&nbsp;player2 = null;</li>
+                  <li></li>
+                  <li>&nbsp;&nbsp;let player1Runs = 0;</li>
+                  <li>&nbsp;&nbsp;let player2Runs = 0;</li>
+                  <li></li>
+                  <li>
+                    &nbsp;&nbsp;function coreEngine(player, runsScoredInTheBall)
+                    {
+                  </li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;if (player1 === null) {</li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player1 =
+                    player;
+                  </li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} else if (player2 === null &&
+                    player1 !== player) {
+                  </li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;player2 =
+                    player;
+                  </li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                  <li></li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (player === player1) player1Runs
+                    = player1Runs + runsScoredInTheBall;
+                  </li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (player === player2) player2Runs
+                    = player2Runs + runsScoredInTheBall;
+                  </li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`${player1} Not Out
+                    ${player1Runs}`);
+                  </li>
+                  <li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`${player2} Not Out
+                    ${player2Runs}`);
+                  </li>
+                  <li>&nbsp;&nbsp;}</li>
+                  <li></li>
+                  <li>&nbsp;&nbsp;return coreEngine;</li>
+                  <li>};</li>
+                </ol>
+                <p>
+                  scoreEngineNext is the parent function here. coreEngine is
+                  created within and returned by the parent. coreEngine will
+                  have access to the scoreEngineNext's variable if it is invoked
+                  outside the function
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/closures.js"
+                    target="_blank"
+                    >(an example here)</a
+                  >
+                </p>
               </div>
             </article>
           </li>
