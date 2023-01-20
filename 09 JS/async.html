@@ -183,15 +183,17 @@
                 </p>
                 <ol class="js-text">
                   <li>const getCountryData = function (country) {</li>
+                  <li>&nbsp;&nbsp;fetch(`https://restcountries.com/</li>
+                  <li>&nbsp;&nbsp;v3.1/name/${country}`)</li>
+
+                  <li>&nbsp;&nbsp;.then(function (ajaxResponse) {</li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;return ajaxResponse.json();</li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;})</li>
                   <li>
-                    fetch(`https://restcountries.com/v3.1/name/${country}`)
+                    &nbsp;&nbsp;&nbsp;&nbsp;.then(function (formatedData) {
                   </li>
-                  <li>.then(function (ajaxResponse) {</li>
-                  <li>return ajaxResponse.json();</li>
-                  <li>})</li>
-                  <li>.then(function (formatedData) {</li>
-                  <li>console.log(formatedData);</li>
-                  <li>});</li>
+                  <li>&nbsp;&nbsp;&nbsp;&nbsp;console.log(formatedData);</li>
+                  <li>&nbsp;&nbsp;});</li>
                   <li>};</li>
                 </ol>
                 <p>
@@ -199,6 +201,76 @@
                   using .json method. But, the .json method itself is a async
                   method returning a promise. That is why we have the second
                   'then' to capture the formatted data.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Chaining the Promises</h2>
+                <p>
+                  At times you have to pass the data from one ajax response to
+                  the following fetch. This is results in a chain of fetching
+                  and handling the promises.
+                </p>
+                <p>
+                  Chaining the promises can get messy when we do multiple
+                  sequential calls. After a fetch, all you have is a streaming
+                  data which cannot be passed as parameter to the next fetch.
+                  So, we have to write the fetch in the then block of .json
+                  method. That creates a nesting. I do not yet have a way out
+                  it. Here is
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/chaining.js"
+                    target="_blank"
+                    >an example</a
+                  >.
+                </p>
+                <p>
+                  But, the above approach is better than not returning the
+                  promise of the second fetch and keep nesting under the then
+                  block of .json
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/chainingHell.js"
+                    target="_blank"
+                    >like this.</a
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Rejected Promises</h2>
+                <p>
+                  At times you have to pass the data from one ajax response to
+                  the following fetch. This is results in a chain of fetching
+                  and handling the promises.
+                </p>
+                <p>
+                  Chaining the promises can get messy when we do multiple
+                  sequential calls. After a fetch, all you have is a streaming
+                  data which cannot be passed as parameter to the next fetch.
+                  So, we have to write the fetch in the then block of .json
+                  method. That creates a nesting. I do not yet have a way out
+                  it. Here is
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/chaining.js"
+                    target="_blank"
+                    >an example</a
+                  >.
+                </p>
+                <p>
+                  But, the above approach is better than not returning the
+                  promise of the second fetch and keep nesting under the then
+                  block of .json
+                  <a
+                    href="https://github.com/jeeves1618/NodeJS/blob/master/02%20JS%20Refresher/chainingHell.js"
+                    target="_blank"
+                    >like this.</a
+                  >
                 </p>
               </div>
             </article>
