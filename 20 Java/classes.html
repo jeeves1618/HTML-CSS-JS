@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="refresher.html" id="logo">Refresher</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="refresher.html" id="sublogo">Java</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Classes</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Constructor Chaining</h2>
+                <p>
+                  Constructor chaining is when one constructor explicitly calls
+                  another overloaded constructor. Please remember, we can call a
+                  constructor only from another constructor. A constructor can
+                  be called using this() statement. We can pass arguments to the
+                  this() and this() statement should be first one in the calling
+                  constructor. Here is an example of
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/tree/master/Classes/src/Classes"
+                    target="_blank"
+                    >constructor chaining</a
+                  >.
+                </p>
+                <p>
+                  Constructor chaining is used when you want to default certain
+                  parameters during the creation of objects. myVwCar object
+                  created
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Classes/src/Classes/Car.java"
+                    target="_blank"
+                    >here</a
+                  >
+                  is an example.
+                </p>
+                <p>
+                  Now, within a constructor there are opinions on whether we
+                  should use
+                  <code>this.instanceVariable = constructorArgument;</code> or
+                  <code> this.setInstanceVariable(constructorArgument); </code>.
+                  The second approach makes sense if you want to do any
+                  validations on the argument passed.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Static Variables and Methods</h2>
+                <p>
+                  Static variables and methods are properties of the class. So,
+                  every instance of the class shares the same static variables.
+                  So, if changes are made to the static variables, they will be
+                  reflected across all instances. The static variables can be
+                  accessed through object reference variable as well. But, it is
+                  considered a best practice to access them through class name.
+                  Here is a
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Classes/src/Static/Main.java"
+                    target="_blank"
+                    >bad way of accessing them.</a
+                  >.
+                </p>
+                <p>
+                  Static methods cannot access the instance variables and
+                  methods directly. We will get an error
+                  <em
+                    >non-static variable this cannot be referenced from a static
+                    context</em
+                  >. So, static methods are used only in the scenarios where
+                  they do not need any data from
+                  <strong>'this'</strong> instance.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">POJO</h2>
+                <p>
+                  A plain old java object (or POJO) is a class that generally
+                  has instance fields and their getters and setters only. It
+                  does not have any other business functionality built within.
+                  POJOs are used to pass data between classes which house such
+                  business functionality.
+                </p>
+                <p>
+                  Many data base frameworks (like Spring JPA) uses POJO to read
+                  data from or write data to databases, files or streams. POJO
+                  used for interfacing with databases are called entities and
+                  may be annotated as such. It may also be called a bean or a
+                  Java bean. An example for simple POJO invocation is
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Classes/src/Pojo/Main.java"
+                    target="_blank"
+                    >here</a
+                  >.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Record</h2>
+                <p>
+                  Look at the amount of boiler plate code in the
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Classes/src/Pojo/Player.java"
+                    target="_blank"
+                    >player pojo class</a
+                  >. Java has an implicit POJO class called record type. To
+                  accomplish that create a record (instead of a class or
+                  interface, when creating a new .java file).
+                </p>
+                <p>
+                  The record is created with the key word record and it has ()
+                  next to the record name. Within that parantheses, provide the
+                  parameters you would have given in the all parameter
+                  constructor in the POJO class. it will look like this
+                  <code>
+                    public record Aussie(String name, String team, String
+                    position) { }
+                  </code>
+                  and can be invoked in the
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Classes/src/Record/Main.java"
+                    target="_blank"
+                    >same way as a plain POJO.</a
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

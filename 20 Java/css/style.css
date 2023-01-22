@@ -165,11 +165,11 @@ main h1 {
 #junit-tile,
 #mockito-tile,
 #collections-tile,
-#linked-tile,
-#stack-tile,
-#tree-tile,
-#graph-tile,
-#recur-tile,
+#classes-tile,
+#inheritance-tile,
+#poly-tile,
+#generic-tile,
+#refresher-tile,
 #sort-tile,
 #search-tile,
 #dynamic-tile,
@@ -184,11 +184,11 @@ main h1 {
 #junit-tile:hover,
 #mockito-tile:hover,
 #collections-tile:hover,
-#linked-tile:hover,
-#stack-tile:hover,
-#tree-tile:hover,
-#graph-tile:hover,
-#recur-tile:hover,
+#classes-tile:hover,
+#inheritance-tile:hover,
+#poly-tile:hover,
+#generic-tile:hover,
+#refresher-tile:hover,
 #sort-tile:hover,
 #search-tile:hover,
 #dynamic-tile:hover,
@@ -216,29 +216,29 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#linked-tile {
-  background: url("../img/linked_tile.jpg") no-repeat;
+#classes-tile {
+  background: url("../img/classes_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#stack-tile {
-  background: url("../img/stack_tile.jpg") no-repeat;
+#inheritance-tile {
+  background: url("../img/inheritance_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#tree-tile {
-  background: url("../img/tree_tile.jpg") no-repeat;
+#poly-tile {
+  background: url("../img/poly_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-#graph-tile {
-  background: url("../img/graph_tile.jpg") no-repeat;
+#generic-tile {
+  background: url("../img/generic_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#recur-tile {
-  background: url("../img/recur_tile.jpg") no-repeat;
+#refresher-tile {
+  background: url("../img/refresher_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -265,11 +265,11 @@ main h1 {
 #junit-tile span,
 #mockito-tile span,
 #collections-tile span,
-#linked-tile span,
-#stack-tile span,
-#tree-tile span,
-#graph-tile span,
-#recur-tile span,
+#classes-tile span,
+#inheritance-tile span,
+#poly-tile span,
+#generic-tile span,
+#refresher-tile span,
 #sort-tile span,
 #search-tile span,
 #dynamic-tile span,
@@ -520,11 +520,11 @@ main h1 {
   #junit-tile,
   #mockito-tile,
   #collections-tile,
-  #linked-tile,
-  #stack-tile,
-  #tree-tile,
-  #graph-tile,
-  #recur-tile,
+  #classes-tile,
+  #inheritance-tile,
+  #poly-tile,
+  #generic-tile,
+  #refresher-tile,
   #sort-tile,
   #search-tile,
   #dynamic-tile,
@@ -695,11 +695,11 @@ main h1 {
   #junit-tile,
   #mockito-tile,
   #collections-tile,
-  #linked-tile,
-  #stack-tile,
-  #tree-tile,
-  #graph-tile,
-  #recur-tile,
+  #classes-tile,
+  #inheritance-tile,
+  #poly-tile,
+  #generic-tile,
+  #refresher-tile,
   #sort-tile,
   #search-tile,
   #dynamic-tile,
