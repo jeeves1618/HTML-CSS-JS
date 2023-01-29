@@ -7,10 +7,23 @@ body {
 a {
   text-decoration: none;
 }
+
+ul,
+ol {
+  list-style: none;
+}
 .language-text {
   font-family: "Courier New", Courier, monospace;
   background-color: rgb(44, 41, 38);
   color: white;
+}
+
+.java-text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: smaller;
+  line-height: 1.3rem;
+  background-color: white;
+  color: black;
 }
 
 #main-header {

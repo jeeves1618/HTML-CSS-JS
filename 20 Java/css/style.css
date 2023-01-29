@@ -61,6 +61,8 @@ body {
   text-align: center;
 }
 
+main a:hover,
+main a:focus,
 .navbar-brand a:hover,
 .navbar-brand a:focus {
   text-decoration: none;
@@ -172,8 +174,8 @@ main h1 {
 #refresher-tile,
 #sort-tile,
 #search-tile,
-#dynamic-tile,
-#greedy-tile {
+#deploy-tile,
+#heroku-tile {
   height: 250px;
   width: 100%;
   margin-bottom: 15px;
@@ -191,8 +193,8 @@ main h1 {
 #refresher-tile:hover,
 #sort-tile:hover,
 #search-tile:hover,
-#dynamic-tile:hover,
-#greedy-tile:hover {
+#deploy-tile:hover,
+#heroku-tile:hover {
   box-shadow: 0 1px 15px 1px #3f0c1f;
 }
 
@@ -252,13 +254,13 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#dynamic-tile {
-  background: url("../img/dynamic_tile.jpg") no-repeat;
+#deploy-tile {
+  background: url("../img/heroku_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#greedy-tile {
-  background: url("../img/greedy_tile.jpg") no-repeat;
+#heroku-tile {
+  background: url("../img/heroku_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -272,8 +274,8 @@ main h1 {
 #refresher-tile span,
 #sort-tile span,
 #search-tile span,
-#dynamic-tile span,
-#greedy-tile span {
+#deploy-tile span,
+#heroku-tile span {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -527,8 +529,8 @@ main h1 {
   #refresher-tile,
   #sort-tile,
   #search-tile,
-  #dynamic-tile,
-  #greedy-tile {
+  #deploy-tile,
+  #heroku-tile {
     width: 360px;
     margin: 0 auto 15px;
   }
@@ -702,8 +704,8 @@ main h1 {
   #refresher-tile,
   #sort-tile,
   #search-tile,
-  #dynamic-tile,
-  #greedy-tile {
+  #deploy-tile,
+  #heroku-tile {
     width: 280px;
     margin: 0 auto 15px;
   }
