@@ -164,17 +164,17 @@ main h1 {
 }
 
 /* Overflow hidden will ensure that nothing comes out of the tile*/
-#junit-tile,
-#mockito-tile,
-#collections-tile,
-#classes-tile,
-#inheritance-tile,
-#poly-tile,
-#generic-tile,
-#refresher-tile,
+#network-tile,
+#data-tile,
+#ad-tile,
+#monitor-tile,
+#security-tile,
+#dr-tile,
+#migrate-tile,
+#basics-tile,
 #sort-tile,
 #search-tile,
-#deploy-tile,
+#compute-tile,
 #heroku-tile {
   height: 250px;
   width: 100%;
@@ -183,17 +183,17 @@ main h1 {
   background-color: rgb(44, 41, 38);
   overflow: hidden;
 }
-#junit-tile:hover,
-#mockito-tile:hover,
-#collections-tile:hover,
-#classes-tile:hover,
-#inheritance-tile:hover,
-#poly-tile:hover,
-#generic-tile:hover,
-#refresher-tile:hover,
+#network-tile:hover,
+#data-tile:hover,
+#ad-tile:hover,
+#monitor-tile:hover,
+#security-tile:hover,
+#dr-tile:hover,
+#migrate-tile:hover,
+#basics-tile:hover,
 #sort-tile:hover,
 #search-tile:hover,
-#deploy-tile:hover,
+#compute-tile:hover,
 #heroku-tile:hover {
   box-shadow: 0 1px 15px 1px #3f0c1f;
 }
@@ -203,43 +203,43 @@ main h1 {
   vertical-align: bottom;
 }
 
-#junit-tile {
-  background: url("../img/junit_tile.jpg") no-repeat;
+#network-tile {
+  background: url("../img/network_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#mockito-tile {
-  background: url("../img/mock_tile.jpg") no-repeat;
+#data-tile {
+  background: url("../img/data_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#collections-tile {
-  background: url("../img/collection_tile.jpg") no-repeat;
+#ad-tile {
+  background: url("../img/ad_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#classes-tile {
+#monitor-tile {
   background: url("../img/classes_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#inheritance-tile {
+#security-tile {
   background: url("../img/inheritance_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#poly-tile {
+#dr-tile {
   background: url("../img/poly_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-#generic-tile {
+#migrate-tile {
   background: url("../img/generic_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#refresher-tile {
+#basics-tile {
   background: url("../img/refresher_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
@@ -254,7 +254,7 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#deploy-tile {
+#compute-tile {
   background: url("../img/heroku_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
@@ -264,17 +264,17 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#junit-tile span,
-#mockito-tile span,
-#collections-tile span,
-#classes-tile span,
-#inheritance-tile span,
-#poly-tile span,
-#generic-tile span,
-#refresher-tile span,
+#network-tile span,
+#data-tile span,
+#ad-tile span,
+#monitor-tile span,
+#security-tile span,
+#dr-tile span,
+#migrate-tile span,
+#basics-tile span,
 #sort-tile span,
 #search-tile span,
-#deploy-tile span,
+#compute-tile span,
 #heroku-tile span {
   position: absolute;
   bottom: 0;
@@ -519,17 +519,17 @@ main h1 {
     text-transform: uppercase;
   }
 
-  #junit-tile,
-  #mockito-tile,
-  #collections-tile,
-  #classes-tile,
-  #inheritance-tile,
-  #poly-tile,
-  #generic-tile,
-  #refresher-tile,
+  #network-tile,
+  #data-tile,
+  #ad-tile,
+  #monitor-tile,
+  #security-tile,
+  #dr-tile,
+  #migrate-tile,
+  #basics-tile,
   #sort-tile,
   #search-tile,
-  #deploy-tile,
+  #compute-tile,
   #heroku-tile {
     width: 360px;
     margin: 0 auto 15px;
@@ -694,17 +694,17 @@ main h1 {
   }
   /* End Footer */
   /* Home page */
-  #junit-tile,
-  #mockito-tile,
-  #collections-tile,
-  #classes-tile,
-  #inheritance-tile,
-  #poly-tile,
-  #generic-tile,
-  #refresher-tile,
+  #network-tile,
+  #data-tile,
+  #ad-tile,
+  #monitor-tile,
+  #security-tile,
+  #dr-tile,
+  #migrate-tile,
+  #basics-tile,
   #sort-tile,
   #search-tile,
-  #deploy-tile,
+  #compute-tile,
   #heroku-tile {
     width: 280px;
     margin: 0 auto 15px;

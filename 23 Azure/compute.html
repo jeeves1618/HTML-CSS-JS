@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compute</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">Azure</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="refresher.html" id="sublogo">Compute</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Compute</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Azure Compute</h2>
+                <p>
+                  Compute is a set of cloud services for hosting and running our
+                  applications. It is with the compute services that we upload
+                  our code and run it. It offers various levels and controls and
+                  flexibility.
+                </p>
+                <p>There are four types of compute services.</p>
+                <ol>
+                  <li>1. Virtual Machines</li>
+                  <li>2. App Services</li>
+                  <li>3. Azure Kubernetes Service (AKS)</li>
+                  <li>4. Azure Functions</li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Virtual Machines (VM)</h2>
+                <p>
+                  A virtual (=not real) server is a program running a physical
+                  (=real) server. It allows creation of new servers extremely
+                  fast because we are not provisioning any new hardware
+                  resources. It is created on the existing resources of the
+                  physical server. From the user's perspective, it is regular
+                  server that you can connect through SSH etc..
+                </p>
+                <p>
+                  An Azure virtual machine is an unmanaged service. That is
+                  because Azure doesn't manage what is happening inside the
+                  virtual machine. Azure doesn't care about the kind of OS,
+                  presence of anti virus etc. They are our responsibilities and
+                  that makes VMs a classic Infrastructure as a Service.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">VM Architecture</h2>
+                <img src="./img/Architecture.jpg" />
+                <p>
+                  The pysical layer is managed by Azure with no control or
+                  access to us, whereas the virtual layer will be managed by us
+                  with complete control and access. Please note that here Azure
+                  provides just the Infrastructure and this set up is a classic
+                  Infrastructure as a Service.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Creating VMs</h2>
+                <p>
+                  We can create a VM in Azure by selecting the location, image
+                  (OS and other pre installed softwares) and the compute size.
+                </p>
+                <p>
+                  Before creating a VM, we can check the pricing
+                  <a
+                    href="https://azure.microsoft.com/en-in/pricing/calculator/"
+                    target="_blank"
+                    >here</a
+                  >. Once we have selected the region, OS and instance, search
+                  for Virtual Machine in the portal. Click on the add button to
+                  fill up the form for provisioning the VM. If we select a
+                  Windows VM, we will be asked to create an administrator
+                  account within the VM.
+                </p>
+                <p>
+                  Once you submit the form, Azure will start a deployment task
+                  to create the VM. And you will see four more VMs will be
+                  created. These addional resources are created for network
+                  interfaces, security groups, IP addresses and virtual
+                  networks. Once the VM is created, you can connect to that VM
+                  through SSH, RDP or Bastion. Usually we use RDP for Windows
+                  and SSH for Linux.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Connecting to VMs</h2>
+                <p>
+                  If we create a VM with Windows VM, we can connect using RDP.
+                  We will have to download the RDP file. Executing the RDP file
+                  will give the option to connect. Clicking on connect will ask
+                  for credentials. Provide the user name as
+                  ./AzureAccountUserName. This will connect you to a Windows
+                  machine where you can install software, browse website etc.
+                </p>
+                <p>
+                  We can close the virtual machine if we are not working on it.
+                  But, closing it will not stop the server. We can stop the
+                  server through the portal. But, stopping the server will not
+                  stop the payments completely because of implicit usage of
+                  resources. So, if you want to save money, please go ahead and
+                  delete the resource group completely.
+                </p>
+                <p>
+                  The real cost of the VM includes the cost of VM, the cost of
+                  <a
+                    href="https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"
+                    target="_blank"
+                    >disk</a
+                  >, the cost of the IP through which the VM is exposed and the
+                  cost of the storage where the image of the VM is stored. Here
+                  is the cost distribution for a small VM.
+                </p>
+                <img src="./img/VMCost.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Reducing Cost</h2>
+                <p>
+                  If you want to reduce the cost during the development phase
+                  without deleting and recreating the resource group, you can
+                  opt for <strong>Auto Shutdown</strong> to automatically shut
+                  down the machine when not needed. The storage and the IP costs
+                  will still be incurred. Still you can save more than 50% of VM
+                  cost.
+                </p>
+                <p>
+                  Upfront payment using <strong>Reserved Instances</strong> (for
+                  1 or 3 years) will help reducing the cost. Another way of
+                  reducing cost is to use <strong>Spot Instances</strong>. We
+                  can utilize the unused capacity in Azure with the risk of
+                  getting evicted any moment. For non critical and non
+                  continuous dev applications, spot instances can provide upto
+                  90% discount. Your discount will be based on the eviction type
+                  and policy choices.
+                </p>
+                <p>
+                  Fourth way of reducing cost is
+                  <strong>Disk Optimization.</strong> For many VMs, the default
+                  disk is Premium SSD, which is the most expensive option. If
+                  our app is not very data intensive, we can go for standard
+                  SSD.
+                </p>
+                <p>
+                  Always select the right VMs. The CPU shouldn't be under
+                  utilized. Also, we should select Linux over Windows whenever
+                  possible. For non prod applications, check the price in
+                  cheaper regions since latency is not a challenge.
+                </p>
+                <p>
+                  Focussing on cost will have a trade off on the availability of
+                  VMs. We will discuss availability in the next section.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Availability</h2>
+                <p>
+                  <a
+                    href="https://azure.microsoft.com/en-us/support/legal/sla/virtual-machines/v1_9/"
+                    target="_blank"
+                    >The SLA</a
+                  >
+                  for virtual machines is dependent on the number of instances
+                  and the choice of the disk. As you can see in the link, there
+                  are five SLAs.
+                </p>
+                <p>
+                  Almost everything in cloud costs money. There are few pricing
+                  models we need to be aware. One is pricing
+                  <strong>per resource</strong>. For instance, we can have a VM
+                  and pay for that VM irrespective of usage. We can also pay
+                  <strong>per consumption</strong>. Another way of paying is
+                  <strong>reserving</strong> a resource for a specified duration
+                  and paying upfront.
+                </p>
+                <p>
+                  Always check the resource's cost before provisioning. You can
+                  look for const effective alternatives like reservations first.
+                  We can check the cost of services using
+                  <a
+                    href="https://azure.microsoft.com/en-in/pricing/calculator/"
+                    target="_blank"
+                    >the pricing calculator.</a
+                  >
+                </p>
+                <p>
+                  We can also set up the billing scope to ensure that we are
+                  within budget. Search for "Cost Management + Billing" in the
+                  portal. Under cost management, we should select budgets and
+                  create a new budget, threshold and notification.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
