@@ -222,29 +222,67 @@
                   are five SLAs.
                 </p>
                 <p>
-                  Almost everything in cloud costs money. There are few pricing
-                  models we need to be aware. One is pricing
-                  <strong>per resource</strong>. For instance, we can have a VM
-                  and pay for that VM irrespective of usage. We can also pay
-                  <strong>per consumption</strong>. Another way of paying is
-                  <strong>reserving</strong> a resource for a specified duration
-                  and paying upfront.
+                  We have to understand four important availability concepts in
+                  Azure in order build high availability applications. They are
+                  fault domain, update domain, availability set and availability
+                  zone. Leveraging these concepts will help in increasing
+                  availability without addional cost.
                 </p>
                 <p>
-                  Always check the resource's cost before provisioning. You can
-                  look for const effective alternatives like reservations first.
-                  We can check the cost of services using
-                  <a
-                    href="https://azure.microsoft.com/en-in/pricing/calculator/"
-                    target="_blank"
-                    >the pricing calculator.</a
-                  >
+                  A fault domain is the group of physical hardware that share a
+                  common power source, network switch etc. and can go down as
+                  whole if there are power or network interruptions. An update
+                  domain is the Logical group of physical hardware that can
+                  undergo maintenance and be rebooted at the same time.
+                  Maintenance is done by Azure at its own discretion.
                 </p>
                 <p>
-                  We can also set up the billing scope to ensure that we are
-                  within budget. Search for "Cost Management + Billing" in the
-                  portal. Under cost management, we should select budgets and
-                  create a new budget, threshold and notification.
+                  So, if all our VMs are in the same fault domain, they can go
+                  down at the same time. If all our VMs are in the same update
+                  domain they will reboot at the same time during maintenance.
+                  The trick is to keep them spread across fault and update
+                  domains. That is where the availability set comes into
+                  picture.
+                </p>
+                <p>
+                  An availability set is the arrangement of our VMs across fault
+                  domains and update domains for maximum availability. One
+                  availability set can contain up to 3 Fault Domains and up to
+                  20 Update Domains. All domains are in the same datacenter (i.e
+                  same building).
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Availability Set</h2>
+                <p>
+                  Fault domains and update domains can be specified as below.
+                </p>
+                <img src="./img/avail-set-create.jpg" />
+                <p>
+                  Dual VMs deployed in a 2 X 3 availability set will be hosted
+                  by Azure as below.
+                </p>
+                <img src="./img/avail-set.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Availability Zone</h2>
+                <p>
+                  Availability zone is a separate building, containing an
+                  autonomous data center, within an availability region. The
+                  different zones within a region functions as fault and update
+                  domains. It is configured in a way that even when one
+                  autonomous datacenter is down, we can ensure availability
+                  through other. This arrangement has the highest SLA. > The
+                  availability set or zone can be selected during the creation
+                  of a VM.<img src="./img/avail-options.jpg" />
                 </p>
               </div>
             </article>
