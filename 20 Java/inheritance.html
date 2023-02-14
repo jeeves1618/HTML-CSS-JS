@@ -98,14 +98,74 @@
                 <p>
                   As a general rule, when you are designing programs in Java,
                   you probably want to look at composition first. In the
-                  personal computer example, the Main module didn't have to know
-                  anything about the parts, to access the personal computer to
-                  do something.
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/tree/master/Composition/src/Composition"
+                    target="_blank"
+                    >personal computer example</a
+                  >, the Main module didn't have to know anything about the
+                  parts, to access the personal computer to do something.
                 </p>
                 <p>
                   But, all those parts were able to inherit a set of attributes,
                   like the manufacturer and model. We used inheritance to reuse
                   and composition
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Encapsulation</h2>
+                <p>
+                  In Java, encapsulation means hiding things by marking them as
+                  private and inaccessible. Why should we hide things? Look at
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Encapsulation/src/Player.java"
+                    target="_blank"
+                    >this class</a
+                  >. It poses three major problems.
+                </p>
+                <ol>
+                  <li>
+                    1. Any change in the variable name in player class will
+                    cause the calling methods to change.
+                  </li>
+                  <li>
+                    2. The player class doesn't have any control on its
+                    variables. Anyone can change the public variables directly.
+                  </li>
+                  <li>3. No validations are done on the public attributes.</li>
+                </ol>
+                <p>
+                  We have the re-rewritten the player class with encapsulation
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Encapsulation/src/PlayerEncapsulated.java"
+                    target="_blank"
+                    >here.</a
+                  >
+                  This solves the problems posed by lack of encapsulation.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Polymorphism</h2>
+                <p>
+                  In Java, you can declare an object of one type and execute it
+                  as another type provided the declared type has some sort of
+                  relationship with the runtime type. Inheritance is one way to
+                  establish such a relationship.
+                </p>
+
+                <p>
+                  Polymorphism in Java has two types: Runtime polymorphism
+                  (dynamic binding) and Compile time polymorphism (static
+                  binding). Method overriding is an example of dynamic
+                  polymorphism, while method overloading is an example of static
+                  polymorphism.
                 </p>
               </div>
             </article>
