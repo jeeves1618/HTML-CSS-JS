@@ -229,7 +229,7 @@ main h1 {
   background-size: cover;
 }
 #dr-tile {
-  background: url("../img/poly_tile.jpg") no-repeat;
+  background: url("../img/compose_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -240,7 +240,7 @@ main h1 {
   background-size: cover;
 }
 #basics-tile {
-  background: url("../img/refresher_tile.jpg") no-repeat;
+  background: url("../img/container_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
