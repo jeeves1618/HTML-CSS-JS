@@ -16,7 +16,13 @@ img {
   background-color: rgb(44, 41, 38);
   color: white;
 }
+.cli-text {
+  font-family: monospace;
 
+  line-height: 1.3rem;
+  background-color: black;
+  color: white;
+}
 #main-header {
   height: 5rem;
   display: flex;

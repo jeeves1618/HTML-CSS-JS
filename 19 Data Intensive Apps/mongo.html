@@ -421,6 +421,53 @@
               </div>
             </article>
           </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Dockerizing MongoDB</h2>
+                <ol>
+                  <li>
+                    Refer to the
+                    <a
+                      href="https://jeeves1618.github.io/HTML-CSS-JS/24%20Docker/basics.html"
+                      target="_blank"
+                      >basics of docker here</a
+                    >. Start with login as usual :
+                    <span class="cli-text">docker login</span>
+                  </li>
+                  <li>
+                    Now we want to run the MongoDB from the docker image and not
+                    from the instance installed in local. Search for mongo in
+                    the docker hub and get the
+                    <a href="https://hub.docker.com/_/mongo" target="_blank"
+                      >official image</a
+                    >.
+                    <span class="cli-text">docker pull mongo:latest</span> will
+                    download the MongoDB image.
+                  </li>
+                  <li>
+                    Once it is installed we want to run the MongoDB by
+                    specifying a port of our choice using
+                    <span class="cli-text"
+                      >docker run -d -p 28000:27017 --name mongodb-containter
+                      mongo:latest</span
+                    >. -d specifies that this DB instance should keep running
+                    even when we close the terminal window. -p is for publishing
+                    the port. 27017 is the default port for Mongo DB running in
+                    our local. Since, that port might have been taken already,
+                    we are exposing docker instance of Mongo through the port
+                    28000.
+                  </li>
+                  <li>
+                    Please note the Mongo DB instance out of docker image would
+                    also be exposed through port 27017. But, that is the port
+                    attached to the local host of docker engine running in your
+                    laptop and not to the local host of the laptop.
+                  </li>
+                </ol>
+              </div>
+            </article>
+          </li>
         </ul>
       </section>
     </main>
