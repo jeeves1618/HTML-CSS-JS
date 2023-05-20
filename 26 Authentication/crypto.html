@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptography</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">Authentication</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="refresher.html" id="sublogo">Cryptography</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Cryptography</h1>
+      <section></section>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Encoding</h2>
+                <p>
+                  Encoding is a process to transform data from one format to
+                  another so that it can be understood and consumed by different
+                  systems. The encoded data can be easily decoded back and it is
+                  not a secure way. Here the word '<strong>Encoding</strong>' is
+                  represented through English alpahbets. This can also be
+                  represented in to sequence of bits like this:
+                  <code
+                    >01000101 01101110 01100011 01101111 01100100 01101001
+                    01101110 01100111</code
+                  >
+                </p>
+
+                <p>
+                  Now, we have two representations for the same information. We
+                  can say that the sequence of letters has been encoded into a
+                  sequence of bits. So, encoding is just a transformation from
+                  one data representation to another, keeping the same
+                  information. Usually, it involves a conversion table, such as
+                  an ASCII table in our example, that maps a representation item
+                  in one system to the corresponding representation item in the
+                  other system.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">URL Encoding</h2>
+                <p>
+                  An URL like this
+                  <code
+                    >https://jeeves1618.github.io/Learnings?the meaning of ? =
+                    question mark</code
+                  >
+                  cannot be sent as such. Because, the spaces, = and ? are
+                  reserved words with specific meaning in HTTP. So, this should
+                  be decoded into
+                  <code
+                    >https%3A%2F%2Fjeeves1618.github.io%2FLearnings%3F<br />the%20meaning%20of%20%3F%20%3D%20question%20mark</code
+                  >
+                </p>
+                <img src="./img/urlencoding.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Base64 Encoding</h2>
+                <p>
+                  A binary data can be converted in to textual representation
+                  and back to binary using Base64 encoding. One common use of
+                  Base64 is the conversion of binary data into text during a
+                  HTML post. If the Base64 encoded text is used in the URL, it
+                  still has to go through URL encoder. Again, like URL encoding,
+                  Base64 encoding is also not encryption. The encoded textual
+                  data can be decoded to binaries easily.
+                </p>
+                <img src="./img/base64.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Hashing</h2>
+                <p>
+                  The idea behind hashing is that, any data, no matter what the
+                  size or type (binary, text etc.) may be, can be converted into
+                  a fixed size textual representation. This fixed size
+                  representation is called <strong>hash or digest</strong>. This
+                  hash or digest are unique to that data. There are no
+                  <strong>collisions</strong>. A hash for a given text cannot be
+                  converted back to the original text (or binary for that
+                  matter). So, hash is not encryption.
+                </p>
+                <img src="./img/hash.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Hashing Passwords</h2>
+                <p>
+                  There are several algorithms for creating hash. The most
+                  popular among them are SHA-512, SHA-256, SHA-1 and MD5. The
+                  size of the hash dependends on the type of the algorithm used.
+                  SHA-256 will create a 256 bit output hash, SHA-512 will create
+                  a 512 bit output hash and so on. Let's look at the two
+                  important characteristics of hashing.
+                </p>
+                <ol>
+                  <li>
+                    It creates an unique, fixed size output for every unique
+                    input. No collisions.
+                  </li>
+                  <li>
+                    And you cannot (or it is computationally infeasible to)
+                    derive the input from the output hash. It is one way (well
+                    almost).
+                  </li>
+                </ol>
+                <p>
+                  Above two characteristics makes it an ideal choice to store
+                  the passwords. Here is how it is done.
+                </p>
+                <ol>
+                  <li>
+                    A user visits a site and fills in a form to create their
+                    username and password.
+                  </li>
+                  <li>
+                    That password is put through a hash function and the hash is
+                    stored in the database.
+                  </li>
+                  <li>
+                    When a user logs in they enter their password again on the
+                    site.
+                  </li>
+                  <li>
+                    That entered password is run through the same hashing
+                    function as was used before.
+                  </li>
+                  <li>
+                    The server checks this hash against the one stored for the
+                    user in the database.
+                  </li>
+                  <li>
+                    If the two hashes match exactly, the user will be granted
+                    access.
+                  </li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Symmetric Encryption</h2>
+                <img src="./img/symmetric.jpg" />
+                <p>
+                  There are several algorithms for encrypting a message with a
+                  secret key. The most popular among them are AES-128, AES-256,
+                  BlowFish and DES. The size of the secret key dependends on the
+                  type of the algorithm used. AES-128 will need a 128 bit or 16
+                  byte secret key, AES-256 will need a 256 bit or 32 byte secret
+                  key.
+                </p>
+                <p>
+                  Symmetric key encryption works exceptionally well for
+                  encrypted data transfers between predefined destinations. It
+                  is simple and efficient for large data sets. So, the SSH
+                  protocol uses Symmetric key encryption to exchange data
+                  between two trusted computers over an untrusted network.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Asymmetric Encryption</h2>
+                <p>
+                  But, if you are transferring data to newer computers on a
+                  regular basis, you won't have the option to share the secret
+                  key upfront. And, you cannot send it along with your data.
+                  That defeats the purpose of having a key. So, the symmetric
+                  encryption fails when the key needs to be distributed.
+                </p>
+                <p>
+                  So, we came up with the asymmetric encryption where there are
+                  two keys; private and public. If you encrypt the data using
+                  public key, then the decryption can be done only using
+                  corresponding private key. If you sign the data using the
+                  private key, then the verification can only be done using the
+                  corresponding public key.
+                </p>
+                <p>
+                  When Alice sends a message to Bob, she encrypts it using Bob's
+                  public key. Bob uses the corresponding private key, which is
+                  available only with him, to decrypt the message.
+                </p>
+                <p>
+                  One major issue with asymmetric encryption is that the data
+                  cannot be large. In fact, it is expected to be only as big as
+                  the key used to encrypt. Encrypting large data sets using RSA
+                  keys will be highly inefficient.
+                </p>
+                <p>
+                  The problems of authentication and large network privacy
+                  protection were addressed theoretically in 1976 by Whitfield
+                  Diffie and Martin Hellman. The idea came to fruition in 1977
+                  with the invention of the RSA Public Key Cryptosystem by
+                  Ronald Rivest, Adi Shamir, and Len Adleman, then professors at
+                  the Massachusetts Institute of Technology.
+                </p>
+                <p>
+                  Inversely, the user can also scramble data using their private
+                  key; in other words, RSA keys work in either direction. This
+                  provides the basis for the "digital signature," for if the
+                  user can unscramble a message with someone's public key, the
+                  other user must have used their private key to scramble it in
+                  the first place. Since only the owner can utilize their own
+                  private key, the scrambled message becomes a kind of
+                  electronic signature—a document that nobody else can produce.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Asymmetric Messaging</h2>
+                <span>Exchanging the public keys</span>
+                <img src="./img/exchange.jpg" />
+                <span>Using the key pairs to communicate</span>
+                <img src="./img/asymmetric.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Public Key Exchange</h2>
+                <p>
+                  In the previous section, alice and bob exchanged their public
+                  keys. But, how do they know someone else is not impersonating
+                  as Bob or Alice and are sending their public keys. That is
+                  where certificate comes into picture.
+                </p>
+                <p>
+                  Whenever an entity wants to create an RSA key pair, the public
+                  key is sent to a certificate authority along with the details
+                  (corporate details, TIN etc.) required to verify the identity
+                  of the public key holder.
+                </p>
+                <p>
+                  The solution is the <strong>digital certificate</strong>, a
+                  kind of digital "passport" or "credential." The digital
+                  certificate is the user's public key that has itself been
+                  "digitally signed" by someone trusted to do so, such as a
+                  network security director, MIS help desk, or VeriSign, Inc.
+                  The following figure presents a pictorial description of a
+                  digital certificate. Every time someone sends a message, they
+                  attach their digital certificate.
+                </p>
+                <p>
+                  The recipient of the message first uses the digital
+                  certificate to verify that the author's public key is
+                  authentic, then uses that public key to verify the message
+                  itself. This way, only one public key, that of the certifying
+                  authority, has to be centrally stored or widely publicized,
+                  since then everyone else can simply transmit their public key
+                  and valid digital certificate with their messages.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
