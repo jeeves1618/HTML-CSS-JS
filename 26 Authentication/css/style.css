@@ -61,6 +61,8 @@ body {
   text-align: center;
 }
 
+main a:hover,
+main a:focus,
 .navbar-brand a:hover,
 .navbar-brand a:focus {
   text-decoration: none;
@@ -162,19 +164,18 @@ main h1 {
 }
 
 /* Overflow hidden will ensure that nothing comes out of the tile*/
-#batch-tile,
-#rdbms-tile,
-#CSS-tile,
-#neo4j-tile,
-#graph-tile,
-#stack-tile,
-#tree-tile,
-#graph-tile,
-#recur-tile,
+#network-tile,
+#data-tile,
+#ad-tile,
+#monitor-tile,
+#security-tile,
+#dr-tile,
+#migrate-tile,
+#basics-tile,
 #sort-tile,
 #search-tile,
-#dynamic-tile,
-#greedy-tile {
+#compute-tile,
+#deploy-tile {
   height: 250px;
   width: 100%;
   margin-bottom: 15px;
@@ -182,19 +183,18 @@ main h1 {
   background-color: rgb(44, 41, 38);
   overflow: hidden;
 }
-#batch-tile:hover,
-#rdbms-tile:hover,
-#CSS-tile:hover,
-#neo4j-tile:hover,
-#graph-tile:hover,
-#stack-tile:hover,
-#tree-tile:hover,
-#graph-tile:hover,
-#recur-tile:hover,
+#network-tile:hover,
+#data-tile:hover,
+#ad-tile:hover,
+#monitor-tile:hover,
+#security-tile:hover,
+#dr-tile:hover,
+#migrate-tile:hover,
+#basics-tile:hover,
 #sort-tile:hover,
 #search-tile:hover,
-#dynamic-tile:hover,
-#greedy-tile:hover {
+#compute-tile:hover,
+#deploy-tile:hover {
   box-shadow: 0 1px 15px 1px #3f0c1f;
 }
 
@@ -203,49 +203,44 @@ main h1 {
   vertical-align: bottom;
 }
 
-#batch-tile {
-  background: url("../img/batch_tile.jpg") no-repeat;
+#network-tile {
+  background: url("../img/network_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#rdbms-tile {
-  background: url("../img/web_tile.jpg") no-repeat;
+#data-tile {
+  background: url("../img/data_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#CSS-tile {
-  background: url("../img/css_tile.jpg") no-repeat;
+#ad-tile {
+  background: url("../img/ad_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#neo4j-tile {
-  background: url("../img/neo4j_tile.jpg") no-repeat;
+#monitor-tile {
+  background: url("../img/classes_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#graph-tile {
-  background: url("../img/graph_tile.jpg") no-repeat;
+#security-tile {
+  background: url("../img/inheritance_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#stack-tile {
-  background: url("../img/stack_tile.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-#tree-tile {
-  background: url("../img/tree_tile.jpg") no-repeat;
+#dr-tile {
+  background: url("../img/compose_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-#graph-tile {
-  background: url("../img/graph_tile.jpg") no-repeat;
+#migrate-tile {
+  background: url("../img/generic_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#recur-tile {
-  background: url("../img/recur_tile.jpg") no-repeat;
+#basics-tile {
+  background: url("../img/container_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -259,29 +254,28 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#dynamic-tile {
-  background: url("../img/dynamic_tile.jpg") no-repeat;
+#compute-tile {
+  background: url("../img/heroku_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#greedy-tile {
-  background: url("../img/greedy_tile.jpg") no-repeat;
+#deploy-tile {
+  background: url("../img/deploy_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
-#batch-tile span,
-#rdbms-tile span,
-#CSS-tile span,
-#neo4j-tile span,
-#graph-tile span,
-#stack-tile span,
-#tree-tile span,
-#graph-tile span,
-#recur-tile span,
+#network-tile span,
+#data-tile span,
+#ad-tile span,
+#monitor-tile span,
+#security-tile span,
+#dr-tile span,
+#migrate-tile span,
+#basics-tile span,
 #sort-tile span,
 #search-tile span,
-#dynamic-tile span,
-#greedy-tile span {
+#compute-tile span,
+#deploy-tile span {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -525,19 +519,18 @@ main h1 {
     text-transform: uppercase;
   }
 
-  #batch-tile,
-  #rdbms-tile,
-  #CSS-tile,
-  #neo4j-tile,
-  #graph-tile,
-  #stack-tile,
-  #tree-tile,
-  #graph-tile,
-  #recur-tile,
+  #network-tile,
+  #data-tile,
+  #ad-tile,
+  #monitor-tile,
+  #security-tile,
+  #dr-tile,
+  #migrate-tile,
+  #basics-tile,
   #sort-tile,
   #search-tile,
-  #dynamic-tile,
-  #greedy-tile {
+  #compute-tile,
+  #deploy-tile {
     width: 360px;
     margin: 0 auto 15px;
   }
@@ -701,19 +694,18 @@ main h1 {
   }
   /* End Footer */
   /* Home page */
-  #batch-tile,
-  #rdbms-tile,
-  #CSS-tile,
-  #neo4j-tile,
-  #graph-tile,
-  #stack-tile,
-  #tree-tile,
-  #graph-tile,
-  #recur-tile,
+  #network-tile,
+  #data-tile,
+  #ad-tile,
+  #monitor-tile,
+  #security-tile,
+  #dr-tile,
+  #migrate-tile,
+  #basics-tile,
   #sort-tile,
   #search-tile,
-  #dynamic-tile,
-  #greedy-tile {
+  #compute-tile,
+  #deploy-tile {
     width: 280px;
     margin: 0 auto 15px;
   }

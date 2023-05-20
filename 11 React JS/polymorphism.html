@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polymorphism</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="refresher.html" id="logo">Refresher</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="refresher.html" id="sublogo">Java</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Polymorphism</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Inheritance</h2>
+                <p>
+                  Inheritance defines an
+                  <strong>IS A</strong> relationship. Composition defines an
+                  <strong>HAS A</strong> relationship.
+                </p>
+                <p>
+                  So, it is a challenge if we want to manipulate data passed as
+                  parameter before calling super. We can try something like
+                  this.
+                </p>
+                <span class="java-text"
+                  >super(isTurboCharged,engineVolumeInCC < 1000 ? "Small" :
+                  (engineVolumeInCC > 1500 ? "Large" : "Medium"))</span
+                >
+                <p>
+                  If a subclass doesn't make a call to super(), java will make
+                  that call to the default constructor of the super class. If
+                  the default constructor of the super class isn't there,
+                  because a constructor was explicitly defined, then the
+                  subclass must explicitly call that constructor in the super
+                  class.
+                </p>
+                <p>
+                  A object of type sub class can be passed to the method
+                  accepting the super class. But, the converse is not possible.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

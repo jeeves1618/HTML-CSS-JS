@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(0, 72, 94);
+  height: 100px;
+  padding: 20px;
+  align-items: center;
+}
+
+header img {
+  width: 100px;
+}
+
+#caption-message {
+  font-size: 24px;
+  color: rgb(199, 196, 5);
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding-bottom: 40px;
+}
+
+#project-name {
+  color: white;
+  font-size: 32px;
+}
+
+#left-content {
+  width: 45%;
+}
+#right-content {
+  width: 55%;
+  text-align: right;
+  color: white;
+}
+
+#nav-border {
+  height: 10px;
+  width: 100%;
+  background-color: rgb(174, 134, 57);
+}
