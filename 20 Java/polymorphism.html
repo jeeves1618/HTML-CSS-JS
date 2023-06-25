@@ -48,7 +48,7 @@
                 <p>
                   Inheritance defines an
                   <strong>IS A</strong> relationship. Composition defines an
-                  <strong>HAS A</strong> relationship.
+                  <strong>HAS A</strong> relationship. The child class
                 </p>
                 <p>
                   So, it is a challenge if we want to manipulate data passed as
@@ -70,6 +70,57 @@
                 <p>
                   A object of type sub class can be passed to the method
                   accepting the super class. But, the converse is not possible.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Instantiation without <code>new</code></h2>
+                <p>
+                  Here is how you can create objects withou instantiating them
+                  referring to sub classes. Not using the name of the sub
+                  classes, gives the flexibility of adding new sub classes and
+                  confining the changes to the super class as it is done
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Polymorphism/src/Movie.java"
+                    target="_blank"
+                    >below</a
+                  >.
+                </p>
+
+                <span class="java-text"
+                  >public static Movie getMovie(String type, String title){<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;return switch
+                  (type.toUpperCase().charAt(0)){<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'A' ->
+                  new Adventure(title);<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'C' ->
+                  new Comedy(title);<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 'R' ->
+                  new Romance(title);<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default -> new
+                  Movie(title);<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;};<br />
+                  }<br
+                /></span>
+                <p>
+                  In this way, the
+                  <a
+                    href="https://github.com/jeeves1618/JavaLearnings/blob/master/Polymorphism/src/Main.java"
+                    target="_blank"
+                    >main class</a
+                  >
+                  will not be impacted when a sub class is added.
+
+                  <span class="java-text"
+                    >Movie movie3 = Movie.getMovie("Adventure", "Matrix");</span
+                  >
+                  can be written instead of invoking the sub class like,
+                  <span class="java-text"
+                    >Movie movie3 = new Adventure("Matrix");</span
+                  ><br />
                 </p>
               </div>
             </article>
