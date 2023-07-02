@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Authorization Server</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">Authentication</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="refresher.html" id="sublogo">Google Authorization Server</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Google Authorization Server</h1>
+      <section>
+        <img src="./img/OAuth-Flow-Endpoints.jpg" />
+      </section>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Google Photos API</h2>
+                <p>
+                  Lets go to
+                  <a href="https://developers.google.com/photos" target="_blank"
+                    ><code>https://developers.google.com/photos</code></a
+                  >
+                  and navigate to
+                  <a
+                    href="https://developers.google.com/photos/library/guides/get-started"
+                    target="_blank"
+                    >Get started with REST</a
+                  >. Create a new project with no organization.
+                </p>
+                <img src="./img/google-grant-01.jpg" />
+
+                <p>
+                  Under that project, search for Photos Library API and enable
+                  it.
+                </p>
+                <img src="./img/API Enabled.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Config and Credentials</h2>
+                <p>
+                  Once the API is enabled, configure the OAuth Consent Screen.
+                  Select the user type as external and add your id as test user
+                  ID. Rest of the fields can be defaulted or left alone for now.
+                </p>
+                <img src="./img/OAuth Consent.jpg" />
+                Then proceed to the creation of credentials. Choose OAuth Client
+                ID and the application type as Web Application.
+                <img src="./img/cred.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Finding Endpoints (EP)</h2>
+
+                <ol>
+                  <li><strong>Authorization EP: </strong></li>
+                  <li><strong>Token EP: </strong></li>
+                  <li><strong>User Info EP: </strong></li>
+                  <li><strong>Introspect EP: </strong></li>
+                  <li><strong>JWKS EP: </strong></li>
+                </ol>
+                <p>
+                  These end points are configured in an end point called
+                  <code
+                    >https://accounts.google.com/.well-known/openid-configuration</code
+                  >
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
