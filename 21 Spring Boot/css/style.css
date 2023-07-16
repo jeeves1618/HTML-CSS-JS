@@ -166,10 +166,9 @@ main h1 {
 #rdbms-tile,
 #CSS-tile,
 #neo4j-tile,
-#graph-tile,
+#act-tile,
 #stack-tile,
 #tree-tile,
-#graph-tile,
 #recur-tile,
 #sort-tile,
 #search-tile,
@@ -186,10 +185,9 @@ main h1 {
 #rdbms-tile:hover,
 #CSS-tile:hover,
 #neo4j-tile:hover,
-#graph-tile:hover,
+#act-tile:hover,
 #stack-tile:hover,
 #tree-tile:hover,
-#graph-tile:hover,
 #recur-tile:hover,
 #sort-tile:hover,
 #search-tile:hover,
@@ -223,8 +221,8 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
-#graph-tile {
-  background: url("../img/graph_tile.jpg") no-repeat;
+#act-tile {
+  background: url("../img/actuator_tile.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
@@ -239,11 +237,6 @@ main h1 {
   background-size: cover;
 }
 
-#graph-tile {
-  background: url("../img/graph_tile.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
-}
 #recur-tile {
   background: url("../img/recur_tile.jpg") no-repeat;
   background-position: center;
@@ -273,10 +266,9 @@ main h1 {
 #rdbms-tile span,
 #CSS-tile span,
 #neo4j-tile span,
-#graph-tile span,
+#act-tile span,
 #stack-tile span,
 #tree-tile span,
-#graph-tile span,
 #recur-tile span,
 #sort-tile span,
 #search-tile span,
@@ -529,10 +521,9 @@ main h1 {
   #rdbms-tile,
   #CSS-tile,
   #neo4j-tile,
-  #graph-tile,
+  #act-tile,
   #stack-tile,
   #tree-tile,
-  #graph-tile,
   #recur-tile,
   #sort-tile,
   #search-tile,
@@ -705,10 +696,9 @@ main h1 {
   #rdbms-tile,
   #CSS-tile,
   #neo4j-tile,
-  #graph-tile,
+  #act-tile,
   #stack-tile,
   #tree-tile,
-  #graph-tile,
   #recur-tile,
   #sort-tile,
   #search-tile,
