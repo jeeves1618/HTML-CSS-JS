@@ -158,13 +158,64 @@
                   and set the path by
                   <code>setx PATH "%PATH%;%JAVA_HOME%\bin"</code>. We may have
                   to exit the terminal and come back for the change to take
-                  effect.
+                  effect. <code>mvnw spring-boot:run</code> should bring up the
+                  application if mvnw is not deleted from your project.
                 </p>
                 <p>
                   Now CD into the target folder and <code>ls *.jar</code> to
                   find out the jar file. The command
                   <code>java -jar Template-0.0.1-SNAPSHOT.jar</code> will bring
-                  up the spring application.
+                  up the spring application. <code>Ctrl + C</code> will shut
+                  down the application.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Custom Properties</h2>
+                <p>
+                  If we don't want to hardcode the values in a program, we can
+                  define them in the application.properties file and inject them
+                  into a spring boot application using
+                  <code>@value</code> annotation.
+                </p>
+                <p>
+                  <code>who.am.i.greeting=John Galt</code> is the variable
+                  definition in application properties file. The variable can be
+                  injected into the class by the following code.<br />
+                  <code
+                    >@Value("${who.am.i.greeting}")<br />
+                    public String greetingsTo;</code
+                  >
+                </p>
+                <p>
+                  The list of spring boot properties which can be configured
+                  through applications.properties file is available
+                  <a
+                    href="How to classify what he’s doing is less important than your emotional clarity: you feel betrayed."
+                    target="_blank"
+                    >here</a
+                  >. We can set the logging levels at package level as in
+                  <code>logging.level.org.springframework=DEBUG</code>. You can
+                  also send the logs to a file through
+                  <code>logging.file.name=log.txt</code> and
+                  <code>logging.file.path=c:/code/java</code>. More on logging
+                  <a
+                    href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.logging"
+                    target="_blank>"
+                    >here</a
+                  >. We can set up the web properties like
+                  <code>server.port=7070</code> to override the default of 8080.
+                  Similarly,
+                  <code>server.servlet.context-path=/myCoolApp</code> will
+                  change the default path of localhost:8080/ to
+                  localhost:8080/mycoolApp/
+                </p>
+                <p>
+                  <code>management.endpoint.web.base-path</code> can be used to
+                  change the context path of actuator.
                 </p>
               </div>
             </article>
