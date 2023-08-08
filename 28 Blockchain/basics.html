@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docker Basics</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">Docker</a>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="refresher.html" id="sublogo">Docker Basics</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="">Books</a></li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Docker Basics</h1>
+      <section></section>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Containers</h2>
+                <img src="./img/services.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Docker</h2>
+                <p>
+                  Docker is a tool for creating and managing containers. A
+                  container in software development is a standardized unit of
+                  software. This standardized unit usually contains code
+                  <strong>and</strong> all the dependencies to run that code.
+                  For example, JavaScript code and JavaScript runtime bundled
+                  together can be considered as a container. The image typically
+                  bundles the
+                  <strong
+                    >source code, dependencies, runtime, configuration and the
+                    server</strong
+                  >
+                  together.
+                </p>
+                <p>
+                  We don't need docker to create a container. But, it is a
+                  defacto standard for creating containers these days. Creating
+                  containers through Dockers come handy when we use the same
+                  exact environment for development and production. With docker
+                  you can share the code and runtime with other developers
+                  easily. Suppose one of your projects require Node 13 and
+                  another one Node 14 in your local machine. Instead of
+                  uninstalling and reinstalling again and again, we can use two
+                  docker containers.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">VM vs Containers</h2>
+                <p>
+                  Can't we achieve the same reproducibility of runtime
+                  environment using VM? Yes, in a way. And, with some effort,
+                  you can also share the VM configurations across regions and
+                  systems. So, VMs work in the same way as containers in the
+                  following ways.
+                </p>
+                <ol>
+                  <li>It creates separate environments for the code to run</li>
+                  <li>Environment specific configurations are possible</li>
+                  <li>Configurations can be shared and reproduced reliably.</li>
+                </ol>
+                <p>
+                  But, compared to containers, VMs have the following drawbacks.
+                </p>
+                <ol>
+                  <li>Redundant duplication (like same OS in multiple VMS)</li>
+                  <li>Waste of space and performace takes a hit/li></li>
+                  <li>
+                    Reproducing on another computer or server is cumbersome.
+                  </li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Installing Docker</h2>
+                <p>
+                  We have to install Docker Desktop or Docker Toolbox in our
+                  MacOS and Windows machines. But, Docker is native to Linux and
+                  you can directly install Docker Engine on Linux.
+                </p>
+                <p>
+                  We can install the Docker desktop and the WSL 2 update for
+                  Linux. Whether we intall the Docker Desktop or Docker Toolbox,
+                  ultimately what get installed in our machine is a Docker
+                  Engine. If you are installing this in an non Linux machine,
+                  them the Docker Engine will be running within a VM installed
+                  along with. The VM is there because our OS do not natively
+                  support Docker.
+                </p>
+                <p>
+                  The Docker desktop has a daemon running in the background and
+                  a CLI on top of the Docker engine. If you want to store the
+                  docker images, you can do so in Docker Hub (imagine Git Hub).
+                  Then, as the containers get sophisticated, we will use Docker
+                  Compose to manage them.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Docker Ecosystem</h2>
+                <img src="./img/dockerarchitecture.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">How to...?</h2>
+                <p>
+                  Now that we have an idea of what a Docker is, we will see how
+                  we can Dockerize our code. I have a very basic Java Spring
+                  Boot application
+                  <a
+                    href="https://github.com/jeeves1618/Spring-Learnings/tree/master/Docker"
+                    target="_blank"
+                    >here</a
+                  >.
+                </p>
+                <ol>
+                  <li>
+                    Add a
+                    <a
+                      href="https://github.com/jeeves1618/Spring-Learnings/blob/master/Docker/Dockerfile"
+                      target="_blank"
+                      >Dockerfile </a
+                    >to the project root directory.
+                  </li>
+                  <li>
+                    Run the command
+                    <span class="cli-text"
+                      >docker build -t my-first-docker-image .</span
+                    >to create a docker image. The docker image is not alive and
+                    it just has the code, maven dependencies, run time (tomcat
+                    server in this case) and other utilities.
+                  </li>
+                  <li>
+                    Tag Docker Image using the command
+                    <span class="cli-text"
+                      >docker tag my-first-docker-image:latest {account
+                      name}/my-first-docker-image:v3</span
+                    >
+                  </li>
+                  <li>
+                    Push Docker Image to Docker hub repository using
+                    <span class="cli-text"
+                      >docker push {account name}/my-first-docker-image</span
+                    >.
+                  </li>
+                  <li>Pull Docker Image from docker hub repository.</li>
+                  <li>
+                    Run the pulled Docker image in to our local computer using
+                    <span class="cli-text"
+                      >docker run -p 8090:8080 {account
+                      name}/my-first-docker-image</span
+                    >.
+                  </li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Commands Glossary</h2>
+                <ol>
+                  <li>
+                    Logging in : <span class="cli-text">docker login</span>
+                  </li>
+                  <li>
+                    Building an image :
+                    <span class="cli-text"
+                      >docker build -t my-first-docker-image .</span
+                    >
+                    The . indicates that the Dockerfile is in the same directory
+                    from which we are running the command.
+                  </li>
+                  <li>
+                    Tag the image to the Docker Hub account :
+                    <span class="cli-text"
+                      >docker tag my-first-docker-image:latest {account
+                      name}/my-first-docker-image:v3</span
+                    >
+                  </li>
+                  <li>
+                    Push the image :
+                    <span class="cli-text"
+                      >docker push {account name}/my-first-docker-image</span
+                    >
+                  </li>
+                  <li>
+                    Logging in : <span class="cli-text">docker login</span>
+                  </li>
+                  <li>
+                    List all Docker images :
+                    <span class="cli-text">docker images</span>
+                  </li>
+                  <li>
+                    Removing the Docker Image :
+                    <span class="cli-text">docker rmi {image-name}</span>
+                  </li>
+                  <li>
+                    Pull (if not available in local) and run the container :
+                    <span class="cli-text"
+                      >docker run -p 8090:8080 {account
+                      name}/my-first-docker-image</span
+                    >
+                  </li>
+                  <li>
+                    List all running containers :
+                    <span class="cli-text">docker ps</span>
+                  </li>
+                  <li>
+                    Kill a running docker container :
+                    <span class="cli-text">docker kill</span>
+                  </li>
+                  <li>
+                    To see the logs :
+                    <span class="cli-text">docker logs {container name}</span>
+                  </li>
+                  <li>
+                    To see the linux container inside the docker running
+                    instance :
+                    <span class="cli-text"
+                      >docker exec -it {container name} bash</span
+                    >. <span class="cli-text">exit</span> will bring us back.
+                  </li>
+                  <li>
+                    To force remove active containers :
+                    <span class="cli-text"
+                      >docker rm -f {container name1} {container name2}</span
+                    >
+                  </li>
+                </ol>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Dockerizing MongoDB</h2>
+                <ol>
+                  <li>
+                    Start with login as usual :
+                    <span class="cli-text">docker login</span>
+                  </li>
+                  <li>
+                    Now we want to run the MongoDB from the docker image and not
+                    from the instance installed in local. Search for mongo in
+                    the docker hub and get the
+                    <a href="https://hub.docker.com/_/mongo" target="_blank"
+                      >official image</a
+                    >.
+                    <span class="cli-text">docker pull mongo:latest</span> will
+                    download the MongoDB image.
+                  </li>
+                  <li>
+                    Once it is installed we want to run the MongoDB by
+                    specifying a port of our choice using
+                    <span class="cli-text"
+                      >docker run -d -p 28000:27017 --name mongodb-containter
+                      mongo:latest</span
+                    >. -d specifies that this DB instance should keep running
+                    even when we close the terminal window. -p is for publishing
+                    the port. 27017 is the default port for Mongo DB running in
+                    our local. Since, that port might have been taken already,
+                    we are exposing docker instance of Mongo through the port
+                    28000.
+                  </li>
+                  <li>
+                    Please note the Mongo DB instance out of docker image would
+                    also be exposed through port 27017. But, that is the port
+                    attached to the local host of docker engine running in your
+                    laptop and not to the local host of the laptop.
+                  </li>
+                </ol>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
