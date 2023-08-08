@@ -174,6 +174,7 @@ main h1 {
 #dr-tile,
 #migrate-tile,
 #basics-tile,
+#performance-tile,
 #sort-tile,
 #search-tile,
 #compute-tile,
@@ -193,6 +194,7 @@ main h1 {
 #dr-tile:hover,
 #migrate-tile:hover,
 #basics-tile:hover,
+#performance-tile:hover,
 #sort-tile:hover,
 #search-tile:hover,
 #compute-tile:hover,
@@ -246,6 +248,11 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
+#performance-tile {
+  background: url("../img/performance_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 #sort-tile {
   background: url("../img/sort_tile.jpg") no-repeat;
   background-position: center;
@@ -274,6 +281,7 @@ main h1 {
 #dr-tile span,
 #migrate-tile span,
 #basics-tile span,
+#performance-tile span,
 #sort-tile span,
 #search-tile span,
 #compute-tile span,
@@ -529,6 +537,7 @@ main h1 {
   #dr-tile,
   #migrate-tile,
   #basics-tile,
+  #performance-tile,
   #sort-tile,
   #search-tile,
   #compute-tile,
@@ -704,6 +713,7 @@ main h1 {
   #dr-tile,
   #migrate-tile,
   #basics-tile,
+  #performance-tile,
   #sort-tile,
   #search-tile,
   #compute-tile,
