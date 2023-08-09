@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clean Architecture</title>
+    <title>Blockchain</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
@@ -14,7 +14,7 @@
   </head>
   <body>
     <header id="main-header">
-      <a href="index.html" id="logo">System Design</a>
+      <a href="index.html" id="logo">Blockchain</a>
       <nav>
         <ul>
           <li><a href="">Books</a></li>
@@ -27,7 +27,7 @@
     </header>
     <aside id="side-drawer">
       <header id="sub-header">
-        <a href="refresher.html" id="sublogo">Clean Architecture</a>
+        <a href="refresher.html" id="sublogo">Blockchain</a>
         <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
       </header>
       <nav>
@@ -38,141 +38,53 @@
       </nav>
     </aside>
     <main>
-      <h1>Clean Architecture</h1>
+      <h1>Blockchain</h1>
       <section></section>
       <section id="latest-products">
         <ul>
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Two Values</h2>
+                <h2 class="content">What is Blockchain?</h2>
                 <p>
-                  Every software system provides two values to its stake
-                  holders, behaviour and structure. Behaviour is dictated by the
-                  business requirements. But, Developers tend to focus more on
-                  behaviour and less on structure. Because, the programs we
-                  write are expected to behave in a specific manner. It becomes
-                  a matter of urgency if they don't behave in that way.
-                  Structure, in spite of its importance, is never enforced.
+                  A blockchain is a continously growing (linked) list of
+                  records, called blocks, which are linked and secured using
+                  cryptography. A block will have the data, previous hash
+                  (pointing to previous block) and current hash. The first block
+                  in the blockchain is called the genesis block. It will not
+                  have the previous hash populated.
                 </p>
-
                 <p>
-                  A 'software' is supposed to be soft. That is, it should be
-                  easy to change. The difficulty in making the change should be
-                  proprtional to the scope of the change, not to the shape of
-                  the change. The structure determines impact of shape on a
-                  change.
-                  <strong
-                    >Is it more important for the software system to work or is
-                    it more important for the software system to be accomodative
-                    of changes?</strong
+                  The hash of the block is cryptographic output of the data in
+                  the block. The next block in the block chain will point to
+                  this crryptographic hash. So, if the data in the previous
+                  block changed, then the next block will no longer point to it
+                  and the chain will be broken. This ensures the immutability of
+                  data in the block chain.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Block Chain Strucutre</h2>
+                <img src="/img/blockchain.jpg" />
+                <p>
+                  &#169;<a
+                    href="https://www.udemy.com/course/build-your-blockchain-az/"
+                    >Blockchain A-Z™</a
                   >
                 </p>
                 <p>
-                  If we have a program that works, but is impossible to change,
-                  then it will stop working when there is a change in
-                  requirement. Unless you are living in a world of certainity,
-                  where you know how the program should behave for the next 100
-                  years, you should consider shape agnostic structure of
-                  software programs to be more important than behaviour.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Matrix</h2>
-
-                <img src="./img/Matrix.jpg" />
-                <p>
-                  The strucuture of the code is in the first two positions of
-                  priority and the behaviour of code is in the first and the
-                  third positions of priority. The mistake that we often make is
-                  to elevate the priority 3 items to priority 1. This leads to
-                  ignoring the important architectural elements of the system in
-                  favor of the unimportant features. Since, business is detached
-                  from the architecture of a system, it is the responsibility of
-                  the developers to assert the importance of structure over
-                  behaviour.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Three Paradigms</h2>
-                <p>
-                  The three paradigms in programming are
-                  <strong
-                    >structured, object oriented and functional
-                    programming</strong
-                  >. Dijkstra prohibited the go to statements and invented
-                  structured programming —in which programs flow from top to
-                  bottom following a hierarchical model. Structured programming
-                  imposes discipline on direct flow of control.
-                </p>
-                <p>
-                  Object Oriented Programming originated when the developers
-                  realized the variables in the stack can be be stored in a heap
-                  and can be reused after the function returns. The function can
-                  be used as the constructor of the class. Object Oriented
-                  Programming imposes discipline on indirect transfer of
-                  control.
-                </p>
-                <p>
-                  Functional programming is an extension of lambda calculus. The
-                  foundation of lambda calculus is the immutability of
-                  variables. Functional imposes discipline upon assignment of
-                  values. Most functional languages will have restricted means
-                  of assigning values.
-                </p>
-                <p>
-                  The three paradigms take away go to statements, function
-                  pointers and assignment. There is probably nothing more to
-                  take away from the developers and that may be why we aren't
-                  seeing any new paradigms.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">Structured Programming</h2>
-                <p>
-                  Dijkstra found out that certain usage of 'go to' statement
-                  prevents the decomposition of a module recursively in to
-                  smaller units. This prevents developers from employing divide
-                  and conquer approach of reducing system complexity.
-                </p>
-                <p>
-                  So, Edgar Dijkstra published a paper stating
+                  The change in hash causes the block chain to break and that is
+                  why we are saying that the blocks are cryptographically linked
+                  together. A good simulation of block chain is available
                   <a
-                    href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf"
+                    href="https://tools.superdatascience.com/blockchain/block"
                     target="_blank"
-                    >Go To statement is harmful</a
-                  >. This led to the removal for 'go to' statements from modern
-                  languages and allowed the programmers to decompose a large
-                  scale problems into small functions. Dijkstra initially
-                  thought of strucutred programming to be accompanied by
-                  mathematical euclidean proofs. But, programming moved towards
-                  verification scientific observations (a.k.a tests) in its
-                  further evolution.
-                </p>
-                <p>
-                  Dijkstra once said a test can prove the presence of bugs, but
-                  not the absence of them. A program can be proven incorrect by
-                  a test, but it cannot be proven correct by a test. So,
-                  software development is not a mathematical endevor. Rather, it
-                  is a science where we show corrects by failing to prove
-                  incorrects.
-                </p>
-                <p>
-                  The above proof of incorrects is possible only on provable
-                  sttructured programs. You cannot show corrects by failing to
-                  prove incorrects in a code full of 'go to' statements.
+                    >here</a
+                  >
                 </p>
               </div>
             </article>
@@ -180,39 +92,46 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Object Oriented Programming</h2>
+                <h2 class="content">Hashing</h2>
                 <p>
-                  Dijkstra found out that certain usage of 'go to' statement
-                  prevents the decomposition of a module recursively in to
-                  smaller units. This prevents developers from employing divide
-                  and conquer approach of reducing system complexity.
+                  The idea behind hashing is that, any data, no matter what the
+                  size or type (binary, text etc.) may be, can be converted into
+                  a fixed size textual representation. This fixed size
+                  representation is called <strong>hash or digest</strong>. This
+                  hash or digest are unique to that data. There are no
+                  <strong>collisions</strong>. Well almost!. A hash for a given
+                  text cannot be converted back to the original text (or binary
+                  for that matter). So, hash is not encryption.
+                </p>
+                <img src="./img/hash.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">What is a Ledger?</h2>
+                <p>
+                  Any time we need a consensus about facts, we use a ledger.
+                  Ledgers record the facts underpinning the realities of the
+                  civilized world. We generally use ledgers to document
+                  ownership (land title), identity (birth registration), status
+                  (voter's database) or authority (passport database authorizing
+                  someone to travel). All these documents have a central
+                  repository called ledger and a token, which you can use as
+                  proof of the entry in the ledger.
                 </p>
                 <p>
-                  So, Edgar Dijkstra published a paper stating
-                  <a
-                    href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf"
-                    target="_blank"
-                    >Go To statement is harmful</a
-                  >. This led to the removal for 'go to' statements from modern
-                  languages and allowed the programmers to decompose a large
-                  scale problems into small functions. Dijkstra initially
-                  thought of strucutred programming to be accompanied by
-                  mathematical euclidean proofs. But, programming moved towards
-                  verification scientific observations (a.k.a tests) in its
-                  further evolution.
+                  For instance, the database holding the details of the
+                  someone's citizenship is the ledger and the passport, which is
+                  the proof, is the token. Such a ledger can be centralized in
+                  electronic form or in physical form. Whichever form they take,
+                  they are suceptible to unauthorized alteration. In other
+                  words, they are mutable.
                 </p>
                 <p>
-                  Dijkstra once said a test can prove the presence of bugs, but
-                  not the absence of them. A program can be proven incorrect by
-                  a test, but it cannot be proven correct by a test. So,
-                  software development is not a mathematical endevor. Rather, it
-                  is a science where we show corrects by failing to prove
-                  incorrects.
-                </p>
-                <p>
-                  The above proof of incorrects is possible only on provable
-                  sttructured programs. You cannot show corrects by failing to
-                  prove incorrects in a code full of 'go to' statements.
+                  What we need to preserve the integrity of the ledger is to
+                  bring immutability to the underlying database.
                 </p>
               </div>
             </article>
@@ -220,76 +139,28 @@
           <li class="topic-item">
             <article>
               <div class="topic-item-content">
-                <h2 class="content">Object Oriented Design Goals</h2>
+                <h2 class="content">Immutable Ledger?</h2>
                 <p>
-                  The three major goals of object oriented programming are
-                  robustness, adaptability, and reusability.
+                  Any time we need a consensus about facts, we use a ledger.
+                  Ledgers record the facts underpinning the realities of the
+                  civilized world. We generally use ledgers to document
+                  ownership (land title), identity (birth registration), status
+                  (voter's database) or authority (passport database authorizing
+                  someone to travel). All these documents have a central
+                  repository called ledger and a token, which you can use as
+                  proof of the entry in the ledger.
                 </p>
                 <p>
-                  We always program for the expected behaviour. In addition, we
-                  want software to be <strong>robust</strong>, that is, capable
-                  of handling unexpected inputs that are not explicitly defined
-                  for its application. For example, if a program is expecting a
-                  positive integer (perhaps representing the price of an item)
-                  and instead is given a negative integer, then the program
-                  should be able to recover gracefully from this error.
+                  For instance, the database holding the details of the
+                  someone's citizenship is the ledger and the passport, which is
+                  the proof, is the token. Such a ledger can be centralized in
+                  electronic form or in physical form. Whichever form they take,
+                  they are suceptible to unauthorized alteration. In other
+                  words, they are mutable.
                 </p>
                 <p>
-                  Software needs to be able to evolve over time in response to
-                  changing conditions in its environment. Thus, another
-                  important goal of quality software is that it achieves
-                  <strong>adaptability</strong> (also called evolvability).
-                  Related to this concept is portability, which is the ability
-                  of software to run with minimal change on different hardware
-                  and operating system platforms.
-                </p>
-                <p>
-                  Going hand in hand with adaptability is the desire that
-                  software be <strong>reusable</strong>, that is, the same code
-                  should be usable as a component of different systems in
-                  various applications. Developing quality software can be an
-                  expensive enterprise, and its cost can be offset somewhat if
-                  the software is designed in a way that makes it easily
-                  reusable in future applications.
-                </p>
-              </div>
-            </article>
-          </li>
-          <li class="topic-item">
-            <article>
-              <div class="topic-item-content">
-                <h2 class="content">OOD - Principle 1 - Abstraction</h2>
-                <p>
-                  The above Object Oriented Design goals are achieved through
-                  three important principles of object oriented programming.
-                  They are abstraction, encapsulation and modularity.
-                </p>
-                <p>
-                  We always program for the expected behaviour. In addition, we
-                  want software to be <strong>robust</strong>, that is, capable
-                  of handling unexpected inputs that are not explicitly defined
-                  for its application. For example, if a program is expecting a
-                  positive integer (perhaps representing the price of an item)
-                  and instead is given a negative integer, then the program
-                  should be able to recover gracefully from this error.
-                </p>
-                <p>
-                  Software needs to be able to evolve over time in response to
-                  changing conditions in its environment. Thus, another
-                  important goal of quality software is that it achieves
-                  <strong>adaptability</strong> (also called evolvability).
-                  Related to this concept is portability, which is the ability
-                  of software to run with minimal change on different hardware
-                  and operating system platforms.
-                </p>
-                <p>
-                  Going hand in hand with adaptability is the desire that
-                  software be <strong>reusable</strong>, that is, the same code
-                  should be usable as a component of different systems in
-                  various applications. Developing quality software can be an
-                  expensive enterprise, and its cost can be offset somewhat if
-                  the software is designed in a way that makes it easily
-                  reusable in future applications.
+                  What we need to preserve the integrity of the ledger is to
+                  bring immutability to the underlying database.
                 </p>
               </div>
             </article>
