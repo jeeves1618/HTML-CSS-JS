@@ -141,26 +141,18 @@
               <div class="topic-item-content">
                 <h2 class="content">Immutable Ledger</h2>
                 <p>
-                  Any time we need a consensus about facts, we use a ledger.
-                  Ledgers record the facts underpinning the realities of the
-                  civilized world. We generally use ledgers to document
-                  ownership (land title), identity (birth registration), status
-                  (voter's database) or authority (passport database authorizing
-                  someone to travel). All these documents have a central
-                  repository called ledger and a token, which you can use as
-                  proof of the entry in the ledger.
+                  How do we ensure that the data in the ledger cannot be
+                  tampered surreptitiously? We leverage hash cryptography to
+                  create an immutable chain of ledger entries to prevent
+                  tampering of data.
                 </p>
+                <img src="./img/blockhashing.jpg" />
+
                 <p>
-                  For instance, the database holding the details of the
-                  someone's citizenship is the ledger and the passport, which is
-                  the proof, is the token. Such a ledger can be centralized in
-                  electronic form or in physical form. Whichever form they take,
-                  they are suceptible to unauthorized alteration. In other
-                  words, they are mutable.
-                </p>
-                <p>
-                  What we need to preserve the integrity of the ledger is to
-                  bring immutability to the underlying database.
+                  As shown in the figure, we use the contents of a block to
+                  create its hash. Any atlerations will change the hash of the
+                  block and the next block will not be pointing to the modified
+                  hash.
                 </p>
               </div>
             </article>
