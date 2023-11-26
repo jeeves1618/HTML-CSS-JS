@@ -20,7 +20,7 @@ let formatPage = function (topics) {
                 <div class="topic-tile">
                   <img
                     width="200"
-                    height="250"
+                    height="380"
                     src="/static` +
       topics[i].imageFileName +
       `"
