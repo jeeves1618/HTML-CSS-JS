@@ -20,7 +20,7 @@ let templateGenerator = function (book) {
               <img
                 width="200"
                 height="250"
-                src="/static` +
+                src="static` +
     book.imageFileName +
     `"
                 alt=` +

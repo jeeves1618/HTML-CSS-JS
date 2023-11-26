@@ -21,7 +21,7 @@ let formatPage = function (topics) {
                   <img
                     width="200"
                     height="380"
-                    src="/static` +
+                    src="static` +
       topics[i].imageFileName +
       `"
                     alt="Fiction"
