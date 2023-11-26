@@ -3,7 +3,7 @@ img {
 }
 
 #jumbo-01 {
-  background: url("../img/main-page-01.jpg") no-repeat;
+  background: url("../img/main-page-bg.jpg") no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 10%;
