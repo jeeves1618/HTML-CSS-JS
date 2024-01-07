@@ -241,7 +241,7 @@
   },
   {
     "id": "25",
-    "name": "Orgainic Greens",
+    "name": "Organic Greens",
     "pricing": { "250": 16, "500": 32, "1": 64 },
     "category": "Vegetables",
     "image": "img/menu/D/A.jpg",
