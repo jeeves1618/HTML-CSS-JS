@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean Architecture</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Libre+Bodoni&family=Lora&family=Mukta&family=Oxygen&family=Source+Serif+Pro&family=Tiro+Kannada&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">Backend Systems</a>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="https://jeeves1618.github.io/HTML-CSS-JS/30%20Librarian/index.html"
+              >Books</a
+            >
+          </li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="refresher.html" id="sublogo">Clean Architecture</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="https://jeeves1618.github.io/HTML-CSS-JS/30%20Librarian/index.html"
+              >Books</a
+            >
+          </li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <div id="main-content" class="container">
+        <h1>Backend Systems</h1>
+
+        <h2>1. Architecture of Backend Systems</h2>
+        <h3>a) Monolithic vs. Microservices</h3>
+        <ul>
+          <li>
+            <strong>Monolithic Architecture</strong>: A single, unified
+            application where all components are tightly coupled.
+          </li>
+          <li>
+            <strong>Microservices Architecture</strong>: A distributed system
+            where each service handles a specific function and communicates via
+            APIs.
+          </li>
+        </ul>
+
+        <h3>b) Layered Architecture</h3>
+        <ul>
+          <li>
+            <strong>Presentation Layer</strong>: Handles HTTP requests (REST,
+            GraphQL) and responses.
+          </li>
+          <li>
+            <strong>Business Logic Layer</strong>: Processes business rules and
+            workflows.
+          </li>
+          <li>
+            <strong>Data Access Layer</strong>: Interacts with databases and
+            external storage systems.
+          </li>
+        </ul>
+
+        <h2>2. Web Servers & APIs</h2>
+        <h3>a) Web Servers</h3>
+        <ul>
+          <li>
+            Handle client requests and serve responses (e.g., Nginx, Apache,
+            Caddy).
+          </li>
+          <li>
+            Backend applications run behind these servers (e.g., Node.js, Spring
+            Boot, Django).
+          </li>
+        </ul>
+
+        <h3>b) APIs</h3>
+        <ul>
+          <li>
+            <strong>RESTful APIs</strong>: Use HTTP methods (GET, POST, PUT,
+            DELETE) with JSON responses.
+          </li>
+          <li>
+            <strong>GraphQL</strong>: A flexible query language for fetching
+            required data.
+          </li>
+          <li>
+            <strong>gRPC</strong>: Uses Protocol Buffers for efficient,
+            high-performance RPC communication.
+          </li>
+        </ul>
+
+        <h2>3. Databases & Storage</h2>
+        <h3>a) Relational Databases (SQL)</h3>
+        <ul>
+          <li>
+            Structured data with relationships (e.g., PostgreSQL, MySQL,
+            Microsoft SQL Server).
+          </li>
+          <li>Use SQL for querying data.</li>
+        </ul>
+
+        <h3>b) NoSQL Databases</h3>
+        <ul>
+          <li><strong>Document Stores</strong>: MongoDB, CouchDB.</li>
+          <li><strong>Key-Value Stores</strong>: Redis, DynamoDB.</li>
+          <li><strong>Column Stores</strong>: Cassandra.</li>
+          <li><strong>Graph Databases</strong>: Neo4j.</li>
+        </ul>
+
+        <h3>c) Caching Strategies</h3>
+        <ul>
+          <li><strong>In-Memory Caching</strong>: Redis, Memcached.</li>
+          <li><strong>CDN Caching</strong>: Cloudflare, AWS CloudFront.</li>
+        </ul>
+
+        <h2>4. Message Queues & Event-Driven Architecture</h2>
+        <ul>
+          <li>Used for asynchronous processing and decoupling services.</li>
+          <li>
+            <strong>Message Brokers</strong>: Kafka, RabbitMQ, Amazon SQS.
+          </li>
+          <li>
+            <strong>Event-Driven Systems</strong>: Publish-subscribe models for
+            scalability.
+          </li>
+        </ul>
+
+        <h2>5. Authentication & Authorization</h2>
+        <ul>
+          <li>
+            <strong>Authentication</strong>: Verifies user identity (OAuth 2.0,
+            JWT, OpenID Connect).
+          </li>
+          <li>
+            <strong>Authorization</strong>: Determines user permissions (RBAC,
+            ABAC, ACL).
+          </li>
+        </ul>
+
+        <h2>6. Scalability & Performance</h2>
+        <h3>a) Load Balancing</h3>
+        <ul>
+          <li>
+            Distributes traffic across multiple servers (e.g., Nginx, HAProxy,
+            AWS ELB).
+          </li>
+        </ul>
+
+        <h3>b) Horizontal vs. Vertical Scaling</h3>
+        <ul>
+          <li><strong>Horizontal Scaling</strong>: Adding more machines.</li>
+          <li>
+            <strong>Vertical Scaling</strong>: Increasing resources (CPU, RAM)
+            of existing machines.
+          </li>
+        </ul>
+
+        <h3>c) Database Replication & Sharding</h3>
+        <ul>
+          <li>
+            <strong>Replication</strong>: Multiple copies for high availability.
+          </li>
+          <li>
+            <strong>Sharding</strong>: Splitting data across multiple databases
+            for scalability.
+          </li>
+        </ul>
+
+        <h2>7. Security Best Practices</h2>
+        <ul>
+          <li>
+            <strong>Input Validation & Sanitization</strong>: Prevent SQL
+            Injection, XSS, CSRF.
+          </li>
+          <li>
+            <strong>Encryption</strong>: Data at rest (AES), in transit
+            (TLS/SSL).
+          </li>
+          <li>
+            <strong>Rate Limiting</strong>: Protects against DDoS attacks.
+          </li>
+        </ul>
+
+        <h2>8. Observability & Monitoring</h2>
+        <ul>
+          <li><strong>Logging</strong>: Collecting logs (ELK Stack, Loki).</li>
+          <li>
+            <strong>Metrics</strong>: Monitoring performance (Prometheus,
+            Grafana).
+          </li>
+          <li>
+            <strong>Tracing</strong>: Debugging distributed systems (Jaeger,
+            Zipkin).
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

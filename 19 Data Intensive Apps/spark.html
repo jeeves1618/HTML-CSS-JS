@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apache Spark</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="css/topic.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <a href="index.html" id="logo">Data Intensive Apps</a>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="https://jeeves1618.github.io/HTML-CSS-JS/30%20Librarian/index.html"
+              >Books</a
+            >
+          </li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+      <a href="#side-drawer" class="menu-btn"
+        ><span></span><span></span><span></span
+      ></a>
+    </header>
+    <aside id="side-drawer">
+      <header id="sub-header">
+        <a href="index.html" id="sublogo">Data Intensive Apps</a>
+        <a href="#" class="menu-btn"><span></span><span></span><span></span></a>
+      </header>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="https://jeeves1618.github.io/HTML-CSS-JS/30%20Librarian/index.html"
+              >Books</a
+            >
+          </li>
+          <li><a href="">Courses</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <h1>Apache Spark</h1>
+      <section id="latest-products">
+        <ul>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Spark on Hadoop</h2>
+                <p>
+                  Spark applications run on Hadoop as well as Databricks. We
+                  will look at the Hadoop implementation first. There are many
+                  managed Hadoop distributions like AWS Elastic Mapreduce,
+                  Hortonworks, Cloudera, MapR, IBM Infosphere and Azure
+                  HDInsight.
+                </p>
+                <p>
+                  The core components of Hadoop are HDFS, YARN, Apache
+                  ZooKeeper, and the Apache Hive Metastore.
+                </p>
+                <p>
+                  In Cloudera,
+                  <a href="https://gethue.com/" target="_blank">Hue</a> is an
+                  open source SQL Assistant for Databases & Data Warehouses
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">HDFS</h2>
+
+                <p>
+                  An HDFS cluster consists of a single <em>NameNode</em> (a
+                  daemon that runs in master node) and multiple
+                  <em>DataNodes</em> (a daemon that runs in worker nodes). The
+                  DataNode is responsible for accepting new blocks, persisting
+                  them and serving up data to clients. The DataNode is only
+                  aware of blocks and their IDs; it does not have knowledge
+                  about the file to which a particular replica belongs. This
+                  information is curated by a coordinating process, the
+                  NameNode, which runs on the master servers and is responsible
+                  for maintaining a mapping of files to the blocks, as well as
+                  metadata about the files themselves (things like names,
+                  permissions, attributes, and replication factor).
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">HDFS Architecture</h2>
+
+                <img src="img/hdfs_arch.jpg" />
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">YARN</h2>
+
+                <p>
+                  To manage the competing demands of computational requests, we
+                  need a centralized cluster manager, which is aware of all the
+                  available compute resources and the current competing workload
+                  demands.
+                </p>
+                <p>
+                  This is exactly what YARN (Yet Another Resource Negotiator) is
+                  designed to be. YARN runs a daemon on each worker node, called
+                  a NodeManager, which reports in to a master process, called
+                  the ResourceManager. Each NodeManager tells the
+                  ResourceManager how much compute resource (in the form of
+                  virtual cores, or vcores) and how much memory is available on
+                  its node. Resources are parceled out to applications running
+                  on the cluster in the form of containers, each of which has a
+                  defined resource demand—say, 10 containers each with 4 vcores
+                  and 8 GB of RAM.
+                </p>
+                <p>
+                  Data: HDFS has NameNode and DataNode daemons running in master
+                  node and worker nodes respectively. Resource Management: YARN
+                  has ResourceManager and NodeManager daemons running in master
+                  node and worker nodes respectively. Data Consistency:
+                  Zookeeper ensures data consistency through the establishment
+                  of quorum. In a distributed system, there are multiple nodes
+                  or machines that need to communicate with each other and
+                  coordinate their actions. ZooKeeper provides a way to ensure
+                  that these nodes are aware of each other and can coordinate
+                  their actions. It does this by maintaining a hierarchical tree
+                  of data nodes called “Znodes“ The Hive Metastore curates
+                  information about the structured datasets (as opposed to
+                  unstructured binary data) that reside in Hadoop and organizes
+                  them into a logical hierarchy of databases, tables, and views.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Spark Drivers and Executors</h2>
+                <p>
+                  Spark Applications consist of a <i>driver</i> process and a
+                  set of <i>executor</i> processes. The driver process runs your
+                  main() function, sits on a node in the cluster, and is
+                  responsible for three things: maintaining information about
+                  the Spark Application; responding to a user’s program or
+                  input; and analyzing, distributing, and scheduling work across
+                  the executors.
+                </p>
+                <p>
+                  The executors are responsible for actually carrying out the
+                  work that the driver assigns them. This means that each
+                  executor is responsible for only two things: executing code
+                  assigned to it by the driver, and reporting the state of the
+                  computation on that executor back to the driver node.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Where does Spark run?</h2>
+                <p>
+                  A Hadoop cluster consists of
+                  <em>(or vertices or entities)</em> and relationships
+                  <em>(or edges or arcs)</em>. Similar type of nodes are clubbed
+                  together under a label. So, you can think of nodes as records
+                  in a RDMS table and label as the table itself.
+                </p>
+                <p>
+                  Unlike RDMS, where relationships are defined at the table
+                  level, the relationships in Graph DB can be defined at the
+                  node level.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="topic-item">
+            <article>
+              <div class="topic-item-content">
+                <h2 class="content">Properties</h2>
+                <p>
+                  We can assign the properties to nodes and relationships. A
+                  relationship will have a direction and a label. The label will
+                  say something like 'belongs to', 'travelling to' etc.
+                </p>
+                <p>
+                  For instance, we can have a node with properties
+                  <code>{name: "John", ...}</code> or
+                  <code>{name: "Peter", ...}</code>. Those nodes can have
+                  multiple labels, like citizens, employees etc. But,
+                  relationships can have only one label.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

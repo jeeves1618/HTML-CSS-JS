@@ -178,6 +178,7 @@ main h1 {
 #sort-tile,
 #search-tile,
 #compute-tile,
+#backend-tile,
 #deploy-tile {
   height: 250px;
   width: 100%;
@@ -198,6 +199,7 @@ main h1 {
 #sort-tile:hover,
 #search-tile:hover,
 #compute-tile:hover,
+#backend-tile:hover,
 #deploy-tile:hover {
   box-shadow: 0 1px 15px 1px #3f0c1f;
 }
@@ -273,6 +275,11 @@ main h1 {
   background-position: center;
   background-size: cover;
 }
+#backend-tile {
+  background: url("../img/heroku_tile.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 #network-tile span,
 #data-tile span,
 #ad-tile span,
@@ -285,6 +292,7 @@ main h1 {
 #sort-tile span,
 #search-tile span,
 #compute-tile span,
+#backend-tile span,
 #deploy-tile span {
   position: absolute;
   bottom: 0;

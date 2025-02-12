@@ -183,6 +183,12 @@ section > img {
   background-color: rgb(221, 134, 34);
 }
 
+#topic-sub-header {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: rgb(179, 62, 62);
+}
+
 @media (max-width: 48rem) {
   #main-header nav {
     display: none;
